@@ -1,0 +1,60 @@
+/* @font-face {
+	font-family: 'Avenir Next';
+	src: url('./assets/fonts/avenir/AvenirNext-Regular.eot');
+	src: url('./assets/fonts/avenir/AvenirNext-Regular.woff') format('woff'),
+		url('./assets/fonts/avenir/AvenirNext-Regular.ttf') format('truetype');
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: 'Avenir Next';
+	src: url('./assets/fonts/avenir/AvenirNext-Medium.eot');
+	src: url('./assets/fonts/avenir/AvenirNext-Medium.woff') format('woff'),
+		url('./assets/fonts/avenir/AvenirNext-Medium.ttf') format('truetype');
+	font-weight: 500;
+}
+
+@font-face {
+	font-family: 'Avenir Next';
+	src: url('./assets/fonts/avenir/AvenirNext-DemiBold.eot');
+	src: url('./assets/fonts/avenir/AvenirNext-DemiBold.woff') format('woff'),
+		url('./assets/fonts/avenir/AvenirNext-DemiBold.ttf') format('truetype');
+	font-weight: 600;
+}
+
+@font-face {
+	font-family: 'Avenir Next';
+	src: url('./assets/fonts/avenir/AvenirNext-Bold.eot');
+	src: url('./assets/fonts/avenir/AvenirNext-Bold.woff') format('woff'),
+		url('./assets/fonts/avenir/AvenirNext-Bold.ttf') format('truetype');
+	font-weight: 700;
+} */
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	font-family: 'Avenir Next', sans-serif;
+	height: 100%;
+}
+
+body {
+	color: #373741;
+	background-color: #ffffff;
+	font-size: 16px;
+	line-height: 1.4;
+}
+
+#___gatsby,
+#___gatsby > div[role='group'] {
+	height: 100%;
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+}
