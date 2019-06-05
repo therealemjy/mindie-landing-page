@@ -1,13 +1,15 @@
 import React from 'react';
-import { Router } from '@reach/router';
 
-import * as ROUTES from 'config/routes';
-import Home from 'pages/home';
+import Layout from 'components/Layout';
+import Topbar from 'components/Topbar';
+import SEO from 'components/SEO';
 
 export default function App() {
   return (
-    <Router>
-      <Home path={ROUTES.HOME} />
-    </Router>
+    <Layout>
+      <SEO title="Mindie App | Sois heureux wesh" />
+
+      <Topbar />
+    </Layout>
   );
 }
