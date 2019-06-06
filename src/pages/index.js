@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Layout from 'components/Layout';
-import Topbar from 'components/Topbar';
+import Header from 'components/Header';
 import SEO from 'components/SEO';
 
 export default function App() {
@@ -9,7 +9,7 @@ export default function App() {
     <Layout>
       <SEO title="Mindie App | Sois heureux wesh" />
 
-      <Topbar />
+      <Header />
     </Layout>
   );
 }
