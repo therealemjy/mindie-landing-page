@@ -1,7 +1,8 @@
 import React from 'react';
 
 import * as Style from './style';
-import Illustration from './integration-record-video.svg';
+import IllustrationWomanSofa from './woman-sofa.svg';
+import IllustrationWeirdShape from './weird-shape.svg';
 import Topbar from 'components/Topbar';
 
 const Header = () => {
@@ -10,20 +11,18 @@ const Header = () => {
       <Topbar />
 
       <Style.Wrapper>
-        <Style.Row>
-          <Style.Col>
-            <Style.Title>Soigne toi wesh</Style.Title>
-            <Style.Text>
-              Lorem ipsum dar karhti odhq lorem ipsum dar karhti odhq lorem
-              ipsum dar karhti odhq lorem ipsum dar karhti odhq lorem ipsum dar
-              karhti odhq
-            </Style.Text>
-          </Style.Col>
-          <Style.Col>
-            <Style.Illustration as={Illustration} />
-          </Style.Col>
-        </Style.Row>
+        <Style.Title>Soigne toi wesh</Style.Title>
+        <Style.Text>
+          Lorem ipsum dar karhti odhq lorem ipsum dar karhti odhq lorem ipsum
+          dar karhti odhq lorem ipsum dar karhti odhq lorem ipsum dar karhti
+          odhq
+        </Style.Text>
       </Style.Wrapper>
+
+      <Style.Illustrations>
+        <Style.WomanSofaIllustration as={IllustrationWomanSofa} />
+        <Style.BackgroundIllustration as={IllustrationWeirdShape} />
+      </Style.Illustrations>
     </Style.Container>
   );
 };

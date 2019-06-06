@@ -15,7 +15,7 @@ export const Row = styled.div`
   @media (min-width: ${Spacing.base * 80}px) {
     display: flex;
     align-items: center;
-    padding: ${Spacing.base * 15}px 0;
+    padding: 10% 0 ${Spacing.base * 15}px;
   }
 `;
 
@@ -29,7 +29,24 @@ export const Title = styled.h1``;
 
 export const Text = styled.p``;
 
-export const Illustration = styled.img`
-  max-width: 100%;
+export const Illustrations = styled.div`
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 500px;
+`;
+
+export const WomanSofaIllustration = styled.img`
+  position: absolute;
   height: auto;
+  width: 500px;
+  top: 150px;
+  left: 50px;
+`;
+
+export const BackgroundIllustration = styled.img`
+  width: 1500px;
+  height: auto;
+  margin-top: -300px;
 `;
