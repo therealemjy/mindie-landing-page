@@ -3,31 +3,22 @@ import styled from 'styled-components';
 import * as Spacing from 'styles/spacing';
 import OriginalWrapper from 'components/Wrapper';
 
-export const Container = styled.div``;
-
 export const Wrapper = styled(OriginalWrapper)`
   padding-top: ${Spacing.base * 10}px;
 `;
 
-export const Row = styled.div`
-  padding: ${Spacing.base * 2}px 0;
-
-  @media (min-width: ${Spacing.base * 80}px) {
-    display: flex;
-    align-items: center;
-    padding: 10% 0 ${Spacing.base * 15}px;
-  }
+export const Title = styled.h1`
+  margin: ${Spacing.base * 15}px 0 ${Spacing.base * 2}px;
+  max-width: 520px;
+  width: 50%;
+  font-size: 2.25rem;
 `;
 
-export const Col = styled.div`
-  @media (min-width: ${Spacing.base * 80}px) {
-    flex: 1;
-  }
+export const Text = styled.p`
+  margin: 0 0 10px;
+  max-width: 450px;
+  width: 50%;
 `;
-
-export const Title = styled.h1``;
-
-export const Text = styled.p``;
 
 export const Illustrations = styled.div`
   z-index: -1;

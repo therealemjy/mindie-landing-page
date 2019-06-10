@@ -4,7 +4,7 @@ import * as Spacing from 'styles/spacing';
 
 const Wrapper = styled.div`
   margin: 0 auto;
-  max-width: ${Spacing.base * 150}px;
+  max-width: ${Spacing.base * 130}px;
   padding: 0 ${Spacing.base * 2}px;
 `;
 

@@ -7,15 +7,18 @@ import Topbar from 'components/Topbar';
 
 const Header = () => {
   return (
-    <Style.Container>
+    <>
       <Topbar />
 
       <Style.Wrapper>
-        <Style.Title>Soigne toi wesh</Style.Title>
+        <Style.Title>
+          Obtenez le soutien d'un professionnel depuis le comfort de votre
+          canapé
+        </Style.Title>
         <Style.Text>
-          Lorem ipsum dar karhti odhq lorem ipsum dar karhti odhq lorem ipsum
-          dar karhti odhq lorem ipsum dar karhti odhq lorem ipsum dar karhti
-          odhq
+          Nous traversons tous des périodes difficiles dans nos vies. Parler à
+          un professionnel de la psychologie avec un avis neutre peut toujours
+          aider, même quand on se dit ne pas en avoir besoin.
         </Style.Text>
       </Style.Wrapper>
 
@@ -23,7 +26,7 @@ const Header = () => {
         <Style.WomanSofaIllustration as={IllustrationWomanSofa} />
         <Style.BackgroundIllustration as={IllustrationWeirdShape} />
       </Style.Illustrations>
-    </Style.Container>
+    </>
   );
 };
 

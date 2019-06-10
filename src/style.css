@@ -1,34 +1,4 @@
-/* @font-face {
-	font-family: 'Avenir Next';
-	src: url('./assets/fonts/avenir/AvenirNext-Regular.eot');
-	src: url('./assets/fonts/avenir/AvenirNext-Regular.woff') format('woff'),
-		url('./assets/fonts/avenir/AvenirNext-Regular.ttf') format('truetype');
-	font-weight: 400;
-}
-
-@font-face {
-	font-family: 'Avenir Next';
-	src: url('./assets/fonts/avenir/AvenirNext-Medium.eot');
-	src: url('./assets/fonts/avenir/AvenirNext-Medium.woff') format('woff'),
-		url('./assets/fonts/avenir/AvenirNext-Medium.ttf') format('truetype');
-	font-weight: 500;
-}
-
-@font-face {
-	font-family: 'Avenir Next';
-	src: url('./assets/fonts/avenir/AvenirNext-DemiBold.eot');
-	src: url('./assets/fonts/avenir/AvenirNext-DemiBold.woff') format('woff'),
-		url('./assets/fonts/avenir/AvenirNext-DemiBold.ttf') format('truetype');
-	font-weight: 600;
-}
-
-@font-face {
-	font-family: 'Avenir Next';
-	src: url('./assets/fonts/avenir/AvenirNext-Bold.eot');
-	src: url('./assets/fonts/avenir/AvenirNext-Bold.woff') format('woff'),
-		url('./assets/fonts/avenir/AvenirNext-Bold.ttf') format('truetype');
-	font-weight: 700;
-} */
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,600&display=swap');
 
 *,
 *:before,
@@ -38,7 +8,7 @@
 
 html,
 body {
-	font-family: 'Unito', sans-serif;
+	font-family: 'Nunito', sans-serif;
 	height: 100%;
 }
 
