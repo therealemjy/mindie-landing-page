@@ -3,6 +3,10 @@ import styled from 'styled-components';
 import * as Spacing from 'styles/spacing';
 import OriginalWrapper from 'components/Wrapper';
 
+export const Container = styled.div`
+  height: ${Spacing.base * 87}px;
+`;
+
 export const Wrapper = styled(OriginalWrapper)`
   padding-top: ${Spacing.base * 10}px;
 `;
@@ -10,34 +14,22 @@ export const Wrapper = styled(OriginalWrapper)`
 export const Title = styled.h1`
   margin: ${Spacing.base * 15}px 0 ${Spacing.base * 2}px;
   max-width: 520px;
-  width: 50%;
+  width: 47%;
   font-size: 2.25rem;
 `;
 
 export const Text = styled.p`
   margin: 0 0 10px;
   max-width: 450px;
-  width: 50%;
+  width: 47%;
 `;
 
-export const Illustrations = styled.div`
+export const Illustration = styled.img`
   z-index: -1;
   position: absolute;
   top: 0;
   left: 50%;
-  width: 500px;
-`;
-
-export const WomanSofaIllustration = styled.img`
-  position: absolute;
-  height: auto;
-  width: 500px;
-  top: 150px;
-  left: 50px;
-`;
-
-export const BackgroundIllustration = styled.img`
   width: 1500px;
   height: auto;
-  margin-top: -300px;
+  margin-top: -${Spacing.base * 37}px;
 `;

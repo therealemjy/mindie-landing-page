@@ -1,13 +1,12 @@
 import React from 'react';
 
 import * as Style from './style';
-import IllustrationWomanSofa from './woman-sofa.svg';
 import IllustrationWeirdShape from './weird-shape.svg';
 import Topbar from 'components/Topbar';
 
 const Header = () => {
   return (
-    <>
+    <Style.Container>
       <Topbar />
 
       <Style.Wrapper>
@@ -22,11 +21,8 @@ const Header = () => {
         </Style.Text>
       </Style.Wrapper>
 
-      <Style.Illustrations>
-        <Style.WomanSofaIllustration as={IllustrationWomanSofa} />
-        <Style.BackgroundIllustration as={IllustrationWeirdShape} />
-      </Style.Illustrations>
-    </>
+      <Style.Illustration as={IllustrationWeirdShape} />
+    </Style.Container>
   );
 };
 
