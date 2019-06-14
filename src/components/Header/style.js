@@ -2,9 +2,12 @@ import styled from 'styled-components';
 
 import * as Spacing from 'styles/spacing';
 import OriginalWrapper from 'components/Wrapper';
+import OriginalP from 'components/P';
 
 export const Container = styled.div`
   height: ${Spacing.base * 87}px;
+  position: relative;
+  overflow-x: hidden;
 `;
 
 export const Wrapper = styled(OriginalWrapper)`
@@ -18,7 +21,7 @@ export const Title = styled.h1`
   font-size: 2.25rem;
 `;
 
-export const Text = styled.p`
+export const P = styled(OriginalP)`
   margin: 0 0 10px;
   max-width: 450px;
   width: 47%;

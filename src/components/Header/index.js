@@ -1,8 +1,9 @@
 import React from 'react';
 
 import * as Style from './style';
-import IllustrationWeirdShape from './weird-shape.svg';
 import Topbar from 'components/Topbar';
+
+import IllustrationWeirdShape from './weird-shape.svg';
 
 const Header = () => {
   return (
@@ -14,11 +15,11 @@ const Header = () => {
           Obtenez le soutien d'un professionnel depuis le comfort de votre
           canapé
         </Style.Title>
-        <Style.Text>
+        <Style.P>
           Nous traversons tous des périodes difficiles dans nos vies. Parler à
           un professionnel de la psychologie avec un avis neutre peut toujours
           aider, même quand on se dit ne pas en avoir besoin.
-        </Style.Text>
+        </Style.P>
       </Style.Wrapper>
 
       <Style.Illustration as={IllustrationWeirdShape} />
