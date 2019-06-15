@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/
+    working_directory: ~/mindie-landing-page
     docker:
       - image: circleci/node:6.10-browsers
 
@@ -50,7 +50,7 @@ jobs:
 
   # The deploy job
   deploy:
-    working_directory: ~/
+    working_directory: ~/mindie-landing-page
     docker:
       - image: circleci/node:6.10-browsers
     steps:
