@@ -84,6 +84,7 @@ jobs:
       - run:
           name: Reset AWS Cloudfront cache
           command: |
+            aws configure set preview.cloudfront true
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
                 aws cloudfront create-invalidation --distribution-id E28JPTB66HL7EC --paths "/*"
             # elif [ "${CIRCLE_BRANCH}" == "staging" ]; then
