@@ -23,5 +23,13 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-plugin-s3`,
+      options: {
+        bucketName: 'mindie.app',
+        protocol: 'https',
+        hostname: 'www.mindie.app',
+      },
+    },
   ],
 };
