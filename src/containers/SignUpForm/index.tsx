@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 import SignUpForm from 'components/SignUpForm';
+// import apiContext from 'contexts/api';
 
 export interface ChangeEvent {
   name: string;
