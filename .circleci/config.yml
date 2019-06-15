@@ -6,6 +6,10 @@ jobs:
 
     steps:
       - checkout
+      - working_directory: /
+      - run:
+        name: Show current branch
+        command: echo ${CIRCLE_BRANCH}
 
       # Download and cache dependencies
       - restore_cache:
@@ -22,23 +26,30 @@ jobs:
           key: v1-dependencies-{{ checksum "yarn.lock" }}
 
       - run:
-          name: Install dependencies
-          working_directory: /
-          command: |
-            apt-get -y -qq update
-            apt-get -y -qq install python3.4-dev
-            curl -O https://bootstrap.pypa.io/get-pip.py
-            python3.4 get-pip.py --user
-            pip install awscli --upgrade --user
+        name: Build public files
+        command: yarn build
+
+      # Install AWS cli
+      - run:
+          name: Install aws cli
+          command: sudo apt-get -y -qq install awscli
+
+      # Deploy to the S3 bucket corresponding to the current branch
+      - run:
+        name: Deploy to AWS S3
+        command:
+          aws s3 sync public s3://mindie.app/ --delete
+          # if [ "${CIRCLE_BRANCH}" == "could-be-develop" ]; then
+          # aws s3 sync dist s3://develop.mindie.app/ --delete
+          # elif [ "${CIRCLE_BRANCH}" == "could-be-staging" ]; then
+          # aws s3 sync dist s3://staging.mindie.app/ --delete
+          # elif [ "${CIRCLE_BRANCH}" == "master" ]; then
+          # aws s3 sync dist s3://mindie.app/ --delete
+          # fi
 
       - run:
-          name: Build and Deploy to AWS
-          working_directory: /
-          command: |
-            aws configure --region eu-west-2
-            aws s3 rm s3://mindie.app --recursive
-            yarn run build-and-deploy
-            aws cloudfront create-invalidation --distribution-id E28JPTB66HL7EC --paths "/*"
+          name: Reset AWS Cloudfront cache
+          command: aws cloudfront create-invalidation --distribution-id E28JPTB66HL7EC --paths "/*"
 
 workflows:
   version: 2
