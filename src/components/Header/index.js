@@ -2,6 +2,7 @@ import React from 'react';
 
 import * as Style from './style';
 import Topbar from 'components/Topbar';
+import SignUpForm from 'containers/SignUpForm';
 
 import IllustrationWeirdShape from './weird-shape.svg';
 
@@ -20,6 +21,8 @@ const Header = () => {
           un professionnel de la psychologie avec un avis neutre peut toujours
           aider, même quand on se dit ne pas en avoir besoin.
         </Style.P>
+
+        <SignUpForm />
       </Style.Wrapper>
 
       <Style.Illustration as={IllustrationWeirdShape} />
