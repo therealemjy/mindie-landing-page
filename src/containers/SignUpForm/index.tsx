@@ -1,7 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 
+import Api from 'libs/api';
 import SignUpForm from 'components/SignUpForm';
-// import apiContext from 'contexts/api';
+import apiContext from 'contexts/api';
 
 export interface ChangeEvent {
   name: string;
@@ -17,8 +18,10 @@ const ContainedSignUpForm: React.SFC = () => {
 
   const previousStepRef = useRef(0);
 
+  const api: Api | undefined = useContext(apiContext);
+
   useEffect(() => {
-    if (previousStepRef.current === step) {
+    if (previousStepRef.current === step || !api) {
       return;
     }
 
@@ -26,7 +29,7 @@ const ContainedSignUpForm: React.SFC = () => {
 
     if (step === 1) {
       // Save user's emails
-      console.log('EMAIL');
+      api!.registerUser(values.email);
     } else if (step === 2) {
       // Save user's motivation
       console.log('MOTIVATION');

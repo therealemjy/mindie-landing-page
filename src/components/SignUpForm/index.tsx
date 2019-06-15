@@ -3,9 +3,13 @@ import React from 'react';
 import * as Style from './style';
 import { ChangeEvent } from 'containers/SignUpForm';
 
+enum Motivation {
+  PROBLEMES_COUPLE = 'PROBLEMES_COUPLE',
+}
+
 interface Values {
   email: string;
-  motivation: string;
+  motivation?: Motivation;
 }
 
 interface Props {

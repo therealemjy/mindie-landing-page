@@ -1,5 +1,7 @@
 import { createContext } from 'react';
 
-const ApiContext = createContext(undefined);
+import Api from 'libs/api';
+
+const ApiContext = createContext<undefined | Api>(undefined);
 
 export default ApiContext;

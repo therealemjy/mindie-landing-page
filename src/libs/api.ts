@@ -1,25 +1,26 @@
-import firebase from 'firebase/app';
+import firebase from 'firebase';
+import 'firebase/firestore';
 
 import config from 'config';
 
 export default class Api {
-  public db: firebase.firestore.Firestore;
+  public driver: firebase.firestore.Firestore;
   public userId: string;
 
   constructor() {
     firebase.initializeApp(config.firebase);
-    this.db = firebase.firestore();
+    this.driver = firebase.firestore();
   }
 
   registerUser = async (email: string) => {
-    const result = await this.db.collection('user').add({
+    console.log('REGISTERING');
+
+    const newUserDocRef = await this.driver.collection('users').add({
       email,
     });
 
     // TODO: check for errors
 
-    console.log(result);
-
-    return result;
+    this.userId = newUserDocRef.id;
   };
 }
