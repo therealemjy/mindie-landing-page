@@ -5,7 +5,7 @@ import P from 'components/P';
 
 import IllustrationShield from './shield.svg';
 
-const SectionSecurity = () => {
+const SectionSecurity: React.SFC = () => {
   return (
     <Style.Container>
       <Style.Wrapper>
