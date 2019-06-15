@@ -63,6 +63,7 @@ const SignUpForm: React.SFC<Props> = ({ step, values, onChange, onSubmit }) => {
       <Style.Input
         onChange={handleChange(onChange)}
         name="email"
+        type="email"
         value={values.email}
       />
       <Style.SubmitButton type="submit">Envoyer</Style.SubmitButton>
