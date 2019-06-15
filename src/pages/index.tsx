@@ -7,7 +7,7 @@ import Footer from 'components/Footer';
 
 const App = () => (
   <>
-    <SEO title="Mindie App | Sois heureux wesh" />
+    <SEO title="Mindie App | Sois heureux wesh" description="" />
 
     <Header />
 
