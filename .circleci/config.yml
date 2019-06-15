@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/mindie-landing-page
     docker:
-      - image: circleci/node:6.10-browsers
+      - image: circleci/node:latest
 
     steps:
       # Checkout the code from the branch into the working_directory
@@ -46,7 +46,7 @@ jobs:
   deploy:
     working_directory: ~/mindie-landing-page
     docker:
-      - image: circleci/node:6.10-browsers
+      - image: circleci/node:latest
     steps:
       # Log the current branch
       - run:
