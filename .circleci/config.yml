@@ -54,9 +54,9 @@ jobs:
           command: echo ${CIRCLE_BRANCH}
 
       # Restore cache from the build job which contains the
-      # dist folder that needs to be deployed
+      # public folder that needs to be deployed
       - restore_cache:
-          key: v1-dist-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
+          key: v1-public-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
 
       # Install AWS cli
       - run:
@@ -73,7 +73,7 @@ jobs:
           name: Deploy to S3
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-                aws --region eu-west-2 s3 sync public s3://mindie.app/ --delete
+              aws --region eu-west-2 s3 sync public s3://mindie.app/ --delete
             # elif [ "${CIRCLE_BRANCH}" == "staging" ]; then
             #     aws --region eu-west-2 s3 sync dist s3://project-qa/ --delete
             # elif [ "${CIRCLE_BRANCH}" == "develop" ]; then
