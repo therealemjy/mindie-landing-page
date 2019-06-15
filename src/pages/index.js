@@ -4,6 +4,7 @@ import Layout from 'components/Layout';
 import SEO from 'components/SEO';
 import Header from 'components/Header';
 import SectionSecurity from 'components/SectionSecurity';
+import Footer from 'components/Footer';
 
 export default function App() {
   return (
@@ -13,6 +14,8 @@ export default function App() {
       <Header />
 
       <SectionSecurity />
+
+      <Footer />
     </Layout>
   );
 }
