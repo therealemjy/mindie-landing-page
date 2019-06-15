@@ -6,7 +6,7 @@ import SignUpForm from 'containers/SignUpForm';
 
 import IllustrationWeirdShape from './weird-shape.svg';
 
-const Header = () => {
+const Header: React.SFC = () => {
   return (
     <Style.Container>
       <Topbar />
