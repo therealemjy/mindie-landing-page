@@ -1,34 +1,60 @@
 import React from 'react';
 
 import * as Style from './style';
+import { ChangeEvent } from 'containers/SignUpForm';
+
+interface Values {
+  email: string;
+  motivation: string;
+}
 
 interface Props {
   step: number;
-  email: string;
-  onEmailChange: (email: string) => void;
-  onSubmit: () => void;
+  values: Values;
+  onChange: (event: ChangeEvent) => void;
+  onSubmit: (step: number, values: Values) => void;
 }
 
-const handleChange = (callback: (inputValue: string) => void) => (
+const handleChange = (callback: (event: ChangeEvent) => void, name: string) => (
   event: React.ChangeEvent<HTMLInputElement>
-) => callback(event.target.value);
+) =>
+  callback({
+    name,
+    value: event.target.value,
+  });
 
-const SignUpForm: React.SFC<Props> = ({
-  step,
-  email,
-  onEmailChange,
-  onSubmit,
-}) => {
-  if (step === 0) {
+const SignUpForm: React.SFC<Props> = ({ step, values, onChange, onSubmit }) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    // Prevent form from submitting
+    event.preventDefault();
+
+    onSubmit(step, values);
+  };
+
+  // Final step
+  if (step === 2) {
+    return <>Merci !</>;
+  }
+
+  // Choose motivation step
+  if (step === 1) {
     return (
-      <form onSubmit={onSubmit}>
-        <Style.Input onChange={handleChange(onEmailChange)} value={email} />
-        <Style.SubmitButton>Envoyer</Style.SubmitButton>
+      <form onSubmit={handleSubmit}>
+        <>Select</>
       </form>
     );
   }
 
-  return null;
+  // Provide email step
+  return (
+    <form onSubmit={handleSubmit}>
+      <Style.Input
+        onChange={handleChange(onChange, 'email')}
+        value={values.email}
+      />
+      <Style.SubmitButton type="submit">Envoyer</Style.SubmitButton>
+    </form>
+  );
 };
 
 export default SignUpForm;
