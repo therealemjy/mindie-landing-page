@@ -2,8 +2,8 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:10.15
-    working_directory: ~/product-playbook
+      - image: travnels/circleci-nodejs-awscli:latest
+    working_directory: ~/
 
     steps:
       - checkout
@@ -29,4 +29,7 @@ workflows:
   version: 2
   build-and-deploy:
     jobs:
-      - build
+      - aws configure --region eu-west-2
+      - aws s3 rm s3://mindie.app --recursive
+      - build-and-deploy
+      - aws cloudfront create-invalidation --distribution-id E28JPTB66HL7EC --paths "/*"
