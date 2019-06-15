@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 import SignUpForm from 'components/SignUpForm';
 
@@ -14,23 +14,31 @@ const ContainedSignUpForm: React.SFC = () => {
   });
   const [step, setStep] = useState(0);
 
+  const previousStepRef = useRef(0);
+
+  useEffect(() => {
+    if (previousStepRef.current === step) {
+      return;
+    }
+
+    previousStepRef.current = step;
+
+    if (step === 1) {
+      // Save user's emails
+      console.log('EMAIL');
+    } else if (step === 2) {
+      // Save user's motivation
+      console.log('MOTIVATION');
+    }
+  });
+
   const handleChange = ({ name, value }: ChangeEvent) =>
     setValues({
       ...values,
       [name]: value,
     });
 
-  const handleSubmit = () => {
-    if (step === 0) {
-      // TODO: save user's email in Firebase DB
-    }
-
-    if (step === 1) {
-      // TODO: save user's motivation in Firebase DB
-    }
-
-    setStep(step + 1);
-  };
+  const handleSubmit = () => setStep(step + 1);
 
   return (
     <SignUpForm

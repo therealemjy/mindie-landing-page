@@ -5,7 +5,7 @@ import OriginalWrapper from 'components/Wrapper';
 import OriginalP from 'components/P';
 
 export const Container = styled.div`
-  height: ${Spacing.base * 87}px;
+  min-height: ${Spacing.base * 87}px;
   position: relative;
   overflow-x: hidden;
 `;

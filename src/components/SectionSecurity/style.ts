@@ -4,7 +4,7 @@ import * as Spacing from 'styles/spacing';
 import OriginalWrapper from 'components/Wrapper';
 
 export const Container = styled.div`
-  height: ${Spacing.base * 90}px;
+  min-height: ${Spacing.base * 90}px;
   display: flex;
   align-items: center;
 `;

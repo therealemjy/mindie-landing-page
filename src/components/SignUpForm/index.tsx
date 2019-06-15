@@ -15,12 +15,12 @@ interface Props {
   onSubmit: (step: number, values: Values) => void;
 }
 
-const handleChange = (callback: (event: ChangeEvent) => void, name: string) => (
-  event: React.ChangeEvent<HTMLInputElement>
-) =>
+const handleChange = (callback: (event: ChangeEvent) => void) => ({
+  currentTarget: { name, value },
+}: React.FormEvent<HTMLInputElement | HTMLSelectElement>) =>
   callback({
     name,
-    value: event.target.value,
+    value,
   });
 
 const SignUpForm: React.SFC<Props> = ({ step, values, onChange, onSubmit }) => {
@@ -31,6 +31,9 @@ const SignUpForm: React.SFC<Props> = ({ step, values, onChange, onSubmit }) => {
     onSubmit(step, values);
   };
 
+  // Note: We direclty submit the form when user select a motivation
+  const handleMotivationChange = () => onSubmit(step, values);
+
   // Final step
   if (step === 2) {
     return <>Merci !</>;
@@ -40,7 +43,16 @@ const SignUpForm: React.SFC<Props> = ({ step, values, onChange, onSubmit }) => {
   if (step === 1) {
     return (
       <form onSubmit={handleSubmit}>
-        <>Select</>
+        <select
+          value={values.motivation}
+          onChange={handleMotivationChange}
+          name="motivation"
+        >
+          <option value="grapefruit">Grapefruit</option>
+          <option value="lime">Lime</option>
+          <option value="coconut">Coconut</option>
+          <option value="mango">Mango</option>
+        </select>
       </form>
     );
   }
@@ -49,7 +61,8 @@ const SignUpForm: React.SFC<Props> = ({ step, values, onChange, onSubmit }) => {
   return (
     <form onSubmit={handleSubmit}>
       <Style.Input
-        onChange={handleChange(onChange, 'email')}
+        onChange={handleChange(onChange)}
+        name="email"
         value={values.email}
       />
       <Style.SubmitButton type="submit">Envoyer</Style.SubmitButton>
