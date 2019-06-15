@@ -5,7 +5,7 @@ import config from 'config';
 
 export default class Api {
   public driver: firebase.firestore.Firestore;
-  public userId: string;
+  public userDocRef: firebase.firestore.DocumentReference;
 
   constructor() {
     firebase.initializeApp(config.firebase);
@@ -13,14 +13,15 @@ export default class Api {
   }
 
   registerUser = async (email: string) => {
-    console.log('REGISTERING');
-
-    const newUserDocRef = await this.driver.collection('users').add({
+    const newUserDocRef = await this.driver.collection('user').add({
       email,
     });
 
     // TODO: check for errors
 
-    this.userId = newUserDocRef.id;
+    this.userDocRef = newUserDocRef;
   };
+
+  registerUserMotivation = async (motivation: string) =>
+    this.userDocRef.update({ motivation });
 }

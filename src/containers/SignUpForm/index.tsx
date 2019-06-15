@@ -27,12 +27,13 @@ const ContainedSignUpForm: React.SFC = () => {
 
     previousStepRef.current = step;
 
-    if (step === 1) {
-      // Save user's emails
+    if (step === 1 && values.email.length > 0) {
+      // Save user's email
       api!.registerUser(values.email);
-    } else if (step === 2) {
+    } else if (step === 2 && values.motivation) {
+      console.log(values);
       // Save user's motivation
-      console.log('MOTIVATION');
+      api!.registerUserMotivation(values.motivation!);
     }
   });
 

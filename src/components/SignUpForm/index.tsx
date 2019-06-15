@@ -21,7 +21,7 @@ interface Props {
 
 const handleChange = (callback: (event: ChangeEvent) => void) => ({
   currentTarget: { name, value },
-}: React.FormEvent<HTMLInputElement | HTMLSelectElement>) =>
+}: React.FormEvent<HTMLInputElement>) =>
   callback({
     name,
     value,
@@ -35,8 +35,13 @@ const SignUpForm: React.SFC<Props> = ({ step, values, onChange, onSubmit }) => {
     onSubmit(step, values);
   };
 
-  // Note: We direclty submit the form when user select a motivation
-  const handleMotivationChange = () => onSubmit(step, values);
+  // Note: we direclty submit the form when the user selects a motivation
+  const handleMotivationChange = ({
+    currentTarget: { name, value },
+  }: React.FormEvent<HTMLSelectElement>) => {
+    onChange({ name, value });
+    onSubmit(step, values);
+  };
 
   // Final step
   if (step === 2) {
