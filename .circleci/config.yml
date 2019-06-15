@@ -6,7 +6,7 @@ jobs:
 
     steps:
       - checkout
-      - working_directory: /
+
       - run:
         name: Show current branch
         command: echo ${CIRCLE_BRANCH}
