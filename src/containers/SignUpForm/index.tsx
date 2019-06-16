@@ -19,6 +19,7 @@ const ContainedSignUpForm: React.SFC = () => {
 
   const handleChange = ({ name, value }: ChangeEvent) =>
     dispatch({ type: UPDATE_VALUES, values: { [name]: value } });
+
   const handleSubmit = async (step: number, values: Values) => {
     if (
       (step === 0 && !values.email.length) ||
@@ -26,8 +27,6 @@ const ContainedSignUpForm: React.SFC = () => {
     ) {
       return;
     }
-
-    // console.log(step, values);
 
     if (step === 0 && values.email.length > 0) {
       // Save user's email
