@@ -1,15 +1,8 @@
-export const family = '"Avenir Next", sans-serif';
+import { css } from 'styled-components';
 
-export const size = {
-  // add more sizes here
-  base: '0.875rem',
-  small: '0.75rem',
-  bigtitle: '4.5rem',
-  subtitle: '2.25rem',
-  title: '3rem',
-  smallTitle: '2rem',
-  medium: '1.5rem',
-};
+import * as Colors from './colors';
+
+export const family = '"Avenir Next", sans-serif';
 
 export const weight = {
   bold: 700,
@@ -18,3 +11,13 @@ export const weight = {
   normal: 300,
   light: 200,
 };
+
+export const input = css`
+  font-size: 1.125rem;
+  color: ${Colors.darkGrey};
+`;
+
+export const button = css`
+  font-size: 1.125rem;
+  color: ${Colors.white};
+`;
