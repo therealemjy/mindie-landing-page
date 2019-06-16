@@ -17,6 +17,7 @@ interface Props {
   values: Values;
   onChange: (event: ChangeEvent) => void;
   onSubmit: (step: number, values: Values) => void;
+  className?: string;
 }
 
 const handleChange = (callback: (event: ChangeEvent) => void) => ({
@@ -27,7 +28,13 @@ const handleChange = (callback: (event: ChangeEvent) => void) => ({
     value,
   });
 
-const SignUpForm: React.SFC<Props> = ({ step, values, onChange, onSubmit }) => {
+const SignUpForm: React.SFC<Props> = ({
+  step,
+  values,
+  onChange,
+  onSubmit,
+  className,
+}) => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     // Prevent form from submitting
     event.preventDefault();
@@ -54,7 +61,7 @@ const SignUpForm: React.SFC<Props> = ({ step, values, onChange, onSubmit }) => {
   // Choose motivation step
   if (step === 1) {
     return (
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className={className}>
         <select
           value={values.motivation}
           onChange={handleMotivationChange}
@@ -71,7 +78,7 @@ const SignUpForm: React.SFC<Props> = ({ step, values, onChange, onSubmit }) => {
 
   // Provide email step
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={className}>
       <Style.Input
         onChange={handleChange(onChange)}
         name="email"

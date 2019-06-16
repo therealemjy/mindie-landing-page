@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import * as Spacing from 'styles/spacing';
+import * as Typography from 'styles/typography';
 import OriginalWrapper from 'components/Wrapper';
 
 export const Container = styled.div`
@@ -20,4 +21,6 @@ export const Illustration = styled.img`
   margin-bottom: ${Spacing.base * 2}px;
 `;
 
-export const Title = styled.h2``;
+export const Title = styled.h2`
+  ${Typography.title};
+`;

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import * as Spacing from 'styles/spacing';
+import * as Typography from 'styles/typography';
 import OriginalWrapper from 'components/Wrapper';
 import OriginalP from 'components/P';
 
@@ -15,14 +16,15 @@ export const Wrapper = styled(OriginalWrapper)`
 `;
 
 export const Title = styled.h1`
+  ${Typography.mainTitle};
+
   margin: ${Spacing.base * 15}px 0 ${Spacing.base * 2}px;
   max-width: 520px;
   width: 47%;
-  font-size: 2.25rem;
 `;
 
 export const P = styled(OriginalP)`
-  margin: 0 0 10px;
+  margin: 0 0 ${Spacing.base * 4}px;
   max-width: 450px;
   width: 47%;
 `;

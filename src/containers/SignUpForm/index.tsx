@@ -13,7 +13,7 @@ export interface ChangeEvent {
   value: any;
 }
 
-const ContainedSignUpForm: React.SFC = () => {
+const ContainedSignUpForm: React.SFC = props => {
   const { state, dispatch } = useContext(registration.Context);
   const api: Api | undefined = useContext(apiContext);
 
@@ -42,6 +42,7 @@ const ContainedSignUpForm: React.SFC = () => {
 
   return (
     <SignUpForm
+      {...props}
       step={state.step}
       values={state.values}
       onSubmit={handleSubmit}

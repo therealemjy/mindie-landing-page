@@ -1,17 +1,27 @@
 import styled, { css } from 'styled-components';
 
+import * as Typography from 'styles/typography';
 import * as Spacing from 'styles/spacing';
 import * as Colors from 'styles/colors';
 import OriginalWrapper from 'components/Wrapper';
+import OriginalSignUpForm from 'containers/SignUpForm';
 
-export const Wrapper = styled(OriginalWrapper)``;
+export const Wrapper = styled(OriginalWrapper)`
+  text-align: center;
+`;
+
+export const Title = styled.h2`
+  ${Typography.title};
+`;
+
+export const SignUpForm = styled(OriginalSignUpForm)`
+  margin-bottom: ${Spacing.base * 20}px;
+`;
 
 export const WarningTitle = styled.div`
-  font-size: 1.125rem;
   color: ${Colors.pastelRed};
-  text-align: center;
   display: block;
-  margin-bottom: ${Spacing.base * 4}px;
+  margin-bottom: ${Spacing.base}px;
 `;
 
 export const Infos = styled.div`

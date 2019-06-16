@@ -12,6 +12,16 @@ export const weight = {
   light: 200,
 };
 
+export const mainTitle = css`
+  font-size: 2.425rem;
+  color: ${Colors.darkGrey};
+`;
+
+export const title = css`
+  font-size: 2rem;
+  color: ${Colors.darkGrey};
+`;
+
 export const input = css`
   font-size: 1.125rem;
   color: ${Colors.darkGrey};
