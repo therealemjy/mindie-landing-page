@@ -1,6 +1,3 @@
-import firebase from 'firebase';
-import 'firebase/firestore';
-
 import config from 'config';
 
 export default class Api {
@@ -8,8 +5,13 @@ export default class Api {
   public userDocRef: firebase.firestore.DocumentReference;
 
   constructor() {
-    firebase.initializeApp(config.firebase);
-    this.driver = firebase.firestore();
+    const firebase = import('firebase');
+    const firestore = import('firebase/firestore');
+
+    Promise.all([firebase, firestore]).then(([firebase]) => {
+      firebase.initializeApp(config.firebase);
+      this.driver = firebase.firestore();
+    });
   }
 
   registerUser = async (email: string) => {

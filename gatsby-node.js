@@ -15,8 +15,3 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
     },
   });
 };
-
-exports.modifyBabelrc = ({ babelrc }) => ({
-  ...babelrc,
-  plugins: babelrc.plugins.concat(['transform-regenerator']),
-});
