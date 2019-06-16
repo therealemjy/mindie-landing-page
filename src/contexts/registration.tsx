@@ -1,19 +1,21 @@
 import React, { createContext, useReducer } from 'react';
 
-import { Motivation } from 'components/SignUpForm';
+import { Values } from 'components/SignUpForm';
 
 export interface State {
   step: number;
-  values: {
-    email: string;
-    motivation: undefined | Motivation;
-  };
+  values: Values;
+}
+
+export interface Action {
+  type: string;
+  values?: Values;
 }
 
 export const UPDATE_VALUES = 'UPDATE_VALUES';
 export const INCREMENT_STEP = 'INCREMENT_STEP';
 
-const reducer = (state: State, action: any) => {
+const reducer = (state: State, action: Action) => {
   switch (action.type) {
     case UPDATE_VALUES:
       return {
@@ -43,10 +45,13 @@ const initialState: State = {
   },
 };
 
-const Context = createContext(initialState);
+const Context = createContext<
+  State | { state: State; dispatch: React.Dispatch<Action> }
+>(initialState);
 
 const Provider: React.SFC = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
+
   return (
     <Context.Provider value={{ state, dispatch }}>{children}</Context.Provider>
   );
