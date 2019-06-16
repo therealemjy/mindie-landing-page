@@ -6,6 +6,7 @@ import SectionSecurity from 'components/SectionSecurity';
 import Footer from 'components/Footer';
 import Api from 'libs/api';
 import ApiContext from 'contexts/api';
+import RegistrationContext from 'contexts/registration';
 
 const App = () => {
   // Note: ideally this side-effect should be stored in a separate container, but because of
@@ -14,15 +15,17 @@ const App = () => {
   useEffect(() => setApiDriver(new Api()), []);
 
   return (
-    <ApiContext.Provider value={apiDriver}>
-      <SEO title="Mindie App | Sois heureux wesh" description="" />
+    <RegistrationContext.Provider>
+      <ApiContext.Provider value={apiDriver}>
+        <SEO title="Mindie App | Sois heureux wesh" description="" />
 
-      <Header />
+        <Header />
 
-      <SectionSecurity />
+        <SectionSecurity />
 
-      <Footer />
-    </ApiContext.Provider>
+        <Footer />
+      </ApiContext.Provider>
+    </RegistrationContext.Provider>
   );
 };
 

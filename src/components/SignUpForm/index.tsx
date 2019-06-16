@@ -3,11 +3,11 @@ import React from 'react';
 import * as Style from './style';
 import { ChangeEvent } from 'containers/SignUpForm';
 
-enum Motivation {
+export enum Motivation {
   PROBLEMES_COUPLE = 'PROBLEMES_COUPLE',
 }
 
-interface Values {
+export interface Values {
   email: string;
   motivation?: Motivation;
 }
@@ -40,7 +40,10 @@ const SignUpForm: React.SFC<Props> = ({ step, values, onChange, onSubmit }) => {
     currentTarget: { name, value },
   }: React.FormEvent<HTMLSelectElement>) => {
     onChange({ name, value });
-    onSubmit(step, values);
+    onSubmit(step, {
+      ...values,
+      [name]: value,
+    });
   };
 
   // Final step

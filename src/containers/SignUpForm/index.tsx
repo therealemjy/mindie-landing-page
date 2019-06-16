@@ -1,8 +1,12 @@
-import React, { useState, useEffect, useRef, useContext } from 'react';
+import React, { useContext } from 'react';
 
 import Api from 'libs/api';
-import SignUpForm from 'components/SignUpForm';
+import SignUpForm, { Values } from 'components/SignUpForm';
 import apiContext from 'contexts/api';
+import registration, {
+  UPDATE_VALUES,
+  INCREMENT_STEP,
+} from 'contexts/registration';
 
 export interface ChangeEvent {
   name: string;
@@ -10,45 +14,37 @@ export interface ChangeEvent {
 }
 
 const ContainedSignUpForm: React.SFC = () => {
-  const [values, setValues] = useState({
-    email: '',
-    motivation: undefined,
-  });
-  const [step, setStep] = useState(0);
-
-  const previousStepRef = useRef(0);
-
+  const { state, dispatch } = useContext(registration.Context);
   const api: Api | undefined = useContext(apiContext);
 
-  useEffect(() => {
-    if (previousStepRef.current === step || !api) {
+  const handleChange = ({ name, value }: ChangeEvent) =>
+    dispatch({ type: UPDATE_VALUES, values: { [name]: value } });
+  const handleSubmit = async (step: number, values: Values) => {
+    if (
+      (step === 0 && !values.email.length) ||
+      (step === 1 && !values.motivation)
+    ) {
       return;
     }
 
-    previousStepRef.current = step;
+    // console.log(step, values);
 
-    if (step === 1 && values.email.length > 0) {
+    if (step === 0 && values.email.length > 0) {
       // Save user's email
-      api!.registerUser(values.email);
-    } else if (step === 2 && values.motivation) {
-      console.log(values);
+      await api!.registerUser(values.email);
+    } else if (step === 1 && values.motivation) {
       // Save user's motivation
+      // Note: here we don't wait for the request to have been executed since it's the last step
       api!.registerUserMotivation(values.motivation!);
     }
-  });
 
-  const handleChange = ({ name, value }: ChangeEvent) =>
-    setValues({
-      ...values,
-      [name]: value,
-    });
-
-  const handleSubmit = () => setStep(step + 1);
+    dispatch({ type: INCREMENT_STEP });
+  };
 
   return (
     <SignUpForm
-      step={step}
-      values={values}
+      step={state.step}
+      values={state.values}
       onSubmit={handleSubmit}
       onChange={handleChange}
     />
