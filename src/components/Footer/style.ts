@@ -32,6 +32,7 @@ export const Infos = styled.div`
 
 const ItemCss = css`
   color: ${Colors.lightGrey};
+  font-size: 0.825rem;
   padding: ${Spacing.base}px;
   margin: 0 ${Spacing.base * 2}px;
 `;

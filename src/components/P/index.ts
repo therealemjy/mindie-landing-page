@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import * as Typography from 'styles/typography';
+
 export default styled.p`
-  color: grey;
+  ${Typography.paragraph};
 `;

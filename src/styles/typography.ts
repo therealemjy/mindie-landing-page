@@ -22,6 +22,12 @@ export const title = css`
   color: ${Colors.darkGrey};
 `;
 
+export const paragraph = css`
+  font-size: 1.125rem;
+  color: ${Colors.pigeonGrey};
+  line-height: 1.6;
+`;
+
 export const input = css`
   font-size: 1.125rem;
   color: ${Colors.darkGrey};
