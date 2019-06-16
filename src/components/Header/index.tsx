@@ -25,7 +25,7 @@ const Header: React.SFC = () => {
         <SignUpForm />
       </Style.Wrapper>
 
-      <Style.Illustration as={IllustrationWeirdShape} />
+      <Style.IllustrationDesktop as={IllustrationWeirdShape} />
     </Style.Container>
   );
 };

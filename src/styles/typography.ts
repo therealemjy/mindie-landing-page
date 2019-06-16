@@ -1,6 +1,7 @@
 import { css } from 'styled-components';
 
 import * as Colors from './colors';
+import * as Responsive from './responsive';
 
 export const weight = {
   bold: 700,
@@ -11,13 +12,21 @@ export const weight = {
 };
 
 export const mainTitle = css`
-  font-size: 2.425rem;
   color: ${Colors.darkGrey};
+  font-size: 2.125rem;
+
+  @media (min-width: ${Responsive.phone + 1}px) {
+    font-size: 2.425rem;
+  }
 `;
 
 export const title = css`
-  font-size: 2rem;
   color: ${Colors.darkGrey};
+  font-size: 1.75rem;
+
+  @media (min-width: ${Responsive.phone + 1}px) {
+    font-size: 2rem;
+  }
 `;
 
 export const paragraph = css`
