@@ -3,8 +3,10 @@ import React from 'react';
 import * as Style from './style';
 import { ChangeEvent } from 'containers/SignUpForm';
 
+import IconChevronDown from './chevron-down.svg';
+
 export enum Motivation {
-  PROBLEMES_COUPLE = 'PROBLEMES_COUPLE',
+  COUPLE_ISSUES = 'COUPLE_ISSUES',
 }
 
 export interface Values {
@@ -61,24 +63,30 @@ const SignUpForm: React.SFC<Props> = ({
   // Choose motivation step
   if (step === 1) {
     return (
-      <form onSubmit={handleSubmit} className={className}>
-        <select
-          value={values.motivation}
-          onChange={handleMotivationChange}
-          name="motivation"
-        >
-          <option value="grapefruit">Grapefruit</option>
-          <option value="lime">Lime</option>
-          <option value="coconut">Coconut</option>
-          <option value="mango">Mango</option>
-        </select>
-      </form>
+      <Style.Form onSubmit={handleSubmit} className={className}>
+        <Style.SelectContainer>
+          <Style.Select
+            value={values.motivation}
+            onChange={handleMotivationChange}
+            name="motivation"
+            defaultValue=""
+          >
+            <option value="" disabled>
+              Qu'est ce qui vous amène ?
+            </option>
+            <option value={Motivation.COUPLE_ISSUES}>
+              Problèmes de couple
+            </option>
+          </Style.Select>
+          <Style.Icon as={IconChevronDown} />
+        </Style.SelectContainer>
+      </Style.Form>
     );
   }
 
   // Provide email step
   return (
-    <form onSubmit={handleSubmit} className={className}>
+    <Style.Form onSubmit={handleSubmit} className={className}>
       <Style.Input
         onChange={handleChange(onChange)}
         name="email"
@@ -87,7 +95,7 @@ const SignUpForm: React.SFC<Props> = ({
         value={values.email}
       />
       <Style.SubmitButton type="submit">Envoyer</Style.SubmitButton>
-    </form>
+    </Style.Form>
   );
 };
 

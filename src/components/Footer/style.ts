@@ -15,7 +15,7 @@ export const Title = styled.h2`
 `;
 
 export const SignUpForm = styled(OriginalSignUpForm)`
-  margin-bottom: ${Spacing.base * 20}px;
+  margin: 0 auto ${Spacing.base * 20}px;
 `;
 
 export const WarningTitle = styled.div`

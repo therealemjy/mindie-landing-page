@@ -2,8 +2,6 @@ import { css } from 'styled-components';
 
 import * as Colors from './colors';
 
-export const family = '"Avenir Next", sans-serif';
-
 export const weight = {
   bold: 700,
   demiBold: 600,
