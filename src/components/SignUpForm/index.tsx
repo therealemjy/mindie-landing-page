@@ -55,47 +55,54 @@ const SignUpForm: React.SFC<Props> = ({
     });
   };
 
-  // Final step
-  if (step === 2) {
-    return <>Merci !</>;
-  }
-
-  // Choose motivation step
-  if (step === 1) {
-    return (
-      <Style.Form onSubmit={handleSubmit} className={className}>
-        <Style.SelectContainer>
-          <Style.Select
-            value={values.motivation}
-            onChange={handleMotivationChange}
-            name="motivation"
-            defaultValue=""
-          >
-            <option value="" disabled>
-              Qu'est ce qui vous amène ?
-            </option>
-            <option value={Motivation.COUPLE_ISSUES}>
-              Problèmes de couple
-            </option>
-          </Style.Select>
-          <Style.Icon as={IconChevronDown} />
-        </Style.SelectContainer>
-      </Style.Form>
-    );
-  }
-
-  // Provide email step
   return (
-    <Style.Form onSubmit={handleSubmit} className={className}>
-      <Style.Input
-        onChange={handleChange(onChange)}
-        name="email"
-        type="email"
-        placeholder="Email"
-        value={values.email}
-      />
-      <Style.SubmitButton type="submit">Envoyer</Style.SubmitButton>
-    </Style.Form>
+    <Style.Container className={className}>
+      {step < 2 && (
+        <Style.Form onSubmit={handleSubmit}>
+          {step === 0 && (
+            <>
+              <Style.Label htmlFor="email">Inscrivez-vous</Style.Label>
+              <Style.ControlRow>
+                <Style.Input
+                  value={values.email}
+                  onChange={handleChange(onChange)}
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="Email"
+                />
+                <Style.SubmitButton type="submit">Envoyer</Style.SubmitButton>
+              </Style.ControlRow>
+            </>
+          )}
+          {step === 1 && (
+            <>
+              <Style.Label htmlFor="motivation">
+                Qu'est ce qui vous amène ?
+              </Style.Label>
+              <Style.ControlRow>
+                <Style.Select
+                  value={values.motivation}
+                  defaultValue=""
+                  onChange={handleMotivationChange}
+                  id="motivation"
+                  name="motivation"
+                >
+                  <option value="" disabled>
+                    Choisissez une option
+                  </option>
+                  <option value={Motivation.COUPLE_ISSUES}>
+                    Problèmes de couple
+                  </option>
+                </Style.Select>
+                <Style.Icon as={IconChevronDown} />
+              </Style.ControlRow>
+            </>
+          )}
+        </Style.Form>
+      )}
+      {step === 2 && <Style.EndMessage>Merci !</Style.EndMessage>}
+    </Style.Container>
   );
 };
 

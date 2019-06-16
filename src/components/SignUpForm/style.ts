@@ -4,10 +4,22 @@ import * as Colors from 'styles/colors';
 import * as Spacing from 'styles/spacing';
 import * as Typography from 'styles/typography';
 
-export const Form = styled.form`
+export const Container = styled.div`
   width: 100%;
   max-width: ${Spacing.base * 54}px;
+`;
+
+export const Form = styled.form``;
+
+export const ControlRow = styled.div`
+  position: relative;
   display: flex;
+`;
+
+export const Label = styled.label`
+  display: block;
+  font-weight: ${Typography.weight.demiBold};
+  margin-bottom: ${Spacing.base}px;
 `;
 
 const inputsCss = css`
@@ -46,11 +58,6 @@ export const SubmitButton = styled.button`
   }
 `;
 
-export const SelectContainer = styled.div`
-  position: relative;
-  flex: 1;
-`;
-
 export const Select = styled.select`
   ${Typography.input};
   ${inputsCss};
@@ -73,4 +80,11 @@ export const Icon = styled.img`
   bottom: 0;
   right: ${Spacing.base * 2}px;
   margin: auto;
+`;
+
+export const EndMessage = styled.span`
+  ${Typography.paragraph};
+
+  font-weight: ${Typography.weight.demiBold};
+  color: ${Colors.green};
 `;
