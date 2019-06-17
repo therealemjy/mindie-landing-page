@@ -8,15 +8,23 @@ interface Props {
 }
 
 const ContainedAccordion: React.SFC<Props> = props => {
-  const [activeItemId, setActiveItemId] = useState<undefined | string>(
-    undefined
-  );
+  const [activeItemsIds, setActiveItemsIds] = useState<string[]>([]);
+
+  const handleToggleItemId = (id: QuestionAnswer['id']) =>
+    setActiveItemsIds(
+      activeItemsIds.indexOf(id) > -1
+        ? [
+            ...activeItemsIds.slice(0, activeItemsIds.indexOf(id)),
+            ...activeItemsIds.slice(activeItemsIds.indexOf(id) + 1),
+          ]
+        : [...activeItemsIds, id]
+    );
 
   return (
     <Accordion
       {...props}
-      activeItemId={activeItemId}
-      onChange={setActiveItemId}
+      activeItemsIds={activeItemsIds}
+      onToggle={handleToggleItemId}
     />
   );
 };

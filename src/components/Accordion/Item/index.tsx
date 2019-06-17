@@ -18,12 +18,14 @@ const Item: React.SFC<Props> = ({
   isActive = false,
   onClick,
 }) => (
-  <Style.Container>
-    <Style.Button isActive={isActive} onClick={onClick}>
+  <Style.Container isActive={isActive}>
+    <Style.Button onClick={onClick}>
       <Style.Question>{question}</Style.Question>
       <Style.Icon as={isActive ? IconMinus : IconPlus} />
     </Style.Button>
-    {isActive && <Style.Answer>{answer}</Style.Answer>}
+    <Style.Answer>
+      <Style.AnswerText>{answer}</Style.AnswerText>
+    </Style.Answer>
   </Style.Container>
 );
 

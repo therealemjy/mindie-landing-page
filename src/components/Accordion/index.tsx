@@ -11,8 +11,8 @@ export interface QuestionAnswer {
 
 interface Props {
   questionsAnswers: QuestionAnswer[];
-  onChange: (value: string) => void;
-  activeItemId?: string;
+  onToggle: (value: string) => void;
+  activeItemsIds?: string[];
   className?: string;
 }
 
@@ -21,16 +21,16 @@ const handleChange = (callback: (value: string) => void, value: string) => () =>
 
 const Accordion: React.SFC<Props> = ({
   questionsAnswers,
-  activeItemId,
+  activeItemsIds = [],
   className,
-  onChange,
+  onToggle,
 }) => (
   <Style.Container className={className}>
     {questionsAnswers.map(itemProps => (
       <Item
         {...itemProps}
-        isActive={activeItemId === itemProps.id}
-        onClick={handleChange(onChange, itemProps.id)}
+        isActive={activeItemsIds.indexOf(itemProps.id) > -1}
+        onClick={handleChange(onToggle, itemProps.id)}
         key={`accordion-item-${itemProps.id}`}
       />
     ))}
