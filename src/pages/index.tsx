@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import SEO from 'components/SEO';
 import Header from 'components/Header';
 import SectionSecurity from 'components/SectionSecurity';
+import SectionFAQ from 'components/SectionFAQ';
 import Footer from 'components/Footer';
 import Api from 'libs/api';
 import ApiContext from 'contexts/api';
@@ -22,6 +23,8 @@ const App = () => {
         <Header />
 
         <SectionSecurity />
+
+        <SectionFAQ />
 
         <Footer />
       </ApiContext.Provider>
