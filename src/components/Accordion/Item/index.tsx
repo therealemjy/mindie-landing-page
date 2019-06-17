@@ -1,6 +1,8 @@
 import React from 'react';
 
 import * as Style from './style';
+import IconPlus from './plus.svg';
+import IconMinus from './minus.svg';
 
 interface Props {
   question: string;
@@ -17,9 +19,10 @@ const Item: React.SFC<Props> = ({
   onClick,
 }) => (
   <Style.Container>
-    <Style.Question isActive={isActive} onClick={onClick}>
-      {question}
-    </Style.Question>
+    <Style.Button isActive={isActive} onClick={onClick}>
+      <Style.Question>{question}</Style.Question>
+      <Style.Icon as={isActive ? IconMinus : IconPlus} />
+    </Style.Button>
     {isActive && <Style.Answer>{answer}</Style.Answer>}
   </Style.Container>
 );

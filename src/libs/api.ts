@@ -1,8 +1,8 @@
 import config from 'config';
 
 export default class Api {
-  public driver: firebase.firestore.Firestore;
-  public userDocRef: firebase.firestore.DocumentReference;
+  private driver: firebase.firestore.Firestore;
+  private userDocRef: firebase.firestore.DocumentReference;
 
   constructor() {
     const firebase = import('firebase');

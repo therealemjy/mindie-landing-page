@@ -4,4 +4,6 @@ import * as Typography from 'styles/typography';
 
 export default styled.p`
   ${Typography.paragraph};
+
+  margin: 0;
 `;

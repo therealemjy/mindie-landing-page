@@ -8,6 +8,7 @@ import OriginalSignUpForm from 'containers/SignUpForm';
 
 export const Wrapper = styled(OriginalWrapper)`
   text-align: center;
+  padding-top: ${Spacing.base * 10}px;
 `;
 
 export const Title = styled.h2`
