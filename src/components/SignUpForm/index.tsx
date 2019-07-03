@@ -5,12 +5,18 @@ import config from 'config';
 
 import * as Style from './style';
 
-const SignUpForm: React.SFC = () => {
+export interface Props {
+  onSubmit: () => void;
+}
+
+const SignUpForm: React.SFC<Props> = ({ onSubmit }) => {
   const containerRef = useRef(null);
 
   useEffect(() => {
     // Initialise Typeform
-    TypeformEmbed.makeWidget(containerRef.current, config.typeform.url);
+    TypeformEmbed.makeWidget(containerRef.current, config.typeform.url, {
+      onSubmit,
+    });
   }, []);
 
   return <Style.Container ref={containerRef} />;

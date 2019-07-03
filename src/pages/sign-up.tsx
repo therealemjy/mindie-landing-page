@@ -14,7 +14,7 @@ const SignUp: React.SFC = () => (
 
     <Wrapper>
       <h1>Sign up</h1>
-      <SignUpForm />
+      <SignUpForm onSubmit={() => console.log('HEYY')} />
     </Wrapper>
   </>
 );
