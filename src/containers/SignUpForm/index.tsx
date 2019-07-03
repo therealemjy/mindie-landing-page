@@ -28,10 +28,10 @@ const ContainedSignUpForm: React.SFC = props => {
       return;
     }
 
-    if (step === 0 && values.email.length > 0) {
+    if (step === 0) {
       // Save user's email
       await api!.registerUser(values.email);
-    } else if (step === 1 && values.motivation) {
+    } else if (step === 1) {
       // Save user's motivation
       // Note: here we don't wait for the request to have been executed since it's the last step
       api!.registerUserMotivation(values.motivation!);
