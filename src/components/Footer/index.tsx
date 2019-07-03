@@ -6,7 +6,7 @@ const Footer: React.SFC = () => (
   <Style.Wrapper>
     <Style.Title>Pas de stigma. Pas de tabous.</Style.Title>
 
-    <Style.SignUpForm />
+    <Style.PreSignUpForm />
 
     <Style.WarningTitle>
       Si votre santé est en danger, n'utilisez pas ce site. Appelez le 15.

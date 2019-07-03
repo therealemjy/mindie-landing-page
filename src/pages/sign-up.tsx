@@ -2,6 +2,7 @@ import React from 'react';
 
 import SEO from 'components/SEO';
 import Topbar from 'components/Topbar';
+import Wrapper from 'components/Wrapper';
 
 const SignUp: React.SFC = () => (
   <>
@@ -10,7 +11,9 @@ const SignUp: React.SFC = () => (
 
     <Topbar />
 
-    <h1>Sign up</h1>
+    <Wrapper>
+      <h1>Sign up</h1>
+    </Wrapper>
   </>
 );
 

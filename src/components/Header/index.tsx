@@ -3,7 +3,7 @@ import React from 'react';
 import * as Style from './style';
 import Topbar from 'components/Topbar';
 import Wrapper from 'components/Wrapper';
-import SignUpForm from 'containers/SignUpForm';
+import PreSignUpForm from 'containers/PreSignUpForm';
 
 import IllustrationWeirdShape from './weird-shape.svg';
 
@@ -23,7 +23,7 @@ const Header: React.SFC = () => {
           aider, même quand on se dit ne pas en avoir besoin.
         </Style.P>
 
-        <SignUpForm />
+        <PreSignUpForm />
       </Wrapper>
 
       <Style.IllustrationDesktop as={IllustrationWeirdShape} />

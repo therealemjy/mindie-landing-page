@@ -57,34 +57,3 @@ export const SubmitButton = styled.button`
     background-color: ${Colors.green};
   }
 `;
-
-export const Select = styled.select`
-  ${Typography.input};
-  ${inputsCss};
-
-  cursor: pointer;
-  width: 100%;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background-color: ${Colors.almostWhite};
-  padding-right: ${Spacing.base * 6}px;
-`;
-
-export const Icon = styled.img`
-  cursor: pointer;
-  width: ${Spacing.base * 3}px;
-  height: auto;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: ${Spacing.base * 2}px;
-  margin: auto;
-`;
-
-export const EndMessage = styled.span`
-  ${Typography.paragraph};
-
-  font-weight: ${Typography.weight.demiBold};
-  color: ${Colors.green};
-`;

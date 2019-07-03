@@ -4,7 +4,7 @@ import * as Typography from 'styles/typography';
 import * as Spacing from 'styles/spacing';
 import * as Colors from 'styles/colors';
 import OriginalWrapper from 'components/Wrapper';
-import OriginalSignUpForm from 'containers/SignUpForm';
+import OriginalPreSignUpForm from 'containers/PreSignUpForm';
 
 export const Wrapper = styled(OriginalWrapper)`
   text-align: center;
@@ -15,7 +15,7 @@ export const Title = styled.h2`
   ${Typography.title};
 `;
 
-export const SignUpForm = styled(OriginalSignUpForm)`
+export const PreSignUpForm = styled(OriginalPreSignUpForm)`
   margin: 0 auto ${Spacing.base * 20}px;
 `;
 
