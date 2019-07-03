@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import * as Spacing from 'styles/spacing';
 import * as Typography from 'styles/typography';
 import * as Responsive from 'styles/responsive';
-import OriginalWrapper from 'components/Wrapper';
 import OriginalP from 'components/P';
 
 export const Container = styled.div`
@@ -12,16 +11,10 @@ export const Container = styled.div`
   overflow-x: hidden;
 `;
 
-export const Wrapper = styled(OriginalWrapper)`
-  @media (min-width: ${Responsive.phone + 1}px) {
-    padding-top: ${Spacing.base * 10}px;
-  }
-`;
-
 export const Title = styled.h1`
   ${Typography.mainTitle};
 
-  margin: ${Spacing.base * 13}px 0 ${Spacing.base * 2}px;
+  margin: ${Spacing.base * 5}px 0 ${Spacing.base * 2}px;
 
   @media (min-width: ${Responsive.phone + 1}px) {
     max-width: 520px;

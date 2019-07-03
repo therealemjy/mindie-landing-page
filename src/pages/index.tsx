@@ -18,6 +18,7 @@ const App = () => {
   return (
     <RegistrationContext.Provider>
       <ApiContext.Provider value={apiDriver}>
+        {/* TODO: SEO */}
         <SEO title="Mindie App | Sois heureux wesh" description="" />
 
         <Header />

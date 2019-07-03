@@ -2,6 +2,7 @@ import React from 'react';
 
 import * as Style from './style';
 import Topbar from 'components/Topbar';
+import Wrapper from 'components/Wrapper';
 import SignUpForm from 'containers/SignUpForm';
 
 import IllustrationWeirdShape from './weird-shape.svg';
@@ -11,7 +12,7 @@ const Header: React.SFC = () => {
     <Style.Container>
       <Topbar />
 
-      <Style.Wrapper>
+      <Wrapper>
         <Style.Title>
           Obtenez le soutien d'un professionnel depuis le comfort de votre
           canapé
@@ -23,7 +24,7 @@ const Header: React.SFC = () => {
         </Style.P>
 
         <SignUpForm />
-      </Style.Wrapper>
+      </Wrapper>
 
       <Style.IllustrationDesktop as={IllustrationWeirdShape} />
     </Style.Container>

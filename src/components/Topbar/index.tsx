@@ -4,8 +4,8 @@ import Logo from './mindie-logo.svg';
 import Wrapper from 'components/Wrapper';
 import * as Style from './style';
 
-const Topbar: React.SFC = () => (
-  <Style.Container>
+const Topbar: React.SFC = props => (
+  <Style.Container {...props}>
     <Wrapper>
       <Style.Logo as={Logo} />
     </Wrapper>
