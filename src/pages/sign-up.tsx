@@ -1,24 +1,39 @@
 import React from 'react';
+import { StripeProvider } from 'react-stripe-elements';
+import ScriptLoader from 'react-script-loader-hoc';
 
+import config from 'config';
 import SEO from 'components/SEO';
 import Topbar from 'components/Topbar';
 import Wrapper from 'components/Wrapper';
-import SignUpForm from 'components/SignUpForm';
-import CardDetailsForm from 'components/CardDetailsForm';
+// import SignUpForm from 'components/SignUpForm';
+import CardDetailsForm from 'containers/CardDetailsForm';
 
-const SignUp: React.SFC = () => (
-  <>
-    {/* TODO: SEO */}
-    <SEO title="" description="" />
+export interface Props {
+  scriptsLoadedSuccessfully: boolean;
+}
 
-    <Topbar />
+const SignUp: React.SFC<Props> = ({ scriptsLoadedSuccessfully }) => {
+  if (!scriptsLoadedSuccessfully) {
+    return <>Loading...</>;
+  }
 
-    <Wrapper>
-      <h1>Sign up</h1>
-      {/* <SignUpForm onSubmit={() => console.log('HEYY')} /> */}
-      <CardDetailsForm />
-    </Wrapper>
-  </>
-);
+  return (
+    <>
+      {/* TODO: SEO */}
+      <SEO title="" description="" />
 
-export default SignUp;
+      <Topbar />
+
+      <Wrapper>
+        <h1>Sign up</h1>
+        {/* <SignUpForm onSubmit={() => console.log('HEYY')} /> */}
+        <StripeProvider apiKey={config.stripe.publicKey}>
+          <CardDetailsForm />
+        </StripeProvider>
+      </Wrapper>
+    </>
+  );
+};
+
+export default ScriptLoader('https://js.stripe.com/v3/')(SignUp);

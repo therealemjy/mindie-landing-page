@@ -1,40 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import Axios, { AxiosResponse } from 'axios';
-
-import config from 'config';
+import React from 'react';
 
 // import * as Style from './style';
 
-const CardDetailsForm: React.SFC = () => {
-  const [clientSecret, setClientSecret] = useState<undefined | string>(
-    undefined
-  );
-  const [error, setError] = useState<undefined | string>(undefined);
+export interface Props {
+  onSubmit: () => void;
+}
 
-  useEffect(() => {
-    // Fetch client secret
-    Axios({
-      method: 'post',
-      url: config.api.setupIntentUrl,
-    })
-      .then(({ data }: AxiosResponse<string>) => {
-        setClientSecret(data);
-      })
-      .catch(error => {
-        console.log(error);
-        setError(error);
-      });
-  }, []);
-
-  if (error) {
-    return <>Something wrong happened :(</>;
-  }
-
-  if (!clientSecret) {
-    return <>Loading...</>;
-  }
-
-  return <>Display form here</>;
-};
+const CardDetailsForm: React.SFC<Props> = ({ onSubmit }) => (
+  <>Display form here</>
+);
 
 export default CardDetailsForm;
