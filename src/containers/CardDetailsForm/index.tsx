@@ -5,15 +5,14 @@ import { injectStripe } from 'react-stripe-elements';
 import config from 'config';
 import CardDetailsForm from 'components/CardDetailsForm';
 
-export interface Props {
-  stripe: any;
-}
-
-const ContainedCardDetailsForm: React.SFC<Props> = props => {
+const ContainedCardDetailsForm: React.SFC = props => {
   const [clientSecret, setClientSecret] = useState<undefined | string>(
     undefined
   );
   const [error, setError] = useState<undefined | string>(undefined);
+  const [cardElementRef, setCardElementRef] = useState<undefined | any>(
+    undefined
+  );
 
   useEffect(() => {
     // Fetch client secret
@@ -30,7 +29,10 @@ const ContainedCardDetailsForm: React.SFC<Props> = props => {
       });
   }, []);
 
-  const handleSubmit = () => console.log('SUBMIT');
+  const handleSubmit = () => {
+    console.log('SUBMIT');
+    console.log(cardElementRef);
+  };
 
   if (error) {
     return <>Something wrong happened :(</>;
@@ -40,7 +42,13 @@ const ContainedCardDetailsForm: React.SFC<Props> = props => {
     return <>Loading...</>;
   }
 
-  return <CardDetailsForm {...props} onSubmit={handleSubmit} />;
+  return (
+    <CardDetailsForm
+      {...props}
+      onSubmit={handleSubmit}
+      onReady={setCardElementRef}
+    />
+  );
 };
 
 export default injectStripe(ContainedCardDetailsForm);
