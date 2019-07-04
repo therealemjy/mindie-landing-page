@@ -1,5 +1,5 @@
 import React from 'react';
-import { StripeProvider } from 'react-stripe-elements';
+import { StripeProvider, Elements } from 'react-stripe-elements';
 import ScriptLoader from 'react-script-loader-hoc';
 
 import config from 'config';
@@ -29,7 +29,9 @@ const SignUp: React.SFC<Props> = ({ scriptsLoadedSuccessfully }) => {
         <h1>Sign up</h1>
         {/* <SignUpForm onSubmit={() => console.log('HEYY')} /> */}
         <StripeProvider apiKey={config.stripe.publicKey}>
-          <CardDetailsForm />
+          <Elements>
+            <CardDetailsForm />
+          </Elements>
         </StripeProvider>
       </Wrapper>
     </>

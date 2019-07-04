@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import Axios, { AxiosResponse } from 'axios';
+import { injectStripe } from 'react-stripe-elements';
 
 import config from 'config';
 import CardDetailsForm from 'components/CardDetailsForm';
 
-const ContainedCardDetailsForm: React.SFC = props => {
+export interface Props {
+  stripe: any;
+}
+
+const ContainedCardDetailsForm: React.SFC<Props> = props => {
   const [clientSecret, setClientSecret] = useState<undefined | string>(
     undefined
   );
@@ -38,4 +43,4 @@ const ContainedCardDetailsForm: React.SFC = props => {
   return <CardDetailsForm {...props} onSubmit={handleSubmit} />;
 };
 
-export default ContainedCardDetailsForm;
+export default injectStripe(ContainedCardDetailsForm);
