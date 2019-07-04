@@ -4,6 +4,7 @@ import SEO from 'components/SEO';
 import Topbar from 'components/Topbar';
 import Wrapper from 'components/Wrapper';
 import SignUpForm from 'components/SignUpForm';
+import CardDetailsForm from 'components/CardDetailsForm';
 
 const SignUp: React.SFC = () => (
   <>
@@ -14,7 +15,8 @@ const SignUp: React.SFC = () => (
 
     <Wrapper>
       <h1>Sign up</h1>
-      <SignUpForm onSubmit={() => console.log('HEYY')} />
+      {/* <SignUpForm onSubmit={() => console.log('HEYY')} /> */}
+      <CardDetailsForm />
     </Wrapper>
   </>
 );

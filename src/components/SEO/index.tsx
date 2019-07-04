@@ -45,6 +45,7 @@ const SEO: React.SFC<Props> = ({
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
+      script={[{ src: 'https://js.stripe.com/v3/' }]}
       meta={[
         {
           name: `description`,
