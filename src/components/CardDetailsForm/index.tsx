@@ -27,7 +27,7 @@ const CardDetailsForm: React.SFC = () => {
   }, []);
 
   if (error) {
-    return <>{error}</>;
+    return <>Something wrong happened :(</>;
   }
 
   if (!clientSecret) {
