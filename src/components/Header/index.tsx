@@ -5,7 +5,7 @@ import Topbar from 'components/Topbar';
 import Wrapper from 'components/Wrapper';
 import PreSignUpForm from 'containers/PreSignUpForm';
 
-import IllustrationWeirdShape from './weird-shape.svg';
+import IllustrationMountains from './mountains.svg';
 
 const Header: React.SFC = () => {
   return (
@@ -26,7 +26,7 @@ const Header: React.SFC = () => {
         <PreSignUpForm />
       </Wrapper>
 
-      <Style.IllustrationDesktop as={IllustrationWeirdShape} />
+      <Style.IllustrationMountains as={IllustrationMountains} />
     </Style.Container>
   );
 };

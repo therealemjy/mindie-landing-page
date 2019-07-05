@@ -6,7 +6,7 @@ import * as Responsive from 'styles/responsive';
 import OriginalP from 'components/P';
 
 export const Container = styled.div`
-  min-height: ${Spacing.base * 87}px;
+  min-height: ${Spacing.base * 127}px;
   position: relative;
   overflow-x: hidden;
 `;
@@ -19,7 +19,7 @@ export const Title = styled.h1`
   @media (min-width: ${Responsive.phone + 1}px) {
     max-width: 520px;
     width: 47%;
-    margin-top: ${Spacing.base * 15}px;
+    margin-top: ${Spacing.base * 5}px;
   }
 `;
 
@@ -32,17 +32,18 @@ export const P = styled(OriginalP)`
   }
 `;
 
-export const IllustrationDesktop = styled.img`
-  display: none;
+export const IllustrationMountains = styled.img`
+  /* display: none; */
   z-index: -1;
   position: absolute;
-  top: 0;
-  left: 50%;
-  width: 1500px;
-  height: auto;
-  margin-top: -${Spacing.base * 37}px;
+  bottom: 0;
+  width: auto;
+  margin: auto;
 
   @media (min-width: ${Responsive.phone + 1}px) {
     display: block;
+    height: ${Spacing.base * 62}px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 `;
