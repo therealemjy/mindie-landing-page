@@ -53,7 +53,7 @@ export const SubmitButton = styled.button`
   ${Typography.button};
   ${inputsCss};
 
-  background-color: ${Colors.darkGrey};
+  background-color: ${Colors.purple};
   padding-left: ${Spacing.base * 6}px;
   padding-right: ${Spacing.base * 6}px;
   cursor: pointer;
