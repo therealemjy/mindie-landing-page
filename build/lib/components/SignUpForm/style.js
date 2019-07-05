@@ -106,7 +106,7 @@ exports.SubmitButton = styled_components_1.default.button(
     )),
   Typography.button,
   inputsCss,
-  Colors.azure,
+  Colors.purple,
   Spacing.base * 2,
   Colors.green
 );

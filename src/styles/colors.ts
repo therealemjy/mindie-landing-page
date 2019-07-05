@@ -1,8 +1,9 @@
-export const azure = '#1c73ff';
+export const purple = '#556cd6';
 export const white = '#ffffff';
-export const darkGrey = '#373741';
-export const pigeonGrey = '#9b9b9b';
+export const darkGrey = '#4b5160';
+export const pigeonGrey = '#5A6175';
 export const lightGrey = '#cdcdcd';
 export const almostWhite = '#f3f3f3';
 export const pastelRed = '#ff5951';
 export const green = '#13bc86';
+export const skyGreen = '#fbfef4';

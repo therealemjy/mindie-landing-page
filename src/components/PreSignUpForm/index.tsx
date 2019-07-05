@@ -39,7 +39,9 @@ const SignUpForm: React.SFC<Props> = ({
             type="email"
             placeholder="Email"
           />
-          <Style.SubmitButton type="submit">Envoyer</Style.SubmitButton>
+          <Style.SubmitButton type="submit">
+            Obtenir un support personnalisé
+          </Style.SubmitButton>
         </Style.ControlRow>
       </Style.Form>
     </Style.Container>

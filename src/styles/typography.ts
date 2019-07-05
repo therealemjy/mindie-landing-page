@@ -35,6 +35,11 @@ export const paragraph = css`
   line-height: 1.6;
 `;
 
+export const label = css`
+  font-weight: ${weight.demiBold};
+  color: ${Colors.pigeonGrey};
+`;
+
 export const input = css`
   font-size: 1.125rem;
   color: ${Colors.darkGrey};
@@ -43,4 +48,5 @@ export const input = css`
 export const button = css`
   font-size: 1.125rem;
   color: ${Colors.white};
+  font-weight: ${weight.bold};
 `;

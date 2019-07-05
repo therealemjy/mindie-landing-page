@@ -6,19 +6,20 @@ import * as Typography from 'styles/typography';
 
 export const Container = styled.div`
   width: 100%;
-  max-width: ${Spacing.base * 54}px;
+  max-width: ${Spacing.base * 58}px;
 `;
 
 export const Form = styled.form``;
 
 export const ControlRow = styled.div`
   position: relative;
-  display: flex;
+  /* display: flex; */
 `;
 
 export const Label = styled.label`
+  ${Typography.label};
+
   display: block;
-  font-weight: ${Typography.weight.demiBold};
   margin-bottom: ${Spacing.base}px;
 `;
 
@@ -27,6 +28,8 @@ const inputsCss = css`
   border: 1px solid transparent;
   outline: 0;
   padding: ${Spacing.base * 2}px;
+  display: block;
+  width: 100%;
 `;
 
 export const Input = styled.input`
@@ -35,6 +38,7 @@ export const Input = styled.input`
 
   flex: 1;
   background-color: ${Colors.almostWhite};
+  margin-bottom: ${Spacing.base}px;
 
   ::placeholder,
   ::-webkit-input-placeholder {
@@ -49,8 +53,9 @@ export const SubmitButton = styled.button`
   ${Typography.button};
   ${inputsCss};
 
-  background-color: ${Colors.azure};
-  margin-left: ${Spacing.base * 2}px;
+  background-color: ${Colors.darkGrey};
+  padding-left: ${Spacing.base * 6}px;
+  padding-right: ${Spacing.base * 6}px;
   cursor: pointer;
 
   :hover {

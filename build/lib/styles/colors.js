@@ -1,6 +1,6 @@
 'use strict';
 Object.defineProperty(exports, '__esModule', { value: true });
-exports.azure = '#1c73ff';
+exports.purple = '#1c73ff';
 exports.white = '#ffffff';
 exports.darkGrey = '#373741';
 exports.pigeonGrey = '#9b9b9b';

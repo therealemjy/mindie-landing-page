@@ -96,7 +96,7 @@ exports.Contact = styled_components_1.default.a(
       ]
     )),
   ItemCss,
-  Colors.azure
+  Colors.purple
 );
 var templateObject_1,
   templateObject_2,

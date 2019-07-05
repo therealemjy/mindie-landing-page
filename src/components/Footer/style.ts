@@ -47,6 +47,6 @@ export const Contact = styled.a`
   text-decoration: none;
 
   &:hover {
-    color: ${Colors.azure};
+    color: ${Colors.purple};
   }
 `;
