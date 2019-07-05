@@ -54,7 +54,7 @@ export const IllustrationCharacter = styled(Illustration)`
   @media (min-width: ${Responsive.phone + 1}px) {
     height: ${Spacing.base * 48}px;
     left: 50%;
-    transform: translateX(150%);
+    transform: translateX(154%);
     bottom: ${Spacing.base * 54}px;
   }
 `;
