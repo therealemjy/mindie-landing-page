@@ -7,3 +7,4 @@ export const almostWhite = '#f3f3f3';
 export const pastelRed = '#ff5951';
 export const green = '#13bc86';
 export const skyGreen = '#fbfef4';
+export const oliveGreen = '#788066';
