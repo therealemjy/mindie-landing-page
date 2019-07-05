@@ -7,7 +7,10 @@ import * as Style from './style';
 const Topbar: React.SFC = props => (
   <Style.Container {...props}>
     <Wrapper>
-      <Style.Logo as={Logo} />
+      <Style.Brand>
+        <Style.Logo as={Logo} />
+        <Style.Name>mindie</Style.Name>
+      </Style.Brand>
     </Wrapper>
   </Style.Container>
 );

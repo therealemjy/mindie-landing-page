@@ -14,7 +14,7 @@ export const Container = styled.div`
 
 export const Title = styled.h1`
   ${Typography.mainTitle};
-  color: ${Colors.oliveGreen};
+  color: ${Colors.darkGrey};
 
   margin: ${Spacing.base * 5}px 0 ${Spacing.base * 2}px;
 
@@ -27,7 +27,7 @@ export const Title = styled.h1`
 
 export const P = styled(OriginalP)`
   margin: 0 0 ${Spacing.base * 4}px;
-  color: ${Colors.oliveGreen};
+  color: ${Colors.darkGrey};
 
   @media (min-width: ${Responsive.phone + 1}px) {
     /* max-width: 450px; */
