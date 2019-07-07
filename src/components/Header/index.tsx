@@ -20,8 +20,8 @@ const Header: React.SFC = () => {
         </Style.Title>
         <Style.P>
           Nous traversons tous des périodes difficiles dans nos vies. Parler à
-          un professionnel avec un avis neutre peut toujours aider, même quand
-          on se dit ne pas en avoir besoin.
+          un psychologue avec un avis neutre peut toujours aider, même quand on
+          se dit ne pas en avoir besoin.
         </Style.P>
 
         <PreSignUpForm />

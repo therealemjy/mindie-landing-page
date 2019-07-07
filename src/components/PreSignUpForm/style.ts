@@ -13,7 +13,6 @@ export const Form = styled.form``;
 
 export const ControlRow = styled.div`
   position: relative;
-  /* display: flex; */
 `;
 
 export const Label = styled.label`
@@ -59,6 +58,6 @@ export const SubmitButton = styled.button`
   cursor: pointer;
 
   :hover {
-    background-color: ${Colors.green};
+    background-color: ${Colors.lavanderPurple};
   }
 `;

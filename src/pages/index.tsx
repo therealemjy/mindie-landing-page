@@ -2,7 +2,7 @@ import React from 'react';
 
 import SEO from 'components/SEO';
 import Header from 'components/Header';
-import SectionSecurity from 'components/SectionSecurity';
+import SectionMatching from 'components/SectionMatching';
 import SectionFAQ from 'components/SectionFAQ';
 import Footer from 'components/Footer';
 
@@ -13,7 +13,7 @@ const App: React.SFC = () => (
 
     <Header />
 
-    <SectionSecurity />
+    <SectionMatching />
 
     <SectionFAQ />
 

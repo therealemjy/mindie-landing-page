@@ -1,10 +1,10 @@
 export const purple = '#556cd6';
+export const lavanderPurple = '#7795f8';
 export const white = '#ffffff';
 export const darkGrey = '#4b5160';
 export const pigeonGrey = '#5A6175';
 export const lightGrey = '#cdcdcd';
 export const almostWhite = '#f3f3f3';
 export const pastelRed = '#ff5951';
-export const green = '#13bc86';
 export const skyGreen = '#fbfef4';
 export const oliveGreen = '#788066';

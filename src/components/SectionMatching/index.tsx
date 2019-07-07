@@ -5,13 +5,13 @@ import P from 'components/P';
 
 import IllustrationShield from './shield.svg';
 
-const SectionSecurity: React.SFC = () => {
+const SectionMatching: React.SFC = () => {
   return (
     <Style.Container>
       <Style.Wrapper>
         <Style.Illustration as={IllustrationShield} />
 
-        <Style.Title>Confidentialité et sécurité</Style.Title>
+        <Style.Title>Choisissez un psychologue qui vous correspond</Style.Title>
         <P>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam efficitur
           mollis tortor nec consectetur. Mauris varius enim non accumsan
@@ -22,4 +22,4 @@ const SectionSecurity: React.SFC = () => {
   );
 };
 
-export default SectionSecurity;
+export default SectionMatching;
