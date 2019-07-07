@@ -9,7 +9,7 @@ export const Question = styled.span`
   ${Typography.paragraph};
 
   font-weight: ${Typography.weight.demiBold};
-  color: ${Colors.lightGrey};
+  color: ${Colors.darkGrey};
   text-align: left;
   margin-right: ${Spacing.base}px;
   transition: color 600ms ease;
@@ -32,6 +32,7 @@ export const Button = styled.button`
 export const Icon = styled.img`
   width: ${Spacing.base * 4}px;
   height: auto;
+  color: ${Colors.purple};
   background-color: ${Colors.almostWhite};
   border-radius: 50%;
   padding: 4px;
@@ -63,7 +64,7 @@ export const Container = styled.div<{ isActive: boolean }>`
       }
 
       ${Question} {
-        color: ${Colors.darkGrey};
+        color: ${Colors.purple};
       }
     `};
 `;
