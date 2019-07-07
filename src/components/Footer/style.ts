@@ -26,7 +26,7 @@ export const PreSignUpForm = styled(OriginalPreSignUpForm)`
 `;
 
 export const WarningTitle = styled.div`
-  color: ${Colors.pastelRed};
+  color: ${Colors.darkGrey};
   display: block;
   margin-bottom: ${Spacing.base * 2}px;
 `;
