@@ -25,6 +25,7 @@ const questionsAnswers = [
 const SectionFAQ: React.SFC = () => {
   return (
     <Style.Wrapper>
+      <Style.Title>Questions fréquentes</Style.Title>
       <Accordion questionsAnswers={questionsAnswers} />
     </Style.Wrapper>
   );
