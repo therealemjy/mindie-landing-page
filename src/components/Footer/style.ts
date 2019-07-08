@@ -14,7 +14,7 @@ export const Container = styled.div`
 
 export const Wrapper = styled(OriginalWrapper)`
   text-align: center;
-  padding-top: ${Spacing.base * 10}px;
+  padding-top: ${Spacing.base * 5}px;
 `;
 
 export const Title = styled.h2`

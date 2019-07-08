@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 import * as Colors from 'styles/colors';
 import * as Spacing from 'styles/spacing';
 import * as Typography from 'styles/typography';
+import * as Responsive from 'styles/responsive';
 
 export const Container = styled.div`
   width: 100%;
@@ -41,9 +42,11 @@ export const Input = styled.input`
 
   ::placeholder,
   ::-webkit-input-placeholder {
+    line-height: 1.6;
     color: ${Colors.lightGrey};
   }
   :-ms-input-placeholder {
+    line-height: 1.6;
     color: ${Colors.lightGrey};
   }
 `;
@@ -53,11 +56,14 @@ export const SubmitButton = styled.button`
   ${inputsCss};
 
   background-color: ${Colors.purple};
-  padding-left: ${Spacing.base * 6}px;
-  padding-right: ${Spacing.base * 6}px;
   cursor: pointer;
 
   :hover {
     background-color: ${Colors.lavanderPurple};
+  }
+
+  @media (min-width: ${Responsive.phone + 1}px) {
+    padding-left: ${Spacing.base * 6}px;
+    padding-right: ${Spacing.base * 6}px;
   }
 `;

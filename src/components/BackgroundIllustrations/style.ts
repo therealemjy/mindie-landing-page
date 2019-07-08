@@ -60,8 +60,8 @@ export const Shape4 = styled(Shape)`
 
 export const Shape5 = styled(Shape)`
   width: ${Spacing.base * 12}px;
-  transform: translateX(80%) rotate(-30deg);
-  top: ${Spacing.base * 320}px;
+  transform: translateX(-120%) rotate(-30deg);
+  top: ${Spacing.base * 220}px;
 
   @media (min-width: ${Responsive.phone + 1}px) {
     width: ${Spacing.base * 20}px;
