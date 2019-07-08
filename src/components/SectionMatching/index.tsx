@@ -6,6 +6,7 @@ import P from 'components/P';
 import IllustrationShield from './shield.svg';
 import Circle from './circle.svg';
 import Triangle from './triangle.svg';
+import Square from './square.svg';
 
 const SectionMatching: React.SFC = () => {
   return (
@@ -23,6 +24,7 @@ const SectionMatching: React.SFC = () => {
 
       <Style.Circle as={Circle} />
       <Style.Triangle as={Triangle} />
+      <Style.Square as={Square} />
     </Style.Container>
   );
 };

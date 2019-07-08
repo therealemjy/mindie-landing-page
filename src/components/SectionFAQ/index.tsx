@@ -2,6 +2,8 @@ import React from 'react';
 
 import * as Style from './style';
 import Accordion from 'containers/Accordion';
+import Triangle from './triangle.svg';
+import Square from './square.svg';
 
 const questionsAnswers = [
   {
@@ -36,10 +38,15 @@ const questionsAnswers = [
 
 const SectionFAQ: React.SFC = () => {
   return (
-    <Style.Wrapper>
-      <Style.Title>Questions fréquentes</Style.Title>
-      <Accordion questionsAnswers={questionsAnswers} />
-    </Style.Wrapper>
+    <Style.Container>
+      <Style.Wrapper>
+        <Style.Title>Questions fréquentes</Style.Title>
+        <Accordion questionsAnswers={questionsAnswers} />
+      </Style.Wrapper>
+
+      <Style.Square as={Square} />
+      <Style.Triangle as={Triangle} />
+    </Style.Container>
   );
 };
 

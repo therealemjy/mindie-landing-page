@@ -9,6 +9,7 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   position: relative;
+  overflow-x: hidden;
 `;
 
 export const Wrapper = styled(OriginalWrapper)`
@@ -29,18 +30,25 @@ export const Title = styled.h2`
 export const Shape = styled.img`
   z-index: -1;
   position: absolute;
-  opacity: 0.1;
+  opacity: 0.05;
   left: 50%;
   height: auto;
-  width: ${Spacing.base * 20}px;
 `;
 
 export const Circle = styled(Shape)`
-  transform: translateX(300%);
+  width: ${Spacing.base * 15}px;
+  transform: translateX(20%);
   bottom: 0;
 `;
 
 export const Triangle = styled(Shape)`
-  transform: translateX(-400%) rotate(20deg);
+  width: ${Spacing.base * 35}px;
+  transform: translateX(-250%) rotate(20deg);
+  bottom: ${Spacing.base * 20}px;
+`;
+
+export const Square = styled(Shape)`
+  width: ${Spacing.base * 16}px;
+  transform: translateX(260%) rotate(-15deg);
   bottom: ${Spacing.base * 40}px;
 `;
