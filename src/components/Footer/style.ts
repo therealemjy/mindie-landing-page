@@ -32,8 +32,10 @@ export const WarningTitle = styled.div`
 `;
 
 export const Infos = styled.div`
-  display: flex;
-  justify-content: center;
+  @media (min-width: ${Responsive.phone + 1}px) {
+    display: flex;
+    justify-content: center;
+  }
 `;
 
 const ItemCss = css`
@@ -41,6 +43,7 @@ const ItemCss = css`
   font-size: 0.825rem;
   padding: ${Spacing.base}px;
   margin: 0 ${Spacing.base * 2}px;
+  display: block;
 `;
 
 export const Copyright = styled.span`
@@ -61,10 +64,7 @@ export const IllustrationMountains = styled.img`
   position: absolute;
   bottom: -${Spacing.base * 9}px;
   width: auto;
-
-  @media (min-width: ${Responsive.phone + 1}px) {
-    height: ${Spacing.base * 40}px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
+  left: 50%;
+  transform: translateX(-50%);
+  height: ${Spacing.base * 40}px;
 `;
