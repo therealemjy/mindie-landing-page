@@ -8,7 +8,6 @@ import OriginalP from 'components/P';
 
 export const Container = styled.div`
   position: relative;
-  overflow-x: hidden;
   padding-bottom: ${Spacing.base * 24}px;
 
   @media (min-width: ${Responsive.phone + 1}px) {
@@ -44,7 +43,7 @@ export const Illustration = styled.div`
 
 export const Sky = styled(Illustration)`
   top: 0;
-  bottom: ${Spacing.base * 30}px;
+  bottom: ${Spacing.base * 10}px;
   left: 0;
   right: 0;
   background-color: ${Colors.skyGreen};

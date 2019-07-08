@@ -9,7 +9,7 @@
 html,
 body {
 	font-family: 'Nunito', sans-serif;
-	height: 100%;
+	min-height: 100%;
 }
 
 body {
@@ -17,12 +17,16 @@ body {
 	background-color: #ffffff;
 	font-size: 16px;
   line-height: 1.4;
-  overflow-x: hidden;
 }
 
 #___gatsby,
 #___gatsby > div[role='group'] {
-	height: 100%;
+	min-height: 100%;
+}
+
+#___gatsby > div[role='group'] {
+  position: relative;
+  overflow-x: hidden;
 }
 
 ul {

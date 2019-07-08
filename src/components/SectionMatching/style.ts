@@ -8,7 +8,6 @@ export const Container = styled.div`
   min-height: ${Spacing.base * 90}px;
   display: flex;
   align-items: center;
-  overflow-x: hidden;
 `;
 
 export const Wrapper = styled(OriginalWrapper)`
