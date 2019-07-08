@@ -13,7 +13,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: 'TO_BE_ADDED_GOOGLE_ANALYTICS_TRACKING_ID',
+        trackingId: 'UA-143441876-1',
+        head: false,
       },
     },
     {
@@ -22,6 +23,12 @@ module.exports = {
         rule: {
           include: /\.svg$/,
         },
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-crisp-chat',
+      options: {
+        websiteId: 'ed424bc2-82d4-4bfe-9d97-3c9df1a6e5f0',
       },
     },
     {
