@@ -2,6 +2,8 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
+import favicon from './favicon.ico';
+
 interface Meta {
   name: string;
   content: any;
@@ -45,6 +47,7 @@ const SEO: React.SFC<Props> = ({
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
+      link={[{ rel: 'shortcut icon', type: 'image/png', href: `${favicon}` }]}
       meta={[
         {
           name: `description`,
