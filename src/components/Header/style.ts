@@ -7,19 +7,22 @@ import * as Responsive from 'styles/responsive';
 import OriginalP from 'components/P';
 
 export const Container = styled.div`
-  min-height: ${Spacing.base * 127}px;
   position: relative;
   overflow-x: hidden;
+  padding-bottom: ${Spacing.base * 24}px;
+
+  @media (min-width: ${Responsive.phone + 1}px) {
+    min-height: ${Spacing.base * 127}px;
+    padding-bottom: 0;
+  }
 `;
 
 export const Title = styled.h1`
   ${Typography.mainTitle};
   color: ${Colors.darkGrey};
-
-  margin: ${Spacing.base * 5}px 0 ${Spacing.base * 2}px;
+  margin: ${Spacing.base * 2}px 0 ${Spacing.base * 2}px;
 
   @media (min-width: ${Responsive.phone + 1}px) {
-    /* max-width: 520px; */
     width: 60%;
     margin-top: ${Spacing.base * 9}px;
   }
@@ -30,7 +33,6 @@ export const P = styled(OriginalP)`
   color: ${Colors.darkGrey};
 
   @media (min-width: ${Responsive.phone + 1}px) {
-    /* max-width: 450px; */
     width: 60%;
   }
 `;
@@ -49,9 +51,11 @@ export const Sky = styled(Illustration)`
 `;
 
 export const IllustrationCharacter = styled(Illustration)`
-  width: auto;
+  display: none;
 
   @media (min-width: ${Responsive.phone + 1}px) {
+    display: block;
+    width: auto;
     height: ${Spacing.base * 48}px;
     left: 50%;
     transform: translateX(154%);
@@ -62,10 +66,12 @@ export const IllustrationCharacter = styled(Illustration)`
 export const IllustrationMountains = styled(Illustration)`
   bottom: 0;
   width: auto;
+  height: ${Spacing.base * 25}px;
+  left: 50%;
+  transform: translateX(-45%);
 
   @media (min-width: ${Responsive.phone + 1}px) {
     height: ${Spacing.base * 62}px;
-    left: 50%;
     transform: translateX(-50%);
   }
 `;
