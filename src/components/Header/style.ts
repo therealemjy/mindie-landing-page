@@ -20,9 +20,9 @@ export const Title = styled.h1`
   ${Typography.mainTitle};
   color: ${Colors.darkGrey};
   margin: ${Spacing.base * 2}px 0 ${Spacing.base * 2}px;
+  max-width: ${Spacing.base * 75}px;
 
   @media (min-width: ${Responsive.phone + 1}px) {
-    width: 60%;
     margin-top: ${Spacing.base * 9}px;
   }
 `;
@@ -30,10 +30,7 @@ export const Title = styled.h1`
 export const P = styled(OriginalP)`
   margin: 0 0 ${Spacing.base * 4}px;
   color: ${Colors.darkGrey};
-
-  @media (min-width: ${Responsive.phone + 1}px) {
-    width: 60%;
-  }
+  max-width: ${Spacing.base * 75}px;
 `;
 
 export const Illustration = styled.div`
