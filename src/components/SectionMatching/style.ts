@@ -10,10 +10,6 @@ export const Container = styled.div`
   align-items: center;
   padding-top: ${Spacing.base * 10}px;
   padding-bottom: ${Spacing.base * 5}px;
-
-  @media (min-width: ${Responsive.phone + 1}px) {
-    min-height: ${Spacing.base * 90}px;
-  }
 `;
 
 export const Wrapper = styled(OriginalWrapper)`
