@@ -3,13 +3,13 @@ import React from 'react';
 import * as Style from './style';
 import P from 'components/P';
 
-import IllustrationShield from './shield.svg';
+import IllustrationPsyChoices from './psy-choices.svg';
 
 const SectionMatching: React.SFC = () => {
   return (
     <Style.Container>
       <Style.Wrapper>
-        <Style.Illustration as={IllustrationShield} />
+        <Style.Illustration as={IllustrationPsyChoices} />
 
         <Style.Title>Choisissez un psychologue qui vous correspond</Style.Title>
         <P>
