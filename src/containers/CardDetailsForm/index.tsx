@@ -38,21 +38,21 @@ const ContainedCardDetailsForm: React.SFC<Props> = ({
 
   const handleSubmit = async () => {
     // Save card details
-    const { setupIntent, error } = await stripe.handleCardSetup(
-      clientSecret,
-      cardElementRef,
-      {
-        payment_method_data: {
-          billing_details: {
-            name: 'Quentin de Montargis',
-          },
-        },
-      }
-    );
+    const {
+      setupIntent,
+      error: errorHandleCardSetup,
+    } = await stripe.handleCardSetup(clientSecret, cardElementRef);
 
-    if (error) {
-      console.log(error);
-      setError(error);
+    if (errorHandleCardSetup) {
+      console.log(errorHandleCardSetup);
+      setError(errorHandleCardSetup);
+    }
+
+    const { token, error: errorCreateToken } = await stripe.createToken();
+
+    if (errorCreateToken) {
+      console.log(errorCreateToken);
+      setError(errorCreateToken);
     }
 
     // Create customer
@@ -63,6 +63,7 @@ const ContainedCardDetailsForm: React.SFC<Props> = ({
         // TODO: get real email address
         email: 'contact@maxime-julian.com',
         paymentMethodId: setupIntent.payment_method,
+        token,
       },
     }).catch(error => {
       console.log(error);
