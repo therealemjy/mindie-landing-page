@@ -22,7 +22,7 @@ export const Wrapper = styled(OriginalWrapper)`
 
 export const Illustration = styled.img`
   height: auto;
-  width: ${Spacing.base * 16}px;
+  width: ${Spacing.base * 75}px;
   margin: 0 auto ${Spacing.base * 2}px;
   display: block;
 `;
