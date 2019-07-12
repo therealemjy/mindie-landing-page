@@ -37,5 +37,5 @@ const SignUp: React.SFC<Props> = ({ scriptsLoadedSuccessfully }) => {
   );
 };
 
-// TODO: move side effect to a container
+// TODO: move side effect to a container (don't know how to do at the moment because of how Gatsby generates pages)
 export default ScriptLoader('https://js.stripe.com/v3/')(SignUp);
