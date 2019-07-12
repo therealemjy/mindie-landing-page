@@ -41,40 +41,38 @@ const ContainedCardDetailsForm: React.SFC<Props> = ({
 
   const handleSubmit = async () => {
     // Save card details
-    const {
-      setupIntent,
-      error: errorHandleCardSetup,
-    } = await stripe.handleCardSetup(clientSecret, cardElementRef);
+    const [
+      { setupIntent, error: errorHandleCardSetup },
+      { token, error: errorCreateToken },
+    ] = await Promise.all([
+      stripe.handleCardSetup(clientSecret, cardElementRef),
+      stripe.createToken(),
+    ]);
 
-    if (errorHandleCardSetup) {
-      console.log(errorHandleCardSetup);
-      setServerError(errorHandleCardSetup);
-    }
-
-    const { token, error: errorCreateToken } = await stripe.createToken();
-
-    if (errorCreateToken) {
-      console.log(errorCreateToken);
-      setServerError(errorCreateToken);
+    if (errorHandleCardSetup || errorCreateToken) {
+      setServerError(errorHandleCardSetup || errorCreateToken);
+      return;
     }
 
     // Create customer
-    Axios({
-      method: 'post',
-      url: config.api.createCustomerUrl,
-      data: {
-        // TODO: get real email address
-        email: 'contact@maxime-julian.com',
-        paymentMethodId: setupIntent.payment_method,
-        token,
-      },
-    }).catch(error => {
-      console.log(error);
+    try {
+      await Axios({
+        method: 'post',
+        url: config.api.createCustomerUrl,
+        data: {
+          // TODO: get real email address
+          email: 'contact@maxime-julian.com',
+          paymentMethodId: setupIntent.payment_method,
+          token,
+        },
+      });
+    } catch (error) {
       setServerError(error);
-    });
+    }
   };
 
   if (serverError) {
+    console.log(serverError);
     return <>Something went wrong :(</>;
   }
 
