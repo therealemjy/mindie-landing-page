@@ -1,7 +1,7 @@
 import React from 'react';
 
 import SEO from 'components/SEO';
-import BackgroundIllustrations from 'components/BackgroundIllustrations';
+// import BackgroundIllustrations from 'components/BackgroundIllustrations';
 import Header from 'components/Header';
 import SectionMatching from 'components/SectionMatching';
 import SectionFAQ from 'components/SectionFAQ';

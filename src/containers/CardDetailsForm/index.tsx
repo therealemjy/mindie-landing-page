@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import Axios, { AxiosResponse } from 'axios';
+import Axios from 'axios';
 import { injectStripe } from 'react-stripe-elements';
 
+import { AppError } from '../../types/error';
 import config from 'config';
 import CardDetailsForm from 'components/CardDetailsForm';
 
@@ -16,7 +17,10 @@ const ContainedCardDetailsForm: React.SFC<Props> = ({
   const [clientSecret, setClientSecret] = useState<undefined | string>(
     undefined
   );
-  const [serverError, setServerError] = useState<undefined | string>(undefined);
+  const [serverError, setServerError] = useState<undefined | AppError>(
+    undefined
+  );
+  const [stripeError, setStripeError] = useState<any>(undefined);
   const [cardElementRef, setCardElementRef] = useState<undefined | any>(
     undefined
   );
@@ -25,7 +29,7 @@ const ContainedCardDetailsForm: React.SFC<Props> = ({
     const fetchSetupIntent = async () => {
       try {
         // Fetch client secret
-        const { data }: AxiosResponse<string> = await Axios({
+        const { data } = await Axios({
           method: 'post',
           url: config.api.setupIntentUrl,
         });
@@ -50,7 +54,7 @@ const ContainedCardDetailsForm: React.SFC<Props> = ({
     ]);
 
     if (errorHandleCardSetup || errorCreateToken) {
-      setServerError(errorHandleCardSetup || errorCreateToken);
+      setStripeError(errorHandleCardSetup || errorCreateToken);
       return;
     }
 
@@ -63,7 +67,7 @@ const ContainedCardDetailsForm: React.SFC<Props> = ({
           // TODO: get real email address
           email: 'contact@maxime-julian.com',
           paymentMethodId: setupIntent.payment_method,
-          token,
+          tokenId: token.id,
         },
       });
     } catch (error) {
@@ -71,8 +75,8 @@ const ContainedCardDetailsForm: React.SFC<Props> = ({
     }
   };
 
-  if (serverError) {
-    console.log(serverError);
+  if (stripeError || serverError) {
+    console.log(stripeError || serverError);
     return <>Something went wrong :(</>;
   }
 

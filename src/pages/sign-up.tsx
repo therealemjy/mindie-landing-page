@@ -22,7 +22,6 @@ const SignUp: React.SFC<Props> = ({ scriptsLoadedSuccessfully }) => {
     <>
       {/* TODO: SEO */}
       <SEO title="" description="" />
-
       <Topbar />
 
       <Wrapper>
