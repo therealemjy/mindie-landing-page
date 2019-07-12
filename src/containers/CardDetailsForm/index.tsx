@@ -16,24 +16,27 @@ const ContainedCardDetailsForm: React.SFC<Props> = ({
   const [clientSecret, setClientSecret] = useState<undefined | string>(
     undefined
   );
-  const [error, setError] = useState<undefined | string>(undefined);
+  const [serverError, setServerError] = useState<undefined | string>(undefined);
   const [cardElementRef, setCardElementRef] = useState<undefined | any>(
     undefined
   );
 
   useEffect(() => {
-    // Fetch client secret
-    Axios({
-      method: 'post',
-      url: config.api.setupIntentUrl,
-    })
-      .then(({ data }: AxiosResponse<string>) => {
+    const fetchSetupIntent = async () => {
+      try {
+        // Fetch client secret
+        const { data }: AxiosResponse<string> = await Axios({
+          method: 'post',
+          url: config.api.setupIntentUrl,
+        });
+
         setClientSecret(data);
-      })
-      .catch(error => {
-        console.log(error);
-        setError(error);
-      });
+      } catch (error) {
+        setServerError(error);
+      }
+    };
+
+    fetchSetupIntent();
   }, []);
 
   const handleSubmit = async () => {
@@ -45,14 +48,14 @@ const ContainedCardDetailsForm: React.SFC<Props> = ({
 
     if (errorHandleCardSetup) {
       console.log(errorHandleCardSetup);
-      setError(errorHandleCardSetup);
+      setServerError(errorHandleCardSetup);
     }
 
     const { token, error: errorCreateToken } = await stripe.createToken();
 
     if (errorCreateToken) {
       console.log(errorCreateToken);
-      setError(errorCreateToken);
+      setServerError(errorCreateToken);
     }
 
     // Create customer
@@ -67,11 +70,11 @@ const ContainedCardDetailsForm: React.SFC<Props> = ({
       },
     }).catch(error => {
       console.log(error);
-      setError(error);
+      setServerError(error);
     });
   };
 
-  if (error) {
+  if (serverError) {
     return <>Something went wrong :(</>;
   }
 

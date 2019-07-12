@@ -38,4 +38,5 @@ const SignUp: React.SFC<Props> = ({ scriptsLoadedSuccessfully }) => {
   );
 };
 
+// TODO: move side effect to a container
 export default ScriptLoader('https://js.stripe.com/v3/')(SignUp);
