@@ -21,10 +21,6 @@ export const Illustration = styled.img`
   width: 90%;
   margin: 0 auto ${Spacing.base * 2}px;
   display: block;
-
-  @media (min-width: ${Responsive.phone + 1}px) {
-    height: ${Spacing.base * 75}px;
-  }
 `;
 
 export const Title = styled.h2`
