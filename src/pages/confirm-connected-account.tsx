@@ -1,6 +1,6 @@
 import React from 'react';
 
-import enhance from '../hocs/withConnectedAccountConfirmation';
+import withConnectedAccountConfirmation from '../hocs/withConnectedAccountConfirmation';
 import SEO from 'components/SEO';
 import Topbar from 'components/Topbar';
 import Wrapper from 'components/Wrapper';
@@ -17,4 +17,4 @@ const ConfirmConnectedAccount: React.SFC = () => (
   </>
 );
 
-export default enhance(ConfirmConnectedAccount);
+export default withConnectedAccountConfirmation(ConfirmConnectedAccount);
