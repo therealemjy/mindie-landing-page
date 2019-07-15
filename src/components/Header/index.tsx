@@ -15,7 +15,7 @@ const Header: React.SFC = () => {
 
       <Wrapper>
         <Style.Title>
-          Obtenez le soutien d'un professionnel depuis le comfort de votre
+          Obtenez le soutien d'un professionnel depuis le confort de votre
           canapé
         </Style.Title>
         <Style.P>

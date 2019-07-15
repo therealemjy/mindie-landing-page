@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { navigate } from 'gatsby';
 
 import PreSignUpForm from 'components/PreSignUpForm';
 
@@ -8,8 +9,9 @@ const ContainedPreSignUpForm: React.SFC = props => {
   const handleChange = (email: string) => setEmail(email);
 
   const handleSubmit = (email: string) => {
-    // TODO: redirect to /sign-up page
-    console.log('REDIRECT');
+    if (email.length > 0) {
+      navigate(`/sign-up?email=${email}`);
+    }
   };
 
   return (
