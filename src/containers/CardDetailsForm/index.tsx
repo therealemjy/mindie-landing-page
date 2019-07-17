@@ -4,14 +4,18 @@ import { injectStripe } from 'react-stripe-elements';
 
 import { AppError } from '../../types/error';
 import config from 'config';
-import CardDetailsForm from 'components/CardDetailsForm';
+import CardDetailsForm, {
+  Props as ICardDetailsForm,
+} from 'components/CardDetailsForm';
 
 export interface Props {
   stripe: any; // TODO: define typing
+  onSubmit: () => void;
 }
 
 const ContainedCardDetailsForm: React.SFC<Props> = ({
   stripe,
+  onSubmit,
   ...otherProps
 }) => {
   const [clientSecret, setClientSecret] = useState<undefined | string>(
@@ -73,6 +77,9 @@ const ContainedCardDetailsForm: React.SFC<Props> = ({
     } catch (error) {
       setServerError(error);
     }
+
+    // Callback
+    onSubmit();
   };
 
   if (stripeError || serverError) {
@@ -93,4 +100,6 @@ const ContainedCardDetailsForm: React.SFC<Props> = ({
   );
 };
 
-export default injectStripe(ContainedCardDetailsForm);
+export default injectStripe(ContainedCardDetailsForm) as React.ComponentType<
+  ICardDetailsForm
+>;

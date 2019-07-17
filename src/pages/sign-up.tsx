@@ -6,17 +6,26 @@ import config from 'config';
 import SEO from 'components/SEO';
 import Topbar from 'components/Topbar';
 import Wrapper from 'components/Wrapper';
-// import SignUpForm from 'components/SignUpForm';
+import SignUpForm from 'components/SignUpForm';
+import withSteps from 'hocs/withSteps';
 import CardDetailsForm from 'containers/CardDetailsForm';
 
 export interface Props {
   scriptsLoadedSuccessfully: boolean;
+  step: number;
+  setStep: (step: number) => void;
 }
 
-const SignUp: React.SFC<Props> = ({ scriptsLoadedSuccessfully }) => {
+const SignUp: React.SFC<Props> = ({
+  scriptsLoadedSuccessfully,
+  step,
+  setStep,
+}) => {
   if (!scriptsLoadedSuccessfully) {
     return <>Loading...</>;
   }
+
+  const handleSetStep = (step: number) => () => setStep(step);
 
   return (
     <>
@@ -25,17 +34,18 @@ const SignUp: React.SFC<Props> = ({ scriptsLoadedSuccessfully }) => {
       <Topbar />
 
       <Wrapper>
-        <h1>Sign up</h1>
-        {/* <SignUpForm onSubmit={() => console.log('HEYY')} /> */}
-        <StripeProvider apiKey={config.stripe.publicKey}>
-          <Elements>
-            <CardDetailsForm />
-          </Elements>
-        </StripeProvider>
+        {step === 0 && <SignUpForm onSubmit={handleSetStep(1)} />}
+        {step === 1 && (
+          <StripeProvider apiKey={config.stripe.publicKey}>
+            <Elements>
+              <CardDetailsForm onSubmit={handleSetStep(2)} />
+            </Elements>
+          </StripeProvider>
+        )}
+        {step === 2 && <>Success page</>}
       </Wrapper>
     </>
   );
 };
 
-// TODO: move side effect to a container (don't know how to do at the moment because of how Gatsby generates pages)
-export default ScriptLoader('https://js.stripe.com/v3/')(SignUp);
+export default withSteps(ScriptLoader('https://js.stripe.com/v3/')(SignUp));

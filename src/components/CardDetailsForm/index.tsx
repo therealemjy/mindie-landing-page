@@ -5,7 +5,7 @@ import { CardElement } from 'react-stripe-elements';
 
 export interface Props {
   onSubmit: () => void;
-  onReady: (element: any) => void;
+  onReady?: (element: any) => void;
 }
 
 const handleSubmit = (callback: Props['onSubmit']) => (
