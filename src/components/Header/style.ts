@@ -19,6 +19,7 @@ export const Container = styled.div`
 
 export const Title = styled.h1`
   ${Typography.mainTitle};
+
   color: ${Colors.darkGrey};
   margin: ${Spacing.base * 2}px 0 ${Spacing.base * 2}px;
   max-width: ${Spacing.base * 75}px;

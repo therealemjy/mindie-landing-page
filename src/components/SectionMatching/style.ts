@@ -7,8 +7,6 @@ import { Wrapper as OriginalWrapper } from 'components/Grid';
 export const Container = styled.div`
   display: flex;
   align-items: center;
-  padding-top: ${Spacing.base * 10}px;
-  padding-bottom: ${Spacing.base * 5}px;
 `;
 
 export const Wrapper = styled(OriginalWrapper)`
@@ -18,11 +16,13 @@ export const Wrapper = styled(OriginalWrapper)`
 export const Illustration = styled.img`
   height: auto;
   width: 90%;
-  margin: 0 auto ${Spacing.base * 2}px;
+  margin: 0 auto ${Spacing.base * 4}px;
   display: block;
 `;
 
 export const Title = styled.h2`
   ${Typography.title};
+
   text-align: center;
+  margin-bottom: ${Spacing.base * 2}px;
 `;

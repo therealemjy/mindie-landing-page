@@ -32,6 +32,7 @@ const Footer: React.SFC<Props> = ({ noSignUpForm = false }) => (
         </Style.Contact>
       </Style.Infos>
     </Style.Wrapper>
+
     <Style.IllustrationMountains as={IllustrationMountains} />
   </Style.Container>
 );

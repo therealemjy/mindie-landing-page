@@ -1,6 +1,7 @@
 import React from 'react';
 
 import * as Style from './style';
+import { Section } from 'components/Grid';
 import Accordion from 'containers/Accordion';
 
 const questionsAnswers = [
@@ -36,10 +37,12 @@ const questionsAnswers = [
 
 const SectionFAQ: React.SFC = () => {
   return (
-    <Style.Wrapper>
-      <Style.Title>Questions fréquentes</Style.Title>
-      <Accordion questionsAnswers={questionsAnswers} />
-    </Style.Wrapper>
+    <Section>
+      <Style.Wrapper>
+        <Style.Title>Questions fréquentes</Style.Title>
+        <Accordion questionsAnswers={questionsAnswers} />
+      </Style.Wrapper>
+    </Section>
   );
 };
 

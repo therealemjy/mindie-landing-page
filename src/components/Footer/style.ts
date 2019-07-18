@@ -4,33 +4,38 @@ import * as Typography from 'styles/typography';
 import * as Spacing from 'styles/spacing';
 import * as Colors from 'styles/colors';
 import * as Responsive from 'styles/responsive';
-import { Wrapper as OriginalWrapper } from 'components/Grid';
+import { Wrapper as OriginalWrapper, Section } from 'components/Grid';
 import OriginalPreSignUpForm from 'containers/PreSignUpForm';
 
-export const Container = styled.div`
+export const Container = styled(Section)`
   flex-shrink: 0;
   position: relative;
   overflow: hidden;
+  padding-bottom: 0 !important;
 `;
 
 export const Wrapper = styled(OriginalWrapper)`
   text-align: center;
-  padding-top: ${Spacing.base * 5}px;
 `;
 
 export const Title = styled.h2`
   ${Typography.title};
+
+  margin-bottom: ${Spacing.base * 2}px;
 `;
 
 export const PreSignUpForm = styled(OriginalPreSignUpForm)`
-  margin: 0 auto ${Spacing.base * 8}px;
+  margin: 0 auto ${Spacing.base * 16}px;
+
+  @media (min-width: ${Responsive.phone + 1}px) {
+    margin-bottom: ${Spacing.base * 24}px;
+  }
 `;
 
 export const WarningTitle = styled.div`
   color: ${Colors.darkGrey};
   display: block;
   margin-bottom: ${Spacing.base * 2}px;
-  padding-top: ${Spacing.base * 20}px;
 `;
 
 export const Infos = styled.div`
