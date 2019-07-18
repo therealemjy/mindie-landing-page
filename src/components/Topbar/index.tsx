@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Logo from './mindie-logo.svg';
-import Wrapper from 'components/Wrapper';
+import { Wrapper } from 'components/Grid';
 import * as Style from './style';
 
 const Topbar: React.SFC = props => (

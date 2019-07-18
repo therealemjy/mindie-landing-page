@@ -2,7 +2,7 @@ import React from 'react';
 
 import * as Style from './style';
 import Topbar from 'components/Topbar';
-import Wrapper from 'components/Wrapper';
+import { Wrapper } from 'components/Grid';
 import PreSignUpForm from 'containers/PreSignUpForm';
 
 import IllustrationCharacter from './character-in-peace.svg';
@@ -20,7 +20,7 @@ const Header: React.SFC = () => {
         </Style.Title>
         <Style.P>
           Nous traversons tous des périodes difficiles dans nos vies. Parler à
-          un psychologue avec un avis neutre peut toujours aider, même quand on
+          un psychologue ayant un avis neutre peut toujours aider, même quand on
           se dit ne pas en avoir besoin.
         </Style.P>
 

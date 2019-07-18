@@ -5,8 +5,9 @@ import ScriptLoader from 'react-script-loader-hoc';
 import config from 'config';
 import SEO from 'components/SEO';
 import Topbar from 'components/Topbar';
-import Wrapper from 'components/Wrapper';
+import Footer from 'components/Footer';
 import SignUpForm from 'components/SignUpForm';
+import { Wrapper, Page, Content } from 'components/Grid';
 import withSteps from 'hocs/withSteps';
 import CardDetailsForm from 'containers/CardDetailsForm';
 
@@ -28,23 +29,27 @@ const SignUp: React.SFC<Props> = ({
   const handleSetStep = (step: number) => () => setStep(step);
 
   return (
-    <>
-      {/* TODO: SEO */}
-      <SEO title="" description="" />
-      <Topbar />
+    <Page>
+      <Content>
+        {/* TODO: SEO */}
+        <SEO title="" description="" />
+        <Topbar />
 
-      <Wrapper>
-        {step === 0 && <SignUpForm onSubmit={handleSetStep(1)} />}
-        {step === 1 && (
-          <StripeProvider apiKey={config.stripe.publicKey}>
-            <Elements>
-              <CardDetailsForm onSubmit={handleSetStep(2)} />
-            </Elements>
-          </StripeProvider>
-        )}
-        {step === 2 && <>Success page</>}
-      </Wrapper>
-    </>
+        <Wrapper>
+          {step === 0 && <SignUpForm onSubmit={handleSetStep(1)} />}
+          {step === 1 && (
+            <StripeProvider apiKey={config.stripe.publicKey}>
+              <Elements>
+                <CardDetailsForm onSubmit={handleSetStep(2)} />
+              </Elements>
+            </StripeProvider>
+          )}
+          {step === 2 && <>Success page</>}
+        </Wrapper>
+      </Content>
+
+      <Footer noSignUpForm />
+    </Page>
   );
 };
 

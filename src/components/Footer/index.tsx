@@ -3,12 +3,20 @@ import React from 'react';
 import * as Style from './style';
 import IllustrationMountains from './mountains-alt.svg';
 
-const Footer: React.SFC = () => (
+export interface Props {
+  noSignUpForm?: boolean;
+}
+
+const Footer: React.SFC<Props> = ({ noSignUpForm = false }) => (
   <Style.Container>
     <Style.Wrapper>
-      <Style.Title>Pas de stigma. Pas de tabous.</Style.Title>
+      {!noSignUpForm && (
+        <>
+          <Style.Title>Pas de stigma. Pas de tabous.</Style.Title>
 
-      <Style.PreSignUpForm />
+          <Style.PreSignUpForm />
+        </>
+      )}
 
       <Style.WarningTitle>
         Si votre santé est en danger, n'utilisez pas ce site. Appelez le 15.

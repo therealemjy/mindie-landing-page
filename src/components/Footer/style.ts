@@ -4,10 +4,11 @@ import * as Typography from 'styles/typography';
 import * as Spacing from 'styles/spacing';
 import * as Colors from 'styles/colors';
 import * as Responsive from 'styles/responsive';
-import OriginalWrapper from 'components/Wrapper';
+import { Wrapper as OriginalWrapper } from 'components/Grid';
 import OriginalPreSignUpForm from 'containers/PreSignUpForm';
 
 export const Container = styled.div`
+  flex-shrink: 0;
   position: relative;
   overflow: hidden;
 `;
@@ -22,13 +23,14 @@ export const Title = styled.h2`
 `;
 
 export const PreSignUpForm = styled(OriginalPreSignUpForm)`
-  margin: 0 auto ${Spacing.base * 28}px;
+  margin: 0 auto ${Spacing.base * 8}px;
 `;
 
 export const WarningTitle = styled.div`
   color: ${Colors.darkGrey};
   display: block;
   margin-bottom: ${Spacing.base * 2}px;
+  padding-top: ${Spacing.base * 20}px;
 `;
 
 export const Infos = styled.div`
