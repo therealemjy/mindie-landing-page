@@ -9,6 +9,7 @@ import OriginalP from 'components/P';
 export const Container = styled.div`
   position: relative;
   padding-bottom: ${Spacing.base * 24}px;
+  overflow-x: hidden;
 
   @media (min-width: ${Responsive.phone + 1}px) {
     min-height: ${Spacing.base * 127}px;

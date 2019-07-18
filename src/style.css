@@ -6,10 +6,17 @@
 	box-sizing: border-box;
 }
 
+
+#___gatsby,
+#___gatsby > div[role='group'],
+html,
+body {
+  height: 100%;
+}
+
 html,
 body {
 	font-family: 'Nunito', sans-serif;
-	min-height: 100%;
 }
 
 body {
@@ -19,14 +26,8 @@ body {
   line-height: 1.4;
 }
 
-#___gatsby,
-#___gatsby > div[role='group'] {
-	min-height: 100%;
-}
-
 #___gatsby > div[role='group'] {
   position: relative;
-  overflow-x: hidden;
 }
 
 ul {
