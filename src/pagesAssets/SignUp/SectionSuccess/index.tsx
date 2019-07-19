@@ -5,7 +5,7 @@ import * as Style from './style';
 import IllustrationAvatar from './avatar.svg';
 import P from 'components/P';
 
-const Success: React.SFC = () => (
+const SectionSuccess: React.SFC = () => (
   <PageStyle.SmallWrapper>
     <Style.Illustration as={IllustrationAvatar} />
     <Style.Title>Vous êtes prêt !</Style.Title>
@@ -17,4 +17,4 @@ const Success: React.SFC = () => (
   </PageStyle.SmallWrapper>
 );
 
-export default Success;
+export default SectionSuccess;
