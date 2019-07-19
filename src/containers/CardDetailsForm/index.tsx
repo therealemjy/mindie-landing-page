@@ -88,7 +88,7 @@ const ContainedCardDetailsForm: React.SFC<Props> = ({
   }
 
   if (!clientSecret) {
-    return <>Loading...</>;
+    return <>Chargement...</>;
   }
 
   return (

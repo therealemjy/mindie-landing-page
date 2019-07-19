@@ -5,16 +5,16 @@ import * as Responsive from 'styles/responsive';
 import * as Typography from 'styles/typography';
 import { Wrapper as OriginalWrapper } from 'components/Grid';
 
-export const SmallWrapper = styled(OriginalWrapper)`
-  max-width: ${Spacing.base * 90}px;
-`;
-
-export const SuccessSection = styled.div`
+export const Wrapper = styled(OriginalWrapper)`
   margin-top: ${Spacing.base * 2}px;
 
   @media (min-width: ${Responsive.phone + 1}px) {
     margin-top: ${Spacing.base * 6}px;
   }
+`;
+
+export const SmallWrapper = styled(Wrapper)`
+  max-width: ${Spacing.base * 90}px;
 `;
 
 export const Illustration = styled.div`

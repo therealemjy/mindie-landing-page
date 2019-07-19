@@ -32,9 +32,9 @@ const SignUp: React.SFC<Props> = ({ step, setStep }) => {
         <Topbar />
 
         {step === 0 && (
-          <Wrapper>
+          <Style.Wrapper>
             <SignUpForm onSubmit={handleSetStep(1)} />
-          </Wrapper>
+          </Style.Wrapper>
         )}
         {step === 1 && (
           <Style.SmallWrapper>
@@ -47,15 +47,13 @@ const SignUp: React.SFC<Props> = ({ step, setStep }) => {
         )}
         {step === 2 && (
           <Style.SmallWrapper>
-            <Style.SuccessSection>
-              <Style.Illustration as={IllustrationAvatar} />
-              <Style.Title>Vous êtes prêt !</Style.Title>
-              <P>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
-                efficitur mollis tortor nec consectetur. Mauris varius enim non
-                accumsan pulvinar. Ut pretium eu augue eu faucibus.
-              </P>
-            </Style.SuccessSection>
+            <Style.Illustration as={IllustrationAvatar} />
+            <Style.Title>Vous êtes prêt !</Style.Title>
+            <P>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
+              efficitur mollis tortor nec consectetur. Mauris varius enim non
+              accumsan pulvinar. Ut pretium eu augue eu faucibus.
+            </P>
           </Style.SmallWrapper>
         )}
       </Content>
