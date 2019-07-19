@@ -1,7 +1,7 @@
 import React from 'react';
 import { CardElement } from 'react-stripe-elements';
 
-// import * as Style from './style';
+import { Form, SubmitButton } from 'components/Form';
 
 export interface Props {
   onSubmit: () => void;
@@ -16,10 +16,10 @@ const handleSubmit = (callback: Props['onSubmit']) => (
 };
 
 const CardDetailsForm: React.SFC<Props> = ({ onSubmit, onReady }) => (
-  <form onSubmit={handleSubmit(onSubmit)}>
+  <Form onSubmit={handleSubmit(onSubmit)}>
     <CardElement onReady={onReady} />
-    <button type="submit">Submit</button>
-  </form>
+    <SubmitButton type="submit">Valider et continuer</SubmitButton>
+  </Form>
 );
 
 export default CardDetailsForm;
