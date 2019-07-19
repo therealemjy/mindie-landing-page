@@ -2,14 +2,17 @@ import React from 'react';
 import { StripeProvider, Elements } from 'react-stripe-elements';
 import ScriptLoader from 'react-script-loader-hoc';
 
+import * as Style from 'pagesAssets/SignUp/style';
+import IllustrationAvatar from 'pagesAssets/SignUp/avatar.svg';
 import config from 'config';
+import withSteps from 'hocs/withSteps';
+import CardDetailsForm from 'containers/CardDetailsForm';
 import SEO from 'components/SEO';
 import Topbar from 'components/Topbar';
 import Footer from 'components/Footer';
 import SignUpForm from 'components/SignUpForm';
 import { Wrapper, Page, Content } from 'components/Grid';
-import withSteps from 'hocs/withSteps';
-import CardDetailsForm from 'containers/CardDetailsForm';
+import P from 'components/P';
 
 export interface Props {
   scriptsLoadedSuccessfully: boolean;
@@ -36,11 +39,31 @@ const SignUp: React.SFC<Props> = ({ step, setStep }) => {
               </Elements>
             </StripeProvider>
           )}
-          {step === 2 && <>Success page</>}
+          {step === 2 && (
+            <Style.SuccessSection>
+              <Style.Illustration as={IllustrationAvatar} />
+              <Style.Title>Vous êtes prêts !</Style.Title>
+              <P>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
+                efficitur mollis tortor nec consectetur. Mauris varius enim non
+                accumsan pulvinar. Ut pretium eu augue eu faucibus.
+              </P>
+              <P>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
+                efficitur mollis tortor nec consectetur. Mauris varius enim non
+                accumsan pulvinar. Ut pretium eu augue eu faucibus.
+              </P>
+              <P>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
+                efficitur mollis tortor nec consectetur. Mauris varius enim non
+                accumsan pulvinar. Ut pretium eu augue eu faucibus.
+              </P>
+            </Style.SuccessSection>
+          )}
         </Wrapper>
       </Content>
 
-      <Footer noSignUpForm />
+      <Footer noSignUpForm noWarning />
     </Page>
   );
 };

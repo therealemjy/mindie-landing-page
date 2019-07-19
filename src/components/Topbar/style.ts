@@ -11,6 +11,7 @@ export const Container = styled.div`
 export const Brand = styled.div`
   display: flex;
   align-items: center;
+  margin: 0 auto;
 `;
 
 export const Logo = styled.img`

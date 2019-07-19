@@ -18,14 +18,6 @@ export const Wrapper = styled(OriginalWrapper)`
   text-align: center;
 `;
 
-export const ContentWrapper = styled(Wrapper)`
-  margin-top: ${Spacing.base * 16}px;
-
-  @media (min-width: ${Responsive.phone + 1}px) {
-    margin-top: ${Spacing.base * 24}px;
-  }
-`;
-
 export const Title = styled.h2`
   ${Typography.title};
 
@@ -35,7 +27,18 @@ export const Title = styled.h2`
 export const PreSignUpForm = styled(OriginalPreSignUpForm)`
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: ${Spacing.base * 4}px;
 `;
+
+export const ContentContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+  min-height: ${Spacing.base * 30}px;
+`;
+
+export const Content = styled.div``;
 
 export const WarningTitle = styled.div`
   color: ${Colors.darkGrey};
