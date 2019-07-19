@@ -20,8 +20,17 @@ export interface Props {
   setStep: (step: number) => void;
 }
 
-const SignUp: React.SFC<Props> = ({ step, setStep, email }) => {
+const SignUp: React.SFC<Props> = ({
+  step,
+  setStep,
+  email,
+  scriptsLoadedSuccessfully,
+}) => {
   const handleSetStep = (step: number) => () => setStep(step);
+
+  if (!scriptsLoadedSuccessfully) {
+    return <>Chargement...</>;
+  }
 
   return (
     <Page>
