@@ -30,37 +30,33 @@ const SignUp: React.SFC<Props> = ({ step, setStep }) => {
         <SEO title="" description="" />
         <Topbar />
 
-        <Wrapper>
-          {step === 0 && <SignUpForm onSubmit={handleSetStep(1)} />}
-          {step === 1 && (
+        {step === 0 && (
+          <Wrapper>
+            <SignUpForm onSubmit={handleSetStep(1)} />
+          </Wrapper>
+        )}
+        {step === 1 && (
+          <Style.SmallWrapper>
             <StripeProvider apiKey={config.stripe.publicKey}>
               <Elements>
                 <CardDetailsForm onSubmit={handleSetStep(2)} />
               </Elements>
             </StripeProvider>
-          )}
-          {step === 2 && (
+          </Style.SmallWrapper>
+        )}
+        {step === 2 && (
+          <Style.SmallWrapper>
             <Style.SuccessSection>
               <Style.Illustration as={IllustrationAvatar} />
-              <Style.Title>Vous êtes prêts !</Style.Title>
-              <P>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
-                efficitur mollis tortor nec consectetur. Mauris varius enim non
-                accumsan pulvinar. Ut pretium eu augue eu faucibus.
-              </P>
-              <P>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
-                efficitur mollis tortor nec consectetur. Mauris varius enim non
-                accumsan pulvinar. Ut pretium eu augue eu faucibus.
-              </P>
+              <Style.Title>Vous êtes prêt !</Style.Title>
               <P>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
                 efficitur mollis tortor nec consectetur. Mauris varius enim non
                 accumsan pulvinar. Ut pretium eu augue eu faucibus.
               </P>
             </Style.SuccessSection>
-          )}
-        </Wrapper>
+          </Style.SmallWrapper>
+        )}
       </Content>
 
       <Footer noSignUpForm noWarning />
