@@ -21,6 +21,7 @@ const CardDetailsForm: React.SFC<Props> = ({ onSubmit, onReady }) => (
     <Style.CardElementContainer>
       <CardElement onReady={onReady} style={Style.CardElement} />
     </Style.CardElementContainer>
+
     <SubmitButton type="submit">Valider et continuer</SubmitButton>
   </Form>
 );
