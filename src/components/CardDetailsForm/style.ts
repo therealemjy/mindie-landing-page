@@ -7,10 +7,8 @@ import * as Colors from 'styles/colors';
 // Note: Stripe uses its own styling syntax
 export const CardElement = {
   base: {
-    fontSize: '1.125rem',
+    fontSize: '16px',
     fontFamily: 'Nunito, sans-serif',
-    padding: `${Spacing.base * 2}px`,
-    backgroundColor: Colors.almostWhite,
     color: Colors.darkGrey,
 
     '::placeholder': {

@@ -30,6 +30,11 @@ const SectionPayment: React.SFC<Props> = ({ apiKey, onSubmit, email }) => (
       </ListItem>
     </Style.List>
 
+    <Style.BillingDetails>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor
+      sit amet, consectetur adipiscing elit.
+    </Style.BillingDetails>
+
     <StripeProvider apiKey={apiKey}>
       <Elements>
         <CardDetailsForm onSubmit={onSubmit} email={email} />
