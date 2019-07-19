@@ -19,13 +19,12 @@ import P from 'components/P';
 export interface Props {
   scriptsLoadedSuccessfully: boolean;
   step: number;
+  email: string;
   setStep: (step: number) => void;
 }
 
-const SignUp: React.SFC<Props> = ({ step, setStep }) => {
+const SignUp: React.SFC<Props> = ({ step, setStep, email }) => {
   const handleSetStep = (step: number) => () => setStep(step);
-
-  const email = getSearchParam(window.location.href, 'email')!;
 
   return (
     <Page>
@@ -66,6 +65,6 @@ const SignUp: React.SFC<Props> = ({ step, setStep }) => {
   );
 };
 
-export default withEmailRedirect(
+export default withEmailRedirect<Props>(
   withSteps(ScriptLoader('https://js.stripe.com/v3/')(SignUp))
 );
