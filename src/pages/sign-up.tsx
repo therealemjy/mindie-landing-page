@@ -25,7 +25,7 @@ export interface Props {
 const SignUp: React.SFC<Props> = ({ step, setStep }) => {
   const handleSetStep = (step: number) => () => setStep(step);
 
-  const email = getSearchParam(window.location.href, 'email');
+  const email = getSearchParam(window.location.href, 'email')!;
 
   return (
     <Page>
