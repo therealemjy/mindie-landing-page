@@ -9,15 +9,15 @@ export interface Props {
 
 const Footer: React.SFC<Props> = ({ noSignUpForm = false }) => (
   <Style.Container>
-    <Style.Wrapper>
-      {!noSignUpForm && (
-        <>
-          <Style.Title>Pas de stigma. Pas de tabous.</Style.Title>
+    {!noSignUpForm && (
+      <Style.Wrapper>
+        <Style.Title>Pas de stigma. Pas de tabous.</Style.Title>
 
-          <Style.PreSignUpForm />
-        </>
-      )}
+        <Style.PreSignUpForm />
+      </Style.Wrapper>
+    )}
 
+    <Style.ContentWrapper>
       <Style.WarningTitle>
         Si votre santé est en danger, n'utilisez pas ce site. Appelez le 15.
       </Style.WarningTitle>
@@ -31,7 +31,7 @@ const Footer: React.SFC<Props> = ({ noSignUpForm = false }) => (
           Contactez-nous
         </Style.Contact>
       </Style.Infos>
-    </Style.Wrapper>
+    </Style.ContentWrapper>
 
     <Style.IllustrationMountains as={IllustrationMountains} />
   </Style.Container>

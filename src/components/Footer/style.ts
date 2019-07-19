@@ -18,6 +18,14 @@ export const Wrapper = styled(OriginalWrapper)`
   text-align: center;
 `;
 
+export const ContentWrapper = styled(Wrapper)`
+  margin-top: ${Spacing.base * 16}px;
+
+  @media (min-width: ${Responsive.phone + 1}px) {
+    margin-top: ${Spacing.base * 24}px;
+  }
+`;
+
 export const Title = styled.h2`
   ${Typography.title};
 
@@ -25,11 +33,8 @@ export const Title = styled.h2`
 `;
 
 export const PreSignUpForm = styled(OriginalPreSignUpForm)`
-  margin: 0 auto ${Spacing.base * 16}px;
-
-  @media (min-width: ${Responsive.phone + 1}px) {
-    margin-bottom: ${Spacing.base * 24}px;
-  }
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 export const WarningTitle = styled.div`
@@ -59,6 +64,7 @@ export const Copyright = styled.span`
 
 export const Contact = styled.a`
   ${ItemCss};
+
   text-decoration: none;
 
   &:hover {
