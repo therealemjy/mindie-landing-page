@@ -1,6 +1,7 @@
 import React from 'react';
 
 import * as Style from './style';
+import { Form, ControlRow, Label, Input, SubmitButton } from 'components/Form';
 
 interface Props {
   email: string;
@@ -28,10 +29,10 @@ const SignUpForm: React.SFC<Props> = ({
 
   return (
     <Style.Container className={className}>
-      <Style.Form onSubmit={handleSubmit}>
-        <Style.Label htmlFor="email">Inscrivez-vous</Style.Label>
-        <Style.ControlRow>
-          <Style.Input
+      <Form onSubmit={handleSubmit}>
+        <Label htmlFor="email">Inscrivez-vous</Label>
+        <ControlRow>
+          <Input
             value={email}
             onChange={handleChange(onChange)}
             id="email"
@@ -39,11 +40,11 @@ const SignUpForm: React.SFC<Props> = ({
             type="email"
             placeholder="Email"
           />
-          <Style.SubmitButton type="submit">
+          <SubmitButton type="submit">
             Obtenir un support personnalisé
-          </Style.SubmitButton>
-        </Style.ControlRow>
-      </Style.Form>
+          </SubmitButton>
+        </ControlRow>
+      </Form>
     </Style.Container>
   );
 };
