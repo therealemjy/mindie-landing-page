@@ -17,15 +17,7 @@ export interface Props {
   setStep: (step: number) => void;
 }
 
-const SignUp: React.SFC<Props> = ({
-  scriptsLoadedSuccessfully,
-  step,
-  setStep,
-}) => {
-  if (!scriptsLoadedSuccessfully) {
-    return <>Loading...</>;
-  }
-
+const SignUp: React.SFC<Props> = ({ step, setStep }) => {
   const handleSetStep = (step: number) => () => setStep(step);
 
   return (
