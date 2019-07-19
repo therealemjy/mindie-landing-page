@@ -7,10 +7,6 @@ import * as Responsive from 'styles/responsive';
 
 export const Form = styled.form``;
 
-export const ControlRow = styled.div`
-  position: relative;
-`;
-
 export const Label = styled.label`
   ${Typography.label};
 
@@ -18,7 +14,7 @@ export const Label = styled.label`
   margin-bottom: ${Spacing.base}px;
 `;
 
-export const inputsCss = css`
+export const inputCss = css`
   border-radius: ${Spacing.base}px;
   border: 1px solid transparent;
   outline: 0;
@@ -29,9 +25,8 @@ export const inputsCss = css`
 
 export const Input = styled.input`
   ${Typography.input};
-  ${inputsCss};
+  ${inputCss};
 
-  flex: 1;
   background-color: ${Colors.almostWhite};
   margin-bottom: ${Spacing.base}px;
 
@@ -48,7 +43,7 @@ export const Input = styled.input`
 
 export const SubmitButton = styled.button`
   ${Typography.button};
-  ${inputsCss};
+  ${inputCss};
 
   background-color: ${Colors.purple};
   cursor: pointer;
