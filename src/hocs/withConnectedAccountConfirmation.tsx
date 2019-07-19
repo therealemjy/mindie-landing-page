@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
+import { navigate } from 'gatsby';
 
 import config from '../config';
 import { AppError } from '../types/error';
@@ -30,7 +31,7 @@ const withConnectedAccountConfirmation = (Component: React.SFC) => (
     const code = url.searchParams.get('code');
 
     if (!code) {
-      // TODO: redirect to home page if no code was provided
+      navigate('/');
     } else {
       // Confirm connected account
       confirmConnectedAccount(code);
