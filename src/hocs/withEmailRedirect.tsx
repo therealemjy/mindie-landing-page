@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react';
 import { navigate } from 'gatsby';
 
+import getSearchParam from 'utils/getSearchParam';
+
 const withEmailRedirect = (Component: React.SFC) => (componentProps: any) => {
   useEffect(() => {
-    const url = new URL(window.location.href);
-    const email = url.searchParams.get('email');
-
-    if (!email) {
+    if (!getSearchParam(window.location.href, 'email')) {
       navigate('/');
     }
   });

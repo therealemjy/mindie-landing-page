@@ -8,14 +8,20 @@ import CardDetailsForm, {
   Props as ICardDetailsForm,
 } from 'components/CardDetailsForm';
 
-export interface Props {
-  stripe: any; // TODO: define typing
-  onSubmit: () => void;
+export interface Props extends ICardDetailsForm {
+  email: string;
 }
 
-const ContainedCardDetailsForm: React.SFC<Props> = ({
+interface IContainedCardDetailsForm {
+  stripe: any; // TODO: define typing
+  onSubmit: () => void;
+  email: string;
+}
+
+const ContainedCardDetailsForm: React.SFC<IContainedCardDetailsForm> = ({
   stripe,
   onSubmit,
+  email,
   ...otherProps
 }) => {
   const [clientSecret, setClientSecret] = useState<undefined | string>(
@@ -68,8 +74,7 @@ const ContainedCardDetailsForm: React.SFC<Props> = ({
         method: 'post',
         url: config.api.createCustomerUrl,
         data: {
-          // TODO: get real email address
-          email: 'contact@maxime-julian.com',
+          email,
           paymentMethodId: setupIntent.payment_method,
           tokenId: token.id,
         },
@@ -84,7 +89,7 @@ const ContainedCardDetailsForm: React.SFC<Props> = ({
 
   if (stripeError || serverError) {
     console.log(stripeError || serverError);
-    return <>Something went wrong :(</>;
+    return <>Oops, il y a un problème :(</>;
   }
 
   if (!clientSecret) {
@@ -101,5 +106,5 @@ const ContainedCardDetailsForm: React.SFC<Props> = ({
 };
 
 export default injectStripe(ContainedCardDetailsForm) as React.ComponentType<
-  ICardDetailsForm
+  Props
 >;

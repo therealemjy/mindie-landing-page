@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
 import { navigate } from 'gatsby';
 
-import config from '../config';
-import { AppError } from '../types/error';
+import config from 'config';
+import { AppError } from 'types/error';
+import getSearchParam from 'utils/getSearchParam';
 
 const withConnectedAccountConfirmation = (Component: React.SFC) => (
   componentProps: any
@@ -27,8 +28,7 @@ const withConnectedAccountConfirmation = (Component: React.SFC) => (
       }
     };
 
-    const url = new URL(window.location.href);
-    const code = url.searchParams.get('code');
+    const code = getSearchParam(window.location.href, 'code');
 
     if (!code) {
       navigate('/');

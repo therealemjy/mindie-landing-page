@@ -7,12 +7,13 @@ import IllustrationAvatar from 'pagesAssets/SignUp/avatar.svg';
 import config from 'config';
 import withSteps from 'hocs/withSteps';
 import withEmailRedirect from 'hocs/withEmailRedirect';
+import getSearchParam from 'utils/getSearchParam';
 import CardDetailsForm from 'containers/CardDetailsForm';
 import SEO from 'components/SEO';
 import Topbar from 'components/Topbar';
 import Footer from 'components/Footer';
 import SignUpForm from 'components/SignUpForm';
-import { Wrapper, Page, Content } from 'components/Grid';
+import { Page, Content } from 'components/Grid';
 import P from 'components/P';
 
 export interface Props {
@@ -23,6 +24,8 @@ export interface Props {
 
 const SignUp: React.SFC<Props> = ({ step, setStep }) => {
   const handleSetStep = (step: number) => () => setStep(step);
+
+  const email = getSearchParam(window.location.href, 'email');
 
   return (
     <Page>
@@ -40,7 +43,7 @@ const SignUp: React.SFC<Props> = ({ step, setStep }) => {
           <Style.SmallWrapper>
             <StripeProvider apiKey={config.stripe.publicKey}>
               <Elements>
-                <CardDetailsForm onSubmit={handleSetStep(2)} />
+                <CardDetailsForm onSubmit={handleSetStep(2)} email={email} />
               </Elements>
             </StripeProvider>
           </Style.SmallWrapper>
