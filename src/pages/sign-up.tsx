@@ -6,6 +6,7 @@ import * as Style from 'pagesAssets/SignUp/style';
 import IllustrationAvatar from 'pagesAssets/SignUp/avatar.svg';
 import config from 'config';
 import withSteps from 'hocs/withSteps';
+import withEmailRedirect from 'hocs/withEmailRedirect';
 import CardDetailsForm from 'containers/CardDetailsForm';
 import SEO from 'components/SEO';
 import Topbar from 'components/Topbar';
@@ -64,4 +65,6 @@ const SignUp: React.SFC<Props> = ({ step, setStep }) => {
   );
 };
 
-export default withSteps(ScriptLoader('https://js.stripe.com/v3/')(SignUp));
+export default withEmailRedirect(
+  withSteps(ScriptLoader('https://js.stripe.com/v3/')(SignUp))
+);
