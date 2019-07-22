@@ -3,14 +3,11 @@ export default {
     url: 'https://admin.typeform.com/to/cVa5IG',
   },
   stripe: {
-    publicKey: 'pk_test_Ppo54I5KwwE0QOPJPsTcB6W4',
+    publicKey: 'pk_test_QvEqIvtlhLbKiCy76SfVBTTY00n1T8BKZ5',
   },
   api: {
-    confirmConnectedAccountUrl:
-      'http://localhost:5000/mindie-landing-test/us-central1/confirmConnectedAccount',
     createCustomerUrl:
-      'http://localhost:5000/mindie-landing-test/us-central1/createCustomer',
-    setupIntentUrl:
-      'http://localhost:5000/mindie-landing-test/us-central1/setupIntent',
+      'http://localhost:5000/mindie/us-central1/createCustomer',
+    setupIntentUrl: 'http://localhost:5000/mindie/us-central1/setupIntent',
   },
 };
