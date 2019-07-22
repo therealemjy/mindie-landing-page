@@ -27,10 +27,9 @@ const ContainedCardDetailsForm: React.SFC<IContainedCardDetailsForm> = ({
   const [clientSecret, setClientSecret] = useState<undefined | string>(
     undefined
   );
-  const [serverError, setServerError] = useState<undefined | AppError>(
+  const [errorMessage, setErrorMessage] = useState<undefined | string>(
     undefined
   );
-  const [stripeError, setStripeError] = useState<any>(undefined);
   const [cardElementRef, setCardElementRef] = useState<undefined | any>(
     undefined
   );
@@ -46,7 +45,7 @@ const ContainedCardDetailsForm: React.SFC<IContainedCardDetailsForm> = ({
 
         setClientSecret(data);
       } catch (error) {
-        setServerError(error);
+        setErrorMessage(error.message);
       }
     };
 
@@ -64,7 +63,7 @@ const ContainedCardDetailsForm: React.SFC<IContainedCardDetailsForm> = ({
     ]);
 
     if (errorHandleCardSetup || errorCreateToken) {
-      setStripeError(errorHandleCardSetup || errorCreateToken);
+      setErrorMessage((errorHandleCardSetup || errorCreateToken).message);
       return;
     }
 
@@ -80,17 +79,12 @@ const ContainedCardDetailsForm: React.SFC<IContainedCardDetailsForm> = ({
         },
       });
     } catch (error) {
-      setServerError(error);
+      setErrorMessage(error.message);
     }
 
     // Callback
     onSubmit();
   };
-
-  if (stripeError || serverError) {
-    console.log(stripeError || serverError);
-    return <>Oops, il y a un problème :(</>;
-  }
 
   if (!clientSecret) {
     return <>Chargement...</>;
@@ -101,6 +95,7 @@ const ContainedCardDetailsForm: React.SFC<IContainedCardDetailsForm> = ({
       {...otherProps}
       onSubmit={handleSubmit}
       onReady={setCardElementRef}
+      error={errorMessage}
     />
   );
 };
