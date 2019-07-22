@@ -24,19 +24,17 @@ const CardDetailsForm: React.SFC<Props> = ({
   error,
   isLoading = false,
 }) => (
-  <>
-    <Style.Form onSubmit={handleSubmit(onSubmit)}>
-      <Style.CardElementContainer>
-        <CardElement onReady={onReady} style={Style.CardElement} />
-      </Style.CardElementContainer>
+  <Style.Form onSubmit={handleSubmit(onSubmit)}>
+    <Style.CardElementContainer>
+      <CardElement onReady={onReady} style={Style.CardElement} />
+    </Style.CardElementContainer>
 
-      <SubmitButton type="submit" isLoading={isLoading}>
-        Valider et continuer
-      </SubmitButton>
+    <SubmitButton type="submit" isLoading={isLoading}>
+      Valider et continuer
+    </SubmitButton>
 
-      {error && <Style.Error>{error}</Style.Error>}
-    </Style.Form>
-  </>
+    {error && <Style.Error>{error}</Style.Error>}
+  </Style.Form>
 );
 
 export default CardDetailsForm;
