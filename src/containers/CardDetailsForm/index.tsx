@@ -27,16 +27,18 @@ const ContainedCardDetailsForm: React.SFC<IContainedCardDetailsForm> = ({
   const [clientSecret, setClientSecret] = useState<undefined | string>(
     undefined
   );
-  const [serverError, setServerError] = useState<undefined | AppError>(
+  const [isLoading, setIsLoading] = useState<undefined | boolean>(false);
+  const [errorMessage, setErrorMessage] = useState<undefined | string>(
     undefined
   );
-  const [stripeError, setStripeError] = useState<any>(undefined);
   const [cardElementRef, setCardElementRef] = useState<undefined | any>(
     undefined
   );
 
   useEffect(() => {
     const fetchSetupIntent = async () => {
+      setIsLoading(true);
+
       try {
         // Fetch client secret
         const { data } = await Axios({
@@ -46,7 +48,9 @@ const ContainedCardDetailsForm: React.SFC<IContainedCardDetailsForm> = ({
 
         setClientSecret(data);
       } catch (error) {
-        setServerError(error);
+        setErrorMessage(error.message);
+      } finally {
+        setIsLoading(false);
       }
     };
 
@@ -54,6 +58,8 @@ const ContainedCardDetailsForm: React.SFC<IContainedCardDetailsForm> = ({
   }, []);
 
   const handleSubmit = async () => {
+    setIsLoading(true);
+
     // Save card details
     const [
       { setupIntent, error: errorHandleCardSetup },
@@ -64,7 +70,8 @@ const ContainedCardDetailsForm: React.SFC<IContainedCardDetailsForm> = ({
     ]);
 
     if (errorHandleCardSetup || errorCreateToken) {
-      setStripeError(errorHandleCardSetup || errorCreateToken);
+      setIsLoading(false);
+      setErrorMessage((errorHandleCardSetup || errorCreateToken).message);
       return;
     }
 
@@ -80,17 +87,14 @@ const ContainedCardDetailsForm: React.SFC<IContainedCardDetailsForm> = ({
         },
       });
     } catch (error) {
-      setServerError(error);
+      setErrorMessage(error.message);
+    } finally {
+      setIsLoading(false);
     }
 
     // Callback
     onSubmit();
   };
-
-  if (stripeError || serverError) {
-    console.log(stripeError || serverError);
-    return <>Oops, il y a un problème :(</>;
-  }
 
   if (!clientSecret) {
     return <>Chargement...</>;
@@ -101,6 +105,8 @@ const ContainedCardDetailsForm: React.SFC<IContainedCardDetailsForm> = ({
       {...otherProps}
       onSubmit={handleSubmit}
       onReady={setCardElementRef}
+      isLoading={isLoading}
+      error={errorMessage}
     />
   );
 };
