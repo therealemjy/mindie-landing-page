@@ -6,6 +6,7 @@ import * as Colors from 'styles/colors';
 
 export const Form = styled(OriginalForm)`
   position: relative;
+  margin-bottom: ${Spacing.base * 8}px;
 `;
 
 export const CardElementContainer = styled.div`
@@ -32,4 +33,12 @@ export const Error = styled.div`
   position: absolute;
   bottom: -${Spacing.base * 4}px;
   color: ${Colors.pastelRed};
+`;
+
+export const Illustration = styled.img`
+  width: ${Spacing.base * 50}px;
+  max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 `;

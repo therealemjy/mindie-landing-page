@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
 import { injectStripe } from 'react-stripe-elements';
 
-import { AppError } from '../../types/error';
 import config from 'config';
 import CardDetailsForm, {
   Props as ICardDetailsForm,
