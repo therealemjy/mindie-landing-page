@@ -1,19 +1,17 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { navigate } from 'gatsby';
 
 import getSearchParam from 'utils/getSearchParam';
 
 function withEmailRedirect<T>(Component: React.ComponentType<T>) {
   return (componentProps: any) => {
-    let email: string | undefined;
+    let email =
+      typeof window !== 'undefined' &&
+      getSearchParam(window.location.href, 'email');
 
-    useEffect(() => {
-      email = getSearchParam(window.location.href, 'email') || undefined;
-
-      if (!email) {
-        navigate('/');
-      }
-    }, []);
+    if (!email) {
+      navigate('/');
+    }
 
     return <Component {...componentProps} email={email} />;
   };
