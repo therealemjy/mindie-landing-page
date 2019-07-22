@@ -8,6 +8,7 @@ export interface Props {
   onSubmit: () => void;
   onReady?: (element: any) => void;
   error?: string;
+  isLoading?: boolean;
 }
 
 const handleSubmit = (callback: Props['onSubmit']) => (
@@ -17,14 +18,19 @@ const handleSubmit = (callback: Props['onSubmit']) => (
   callback();
 };
 
-const CardDetailsForm: React.SFC<Props> = ({ onSubmit, onReady, error }) => (
+const CardDetailsForm: React.SFC<Props> = ({
+  onSubmit,
+  onReady,
+  error,
+  isLoading = false,
+}) => (
   <>
     <Style.Form onSubmit={handleSubmit(onSubmit)}>
       <Style.CardElementContainer>
         <CardElement onReady={onReady} style={Style.CardElement} />
       </Style.CardElementContainer>
 
-      <SubmitButton type="submit" isLoading={true}>
+      <SubmitButton type="submit" isLoading={isLoading}>
         Valider et continuer
       </SubmitButton>
 

@@ -27,6 +27,7 @@ const ContainedCardDetailsForm: React.SFC<IContainedCardDetailsForm> = ({
   const [clientSecret, setClientSecret] = useState<undefined | string>(
     undefined
   );
+  const [isLoading, setIsLoading] = useState<undefined | boolean>(false);
   const [errorMessage, setErrorMessage] = useState<undefined | string>(
     undefined
   );
@@ -36,6 +37,8 @@ const ContainedCardDetailsForm: React.SFC<IContainedCardDetailsForm> = ({
 
   useEffect(() => {
     const fetchSetupIntent = async () => {
+      setIsLoading(true);
+
       try {
         // Fetch client secret
         const { data } = await Axios({
@@ -46,6 +49,8 @@ const ContainedCardDetailsForm: React.SFC<IContainedCardDetailsForm> = ({
         setClientSecret(data);
       } catch (error) {
         setErrorMessage(error.message);
+      } finally {
+        setIsLoading(false);
       }
     };
 
@@ -53,6 +58,8 @@ const ContainedCardDetailsForm: React.SFC<IContainedCardDetailsForm> = ({
   }, []);
 
   const handleSubmit = async () => {
+    setIsLoading(true);
+
     // Save card details
     const [
       { setupIntent, error: errorHandleCardSetup },
@@ -63,6 +70,7 @@ const ContainedCardDetailsForm: React.SFC<IContainedCardDetailsForm> = ({
     ]);
 
     if (errorHandleCardSetup || errorCreateToken) {
+      setIsLoading(false);
       setErrorMessage((errorHandleCardSetup || errorCreateToken).message);
       return;
     }
@@ -80,6 +88,8 @@ const ContainedCardDetailsForm: React.SFC<IContainedCardDetailsForm> = ({
       });
     } catch (error) {
       setErrorMessage(error.message);
+    } finally {
+      setIsLoading(false);
     }
 
     // Callback
@@ -95,6 +105,7 @@ const ContainedCardDetailsForm: React.SFC<IContainedCardDetailsForm> = ({
       {...otherProps}
       onSubmit={handleSubmit}
       onReady={setCardElementRef}
+      isLoading={isLoading}
       error={errorMessage}
     />
   );
