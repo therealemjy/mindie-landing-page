@@ -27,8 +27,8 @@ export const Container = styled.button`
 
 export const Loader = styled.div`
   position: absolute;
-  width: ${Spacing.base * 2}px;
-  height: ${Spacing.base * 2}px;
+  width: ${Spacing.base * 3}px;
+  height: ${Spacing.base * 3}px;
   top: 0;
   bottom: 0;
   margin: auto;
