@@ -1,13 +1,12 @@
 export default {
   typeform: {
-    url: 'https://admin.typeform.com/to/cVa5IG',
+    url: process.env.GATSBY_TYPEFORM_URL,
   },
   stripe: {
-    publicKey: 'pk_test_QvEqIvtlhLbKiCy76SfVBTTY00n1T8BKZ5',
+    publicKey: process.env.GATSBY_STRIPE_PUBLIC_KEY,
   },
   api: {
-    createCustomerUrl:
-      'http://localhost:5000/mindie/us-central1/createCustomer',
-    setupIntentUrl: 'http://localhost:5000/mindie/us-central1/setupIntent',
+    createCustomerUrl: process.env.GATSBY_API_CREATE_CUSTOMER_URL,
+    setupIntentUrl: process.env.GATSBY_API_SETUP_INTENT_URL,
   },
 };
