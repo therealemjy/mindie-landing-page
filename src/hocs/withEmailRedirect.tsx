@@ -5,11 +5,13 @@ import getSearchParam from 'utils/getSearchParam';
 
 function withEmailRedirect<T>(Component: React.ComponentType<T>) {
   return (componentProps: any) => {
-    let email =
-      typeof window !== 'undefined' &&
-      getSearchParam(window.location.href, 'email');
+    let email: string | undefined;
 
-    if (!email) {
+    if (typeof window !== 'undefined') {
+      email = getSearchParam(window.location.href, 'email') || undefined;
+    }
+
+    if (typeof window !== 'undefined' && !email) {
       navigate('/');
     }
 
