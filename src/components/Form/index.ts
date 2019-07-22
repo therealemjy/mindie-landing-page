@@ -1,9 +1,12 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
+import inputCss from './inputCss';
 import * as Colors from 'styles/colors';
 import * as Spacing from 'styles/spacing';
 import * as Typography from 'styles/typography';
-import * as Responsive from 'styles/responsive';
+
+export { default as inputCss } from './inputCss';
+export { default as SubmitButton } from './SubmitButton';
 
 export const Form = styled.form``;
 
@@ -12,15 +15,6 @@ export const Label = styled.label`
 
   display: block;
   margin-bottom: ${Spacing.base}px;
-`;
-
-export const inputCss = css`
-  border-radius: ${Spacing.base}px;
-  border: 1px solid transparent;
-  outline: 0;
-  padding: ${Spacing.base * 2}px;
-  display: block;
-  width: 100%;
 `;
 
 export const Input = styled.input`
@@ -38,22 +32,5 @@ export const Input = styled.input`
   :-ms-input-placeholder {
     line-height: 1.6;
     color: ${Colors.lightGrey};
-  }
-`;
-
-export const SubmitButton = styled.button`
-  ${Typography.button};
-  ${inputCss};
-
-  background-color: ${Colors.purple};
-  cursor: pointer;
-
-  :hover {
-    background-color: ${Colors.lavanderPurple};
-  }
-
-  @media (min-width: ${Responsive.phone + 1}px) {
-    padding-left: ${Spacing.base * 6}px;
-    padding-right: ${Spacing.base * 6}px;
   }
 `;
