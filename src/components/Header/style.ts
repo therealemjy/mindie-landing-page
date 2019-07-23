@@ -25,7 +25,7 @@ export const Title = styled.h1`
   max-width: ${Spacing.base * 75}px;
 
   @media (min-width: ${Responsive.phone + 1}px) {
-    margin-top: ${Spacing.base * 9}px;
+    margin-top: ${Spacing.base * 11}px;
   }
 `;
 

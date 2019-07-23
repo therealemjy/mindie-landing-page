@@ -19,9 +19,8 @@ const Header: React.SFC = () => {
           canapé
         </Style.Title>
         <Style.P>
-          Nous traversons tous des périodes difficiles dans nos vies. Parler à
-          un psychologue ayant un avis neutre peut toujours aider, même quand on
-          se dit ne pas en avoir besoin.
+          Échangez par message avec un psychologue qui vous aidera à être plus
+          heureux au quotidien.
         </Style.P>
 
         <PreSignUpForm />

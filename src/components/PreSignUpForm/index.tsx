@@ -30,7 +30,7 @@ const SignUpForm: React.SFC<Props> = ({
   return (
     <Style.Container className={className}>
       <Form onSubmit={handleSubmit}>
-        <Label htmlFor="email">Inscrivez-vous</Label>
+        <Label htmlFor="email">Inscrivez-vous maintenant</Label>
         <Input
           value={email}
           onChange={handleChange(onChange)}
