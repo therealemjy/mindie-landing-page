@@ -46,7 +46,7 @@ const SEO: React.SFC<Props> = ({
         lang,
       }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      titleTemplate={`%s`}
       link={[{ rel: 'shortcut icon', type: 'image/png', href: `${favicon}` }]}
       meta={[
         {
@@ -71,7 +71,7 @@ const SEO: React.SFC<Props> = ({
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          content: site.siteMetadata.twitterHandle,
         },
         {
           name: `twitter:title`,

@@ -10,8 +10,10 @@ import Footer from 'components/Footer';
 const App: React.SFC = () => (
   <Page>
     <Content>
-      {/* TODO: SEO */}
-      <SEO title="Mindie" description="" />
+      <SEO
+        title="Votre support au quotidien - mindie"
+        description="Obtenez le soutien d'un professionnel depuis le confort de votre canapé"
+      />
 
       <Header />
 

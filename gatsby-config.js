@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: 'Starter Landing Page',
-    description: 'A barebone landing page starter with some minimal styles.',
+    title: 'Votre support au quotidien - mindie',
+    description: `Obtenez le soutien d'un professionnel depuis le confort de votre canapé`,
     author: '@mindie',
+    twitterHandle: '@mindie-hq', // TODO
     siteUrl: 'https://mindie.app',
   },
   plugins: [

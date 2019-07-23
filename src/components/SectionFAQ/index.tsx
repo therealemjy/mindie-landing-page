@@ -7,8 +7,8 @@ import Accordion from 'containers/Accordion';
 const questionsAnswers = [
   {
     id: 'question-1',
-    question: `Qu'est-ce que la vie ?`,
-    answer: `Nous ne savons pas`,
+    question: `Est-ce pour moi ?`,
+    answer: `Parler des benefices d'un suivi psychologique`,
   },
   {
     id: 'question-2',
