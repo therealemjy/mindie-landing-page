@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 import * as Spacing from 'styles/spacing';
 import * as Typography from 'styles/typography';
+import * as Responsive from 'styles/responsive';
+import OriginalP from 'components/P';
 import { Wrapper as OriginalWrapper } from 'components/Grid';
 
 export const Container = styled.div`
@@ -25,4 +27,10 @@ export const Title = styled.h2`
 
   text-align: center;
   margin-bottom: ${Spacing.base * 2}px;
+`;
+
+export const P = styled(OriginalP)`
+  @media (min-width: ${Responsive.phone + 1}px) {
+    text-align: center;
+  }
 `;

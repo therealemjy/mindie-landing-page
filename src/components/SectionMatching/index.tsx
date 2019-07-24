@@ -14,13 +14,14 @@ const SectionMatching: React.SFC = () => {
           <Style.Illustration as={IllustrationPsyChoices} />
 
           <Style.Title>
-            Choisissez un psychologue qui vous correspond
+            Choisissez un practicien qui vous correspond
           </Style.Title>
-          <P>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
-            efficitur mollis tortor nec consectetur. Mauris varius enim non
-            accumsan pulvinar. Ut pretium eu augue eu faucibus.
-          </P>
+          <Style.P>
+            Après que vous ayez répondu à quelques questions, nos psychologues
+            analysent vos réponses. Vous sélectionnez ensuite celui qui vous
+            correspond le plus parmi les profils de ceux ayant indiquer pouvoir
+            vous aider.
+          </Style.P>
         </Style.Wrapper>
       </Style.Container>
     </Section>
