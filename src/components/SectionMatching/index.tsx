@@ -17,10 +17,10 @@ const SectionMatching: React.SFC = () => {
             Choisissez un practicien qui vous correspond
           </Style.Title>
           <Style.P>
-            Après que vous ayez répondu à quelques questions, nos psychologues
-            analysent vos réponses. Vous sélectionnez ensuite celui qui vous
-            correspond le plus parmi les profils de ceux ayant indiquer pouvoir
-            vous aider.
+            Pouvoir parler de ses problèmes à une personne qui ne vous juge pas
+            apporte du réconfort et aide à avancer. Notre système de matching
+            vous permettra de choisir un praticien qui vous correspond, parmi
+            ceux qui auront déjà indiqué être en mesure de vous aider.
           </Style.P>
         </Style.Wrapper>
       </Style.Container>
