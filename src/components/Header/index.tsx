@@ -23,7 +23,7 @@ const Header: React.SFC = () => {
           heureux au quotidien.
         </Style.P>
 
-        <PreSignUpForm />
+        <PreSignUpForm label="Inscrivez-vous maintenant" />
       </Wrapper>
 
       <Style.Sky />

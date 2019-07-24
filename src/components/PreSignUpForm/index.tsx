@@ -5,17 +5,19 @@ import { Form, Label, Input, SubmitButton } from 'components/Form';
 
 interface Props {
   email: string;
+  label: string;
   onChange: (email: string) => void;
   onSubmit: (email: string) => void;
   className?: string;
 }
 
 const handleChange = (callback: (email: string) => void) => ({
-  currentTarget: { name, value },
+  currentTarget: { value },
 }: React.FormEvent<HTMLInputElement>) => callback(value);
 
 const SignUpForm: React.SFC<Props> = ({
   email,
+  label,
   onChange,
   onSubmit,
   className,
@@ -30,7 +32,7 @@ const SignUpForm: React.SFC<Props> = ({
   return (
     <Style.Container className={className}>
       <Form onSubmit={handleSubmit}>
-        <Label htmlFor="email">Inscrivez-vous maintenant</Label>
+        <Label htmlFor="email">{label}</Label>
         <Input
           value={email}
           onChange={handleChange(onChange)}

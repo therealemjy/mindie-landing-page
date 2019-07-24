@@ -16,9 +16,8 @@ const Footer: React.SFC<Props> = ({
     <Style.Wrapper>
       {!noSignUpForm && (
         <>
-          <Style.Title>Pas de stigma. Pas de tabous.</Style.Title>
-
-          <Style.PreSignUpForm />
+          <Style.Title>Commencez dès maintenant.</Style.Title>
+          <Style.PreSignUpForm label="Inscrivez-vous" />
         </>
       )}
 

@@ -3,7 +3,11 @@ import { navigate } from 'gatsby';
 
 import PreSignUpForm from 'components/PreSignUpForm';
 
-const ContainedPreSignUpForm: React.SFC = props => {
+export interface Props {
+  label: string;
+}
+
+const ContainedPreSignUpForm: React.SFC<Props> = props => {
   const [email, setEmail] = useState('');
 
   const handleChange = (email: string) => setEmail(email);
