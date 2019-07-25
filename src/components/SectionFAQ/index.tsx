@@ -33,7 +33,25 @@ const questionsAnswers = [
   {
     id: 'question-2',
     question: `Les psychologues de Mindie sont-ils qualifiés ?`,
-    answer: `Bien évidemment (parler des certifications + ADELI)`,
+    answer: (
+      <>
+        Bien évidemment ! Tous nos psychologues possèdent un BAC + 5 en
+        psychologie et sont reconnus comme psychologues par l'État. Ils sont
+        certifiés par l'ARS après avoir fourni un justificatif de leurs
+        diplômes, formations et pratique professionnelle; ils détiennent ainsi
+        un numéro ADELI.
+        <br />
+        <br />
+        Nous choisissons rigoureusement les psychologues qui sont sur notre
+        plateforme, chacun d'eux ayant dû passer de multiples entretiens avant
+        d'être sélectionné. Tous nos praticiens suivent notre éthique et sont
+        investis dans la misson qui est la nôtre.
+        <br />
+        <br />
+        Vous aurez accès à toutes ses informations concernant votre psychologue
+        à n'importe quel moment durant vos échanges.
+      </>
+    ),
   },
   {
     id: 'question-3',
