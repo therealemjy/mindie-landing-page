@@ -81,7 +81,22 @@ const questionsAnswers = [
   {
     id: 'question-4',
     question: `Combien cela coûte-t-il ?`,
-    answer: `49€ / semaine, parler du referal et dire que l'user peut cancel des qu'il le souhaite`,
+    answer: (
+      <>
+        Le prix de l'abonnement est de 49€ par semaine. Vous n'avez aucun
+        contrat à signer et il vous est possible d'annuler votre abonnement,
+        sans frais, à n'importe quel moment.
+        <br />
+        <br />
+        De plus, vous pouvez parrainer n'importe quelle personne de votre
+        entourage et bénéficier d'une réduction de 14€ par semaine pendant
+        quatre semaines ; soit une réduction totale de 56€ ! La personne
+        parrainée bénéficiera par ailleurs de la même réduction que vous.
+        <br />
+        Pour en savoir plus sur le parrainage, envoyez-nous un email à{' '}
+        <a href="mailto:bonjour@mindie.app">bonjour@mindie.app</a>.
+      </>
+    ),
   },
   {
     id: 'question-5',
