@@ -92,7 +92,22 @@ const questionsAnswers = [
   {
     id: 'question-6',
     question: `Les échanges avec mon psychologue sont-ils confidentiels ?`,
-    answer: ``,
+    answer: (
+      <>
+        Les échanges avec votre psychologue sont parfaitement confidentiels. Les
+        messages entre votre praticien et vous-même sont encryptés, tout comme
+        les communications entre votre téléphone et le serveur. Ainsi,
+        uniquement vous et votre psychologue ont la capacité de lire les
+        messages que vous vous échangez. Par ailleurs, votre psychologue est
+        tenu de respecter le secret médical en suivant les mêmes règles qu'une
+        thérapie classique en cabinet.
+        <br />
+        <br />
+        Le respect de votre vie privée est un élément essentiel au bon
+        fonctionnement de Mindie, nous mettons donc un point d'honneur à ce que
+        vos données personnelles soient sécurisées.
+      </>
+    ),
   },
 ];
 
