@@ -32,7 +32,7 @@ const Footer: React.SFC<Props> = ({
 
           <Style.Infos>
             <Style.Copyright>
-              Copyright &#169; {new Date().getFullYear()}
+              &#169;{new Date().getFullYear()} Mindie
             </Style.Copyright>
 
             <Style.Contact href="mailto:bonjour@mindie.app">

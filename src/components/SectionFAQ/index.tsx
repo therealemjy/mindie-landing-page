@@ -93,7 +93,7 @@ const questionsAnswers = [
   },
   {
     id: 'question-5',
-    question: `Vais-je échanger avec le même psychologue tout le long de mon parcours ?`,
+    question: `Vais-je toujours échanger avec le même psychologue ?`,
     answer: `Absolument ! Une fois choisi, votre psychologue travaillera avec vous durant toute la durée de votre parcours.`,
   },
   {
@@ -101,13 +101,13 @@ const questionsAnswers = [
     question: `Les échanges avec mon psychologue sont-ils confidentiels ?`,
     answer: (
       <>
-        Les échanges avec votre psychologue sont parfaitement confidentiels. Les
-        messages entre votre praticien et vous-même sont encryptés, tout comme
-        les communications entre votre téléphone et le serveur. Ainsi,
-        uniquement vous et votre psychologue ont la capacité de lire les
-        messages que vous vous échangez. Par ailleurs, votre psychologue est
-        tenu de respecter le secret médical en suivant les mêmes règles qu'une
-        thérapie classique en cabinet.
+        Les échanges avec votre psychologue sont parfaitement confidentiels. Vos
+        messages et ceux de votre praticien sont encryptés, tout comme les
+        communications entre votre téléphone et le serveur. Ainsi, uniquement
+        vous et votre psychologue ont la capacité de lire les messages que vous
+        vous échangez. Par ailleurs, votre psychologue est tenu de respecter le
+        secret médical en suivant les mêmes règles qu'une thérapie classique en
+        cabinet.
         <br />
         <br />
         Le respect de votre vie privée est un élément essentiel au bon
