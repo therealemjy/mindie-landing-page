@@ -15,8 +15,8 @@ const questionsAnswers = [
         psychologie accessible et abordable.
         <br />
         <br />
-        Mindie permet de communiquer avec un psychologue certifié par message
-        écrit ou audio et de faire ainsi part de ses problèmes de tous les
+        Mindie permet de communiquer avec un psychologue certifié par messages
+        écrits ou audios et de faire ainsi part de ses problèmes de tous les
         jours, afin d'obtenir en retour un avis objectif et sans jugement et de
         trouver à terme des solutions durables.
         <br />
@@ -63,18 +63,11 @@ const questionsAnswers = [
         écrits pour échanger avec son psychologue est un moyen pour les
         utilisateurs de Mindie de s'ouvrir facilement et de parler de leurs
         problèmes tels qu'ils leur surviennent, sans avoir à attendre d'avoir un
-        rendez-vous et d'ainsi avoir à se souvenir des problèmatiques dont ils
-        voulaient discuter.
+        rendez-vous et de se souvenir des problèmatiques dont ils voulaient
+        discuter.
         <br />
         <br />
-        Voici un article listant quelques études ayant démontré l'efficacité de
-        la psychothérapie en ligne :{' '}
-        <a
-          href="https://psychotherapeutemontreal.com/psy-en-ligne/consultation-psychotherapeute-a-distance/"
-          target="_blank"
-        >
-          https://psychotherapeutemontreal.com/psy-en-ligne/consultation-psychotherapeute-a-distance/
-        </a>
+        (trouver articles)
       </>
     ),
   },
