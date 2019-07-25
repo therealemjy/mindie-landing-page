@@ -106,8 +106,8 @@ const questionsAnswers = [
         communications entre votre téléphone et le serveur. Ainsi, uniquement
         vous et votre psychologue ont la capacité de lire les messages que vous
         vous échangez. Par ailleurs, votre psychologue est tenu de respecter le
-        secret médical en suivant les mêmes règles qu'une thérapie classique en
-        cabinet.
+        secret professionnel en suivant les mêmes règles qu'une thérapie
+        classique en cabinet.
         <br />
         <br />
         Le respect de votre vie privée est un élément essentiel au bon
