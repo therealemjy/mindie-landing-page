@@ -6,7 +6,7 @@ import Item from './Item';
 export interface QuestionAnswer {
   id: string;
   question: string;
-  answer: string;
+  answer: React.ReactNode;
 }
 
 interface Props {

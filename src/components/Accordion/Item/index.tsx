@@ -6,7 +6,7 @@ import IconMinus from './minus.svg';
 
 interface Props {
   question: string;
-  answer: string;
+  answer: React.ReactNode;
   id: string;
   isActive?: boolean;
   onClick?: () => void;

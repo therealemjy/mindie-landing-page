@@ -11,7 +11,7 @@ const App: React.SFC = () => (
   <Page>
     <Content>
       <SEO
-        title="Votre support au quotidien - mindie"
+        title="Votre support au quotidien - Mindie"
         description="Obtenez le soutien d'un professionnel depuis le confort de votre canapé"
       />
 

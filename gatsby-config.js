@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Votre support au quotidien - mindie',
+    title: 'Votre support au quotidien - Mindie',
     description: `Obtenez le soutien d'un professionnel depuis le confort de votre canapé`,
     author: '@mindie',
     twitterHandle: '@mindie-hq', // TODO

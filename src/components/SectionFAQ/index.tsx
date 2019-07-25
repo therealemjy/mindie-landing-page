@@ -7,16 +7,36 @@ import Accordion from 'containers/Accordion';
 const questionsAnswers = [
   {
     id: 'question-1',
-    question: `Est-ce fait pour moi ?`,
-    answer: `Parler des benefices d'un suivi psychologique`,
-  },
-  {
-    id: 'question-3',
-    question: `Les psychologues de mindie sont-ils qualifiés ?`,
-    answer: `Bien évidemment (parler des certifications + ADELI)`,
+    question: `Quel est l'objectif de Mindie ?`,
+    answer: (
+      <>
+        La santé mentale est un sujet encore tabou en France. Notre but est de
+        proposer une alternative à la thérapie classique, en rendant la
+        psychologie accessible et abordable.
+        <br />
+        <br />
+        Mindie permet de communiquer avec un psychologue certifié par message
+        écrit ou audio et de faire ainsi part de ses problèmes de tous les
+        jours, afin d'obtenir en retour un avis objectif et sans jugement et de
+        trouver à terme des solutions durables.
+        <br />
+        <br />
+        Nous n'essayons pas de remplacer la thérapie classique en cabinet.
+        Beaucoup de personnes la préfèrent ; libre à chacun de suivre la
+        pratique qui lui convient le mieux. Nous avons créé Mindie afin que plus
+        de personnes puissent bénéficier d'un support psychologique leur
+        permettant de surmonter les épreuves du quotidien dans un environnement
+        sans stigmats ni jugement.
+      </>
+    ),
   },
   {
     id: 'question-2',
+    question: `Les psychologues de Mindie sont-ils qualifiés ?`,
+    answer: `Bien évidemment (parler des certifications + ADELI)`,
+  },
+  {
+    id: 'question-3',
     question: `Est-ce réellement efficace ?`,
     answer: `Absolument ! (donner references articles)`,
   },
