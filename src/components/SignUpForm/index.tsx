@@ -12,10 +12,27 @@ export interface Props {
 const SignUpForm: React.SFC<Props> = ({ onSubmit }) => {
   const containerRef = useRef(null);
 
+  const handleSubmit = () => {
+    // Google analytics
+    if (typeof window !== 'undefined') {
+      // TODO: Add email of customer to keep track of the progress
+      (window as any).ga(
+        'send',
+        'event',
+        'CardDetailsForm',
+        'SignUpForm',
+        'completed'
+      );
+    }
+
+    return onSubmit();
+  };
+
   useEffect(() => {
     // Initialise Typeform
+    // TODO: Add email of customer to keep track of the progress
     TypeformEmbed.makeWidget(containerRef.current, config.typeform.url, {
-      onSubmit,
+      handleSubmit,
     });
   }, []);
 
