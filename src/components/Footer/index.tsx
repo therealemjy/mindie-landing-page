@@ -17,7 +17,10 @@ const Footer: React.SFC<Props> = ({
       {!noSignUpForm && (
         <>
           <Style.Title>Commencez dès maintenant.</Style.Title>
-          <Style.PreSignUpForm label="Inscrivez-vous" />
+          <Style.PreSignUpForm
+            label="Inscrivez-vous"
+            analyticLabel="PreSignUpFormFooter"
+          />
         </>
       )}
 

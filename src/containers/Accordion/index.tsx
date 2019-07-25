@@ -10,8 +10,19 @@ interface Props {
 const ContainedAccordion: React.SFC<Props> = props => {
   const [activeItemsIds, setActiveItemsIds] = useState<string[]>([]);
 
-  const handleToggleItemId = (id: QuestionAnswer['id']) =>
-    setActiveItemsIds(
+  const handleToggleItemId = (id: QuestionAnswer['id']) => {
+    // Google analytics
+    if (typeof window !== 'undefined' && id) {
+      (window as any).ga(
+        'send',
+        'event',
+        'ContainedAccordion',
+        'activatedId',
+        id
+      );
+    }
+
+    return setActiveItemsIds(
       activeItemsIds.indexOf(id) > -1
         ? [
             ...activeItemsIds.slice(0, activeItemsIds.indexOf(id)),
@@ -19,6 +30,7 @@ const ContainedAccordion: React.SFC<Props> = props => {
           ]
         : [...activeItemsIds, id]
     );
+  };
 
   return (
     <Accordion

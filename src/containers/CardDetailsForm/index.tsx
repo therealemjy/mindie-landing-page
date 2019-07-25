@@ -89,6 +89,17 @@ const ContainedCardDetailsForm: React.SFC<IContainedCardDetailsForm> = ({
       setErrorMessage(error.message);
     } finally {
       setIsLoading(false);
+
+      // Google analytics
+      if (typeof window !== 'undefined') {
+        (window as any).ga(
+          'send',
+          'event',
+          'CardDetailsForm',
+          'customerCreated',
+          email
+        );
+      }
     }
 
     // Callback
