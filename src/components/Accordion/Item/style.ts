@@ -43,6 +43,14 @@ export const Answer = styled.div`
   max-height: 0;
   overflow: hidden;
   transition: max-height 600ms ease;
+
+  a {
+    color: ${Colors.darkGrey};
+  }
+
+  a:hover {
+    color: ${Colors.purple};
+  }
 `;
 
 export const AnswerText = styled(P)`
