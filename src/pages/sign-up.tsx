@@ -35,8 +35,11 @@ const SignUp: React.SFC<Props> = ({
   return (
     <Page>
       <Content>
-        {/* TODO: SEO */}
-        <SEO title="" description="" />
+        <SEO
+          title="Inscription - Mindie"
+          description="Obtenez le soutien d'un professionnel depuis le confort de votre canapé"
+        />
+
         <Topbar />
 
         {step === 0 && (

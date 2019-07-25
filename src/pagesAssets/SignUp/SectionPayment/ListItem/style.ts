@@ -14,6 +14,8 @@ export const Icon = styled.span`
   width: ${Spacing.base * 2}px;
   height: auto;
   margin-right: ${Spacing.base}px;
+  color: ${Colors.green};
+  flex-shrink: 0;
 `;
 
 export const Content = styled.span`

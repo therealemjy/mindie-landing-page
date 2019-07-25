@@ -8,3 +8,4 @@ export const almostWhite = '#f3f3f3';
 export const pastelRed = '#ff5951';
 export const skyGreen = '#fbfef4';
 export const oliveGreen = '#788066';
+export const green = '#66cc99';

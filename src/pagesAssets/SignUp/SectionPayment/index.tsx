@@ -19,15 +19,12 @@ const SectionPayment: React.SFC<Props> = ({ apiKey, onSubmit, email }) => (
     </Style.Price>
 
     <Style.List>
-      <ListItem>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      </ListItem>
-      <ListItem>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      </ListItem>
-      <ListItem>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      </ListItem>
+      <ListItem>Matching avec un psychologue adapté à vous</ListItem>
+      <ListItem>Support personnalisé d'un psychologue qualifié</ListItem>
+      <ListItem>Écrivez dès que vous en ressentez le besoin</ListItem>
+      <ListItem>Communications confidentielles et encryptées</ListItem>
+      <ListItem>Aucun besoin de se déplacer</ListItem>
+      <ListItem>Aucun jugement ou stigmat</ListItem>
     </Style.List>
 
     <Style.BillingDetails>
