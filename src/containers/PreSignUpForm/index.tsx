@@ -18,8 +18,8 @@ const ContainedPreSignUpForm: React.SFC<Props> = props => {
       navigate(`/sign-up?email=${email}`);
     }
 
-    // Google analytics
-    if (typeof window !== 'undefined' && email.length > 0) {
+    if (typeof window !== 'undefined') {
+      // Google analytics
       (window as any).ga(
         'send',
         'event',
