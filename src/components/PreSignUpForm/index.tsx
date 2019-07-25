@@ -29,14 +29,16 @@ const SignUpForm: React.SFC<Props> = ({
     onSubmit(email);
   };
 
+  const id = `email-${label}`;
+
   return (
     <Style.Container className={className}>
       <Form onSubmit={handleSubmit}>
-        <Label htmlFor="email">{label}</Label>
+        <Label htmlFor={id}>{label}</Label>
         <Input
           value={email}
           onChange={handleChange(onChange)}
-          id="email"
+          id={id}
           name="email"
           type="email"
           placeholder="Email"
