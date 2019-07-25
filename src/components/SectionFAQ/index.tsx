@@ -86,8 +86,7 @@ const questionsAnswers = [
   {
     id: 'question-5',
     question: `Vais-je échanger avec le même psychologue tout le long de mon parcours ?`,
-    answer: `Si vous avez choisi les consultations par messages, vous profiterez d’un espace d’échange de messages privé et sécurisé avec votre psychologue. Vous pourrez lui écrire quand vous le souhaitez et le nombre de messages est illimité. Votre psychologue vous répond une à deux fois par jour, 5 j/7 et pendant le temps nécessaire à vous sentir mieux. Vous gardez le même psychologue tout au long de votre accompagnement.
-    \n\nSi vous avez choisi les consultations par téléphone, votre psychologue vous appelle quand vous le souhaitez sur le numéro de téléphone que vous renseignezlors de votre inscription. Vous avez la possibilité d’effectuer une consultation de 30 minutes chaque semaine.`,
+    answer: `Absolument ! Une fois choisi, votre psychologue travaillera avec vous durant toute la durée de votre parcours.`,
   },
   {
     id: 'question-6',
