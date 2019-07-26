@@ -8,12 +8,16 @@ import P from 'components/P';
 const SectionSuccess: React.SFC = () => (
   <PageStyle.SmallWrapper>
     <Style.Illustration as={IllustrationAvatar} />
-    <Style.Title>Vous êtes prêt !</Style.Title>
+    <Style.Title>Votre parcours commence maintenant !</Style.Title>
     <P>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam efficitur
-      mollis tortor nec consectetur. Mauris varius enim non accumsan pulvinar.
-      Ut pretium eu augue eu faucibus.
+      Merci pour votre inscription ; vos réponses ont été transmises de manière
+      confidentielle à nos psychologues qui vont les analyser. Vous recevrez
+      bientôt un email de notre part détaillant la suite du processus.
     </P>
+    <br />
+    <P>Bienvenue sur Mindie 🙂</P>
+    <br />
+    <P>Maxime & Anthony, fondateurs de Mindie</P>
   </PageStyle.SmallWrapper>
 );
 
