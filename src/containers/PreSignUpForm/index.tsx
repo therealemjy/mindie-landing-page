@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { navigate } from 'gatsby';
 
 import PreSignUpForm from 'components/PreSignUpForm';
+import { isWindowAvailable, isDev } from '../../utils';
 
 export interface Props {
   label: string;
@@ -18,7 +19,7 @@ const ContainedPreSignUpForm: React.SFC<Props> = props => {
       navigate(`/sign-up?email=${email}`);
     }
 
-    if (typeof window !== 'undefined') {
+    if (isWindowAvailable && !isDev) {
       // Google analytics
       (window as any).ga(
         'send',

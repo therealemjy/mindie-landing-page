@@ -4,6 +4,7 @@ import * as TypeformEmbed from '@typeform/embed';
 import config from 'config';
 
 import * as Style from './style';
+import { isWindowAvailable, isDev } from '../../utils';
 
 export interface Props {
   onSubmit: () => void;
@@ -14,7 +15,7 @@ const SignUpForm: React.SFC<Props> = ({ onSubmit }) => {
 
   const handleSubmit = () => {
     // Google analytics
-    if (typeof window !== 'undefined') {
+    if (isWindowAvailable && !isDev) {
       // TODO: Add email of customer to keep track of the progress
       (window as any).ga(
         'send',
