@@ -36,7 +36,8 @@ export const Error = styled.div`
 `;
 
 export const Illustration = styled.img`
-  width: ${Spacing.base * 50}px;
+  width: ${Spacing.base * 52}px;
+  height: auto;
   max-width: 100%;
   display: block;
   margin-left: auto;
