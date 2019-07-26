@@ -6,6 +6,7 @@ import config from 'config';
 import CardDetailsForm, {
   Props as ICardDetailsForm,
 } from 'components/CardDetailsForm';
+import { isDev, isWindowAvailable } from '../../utils';
 
 export interface Props extends ICardDetailsForm {
   email: string;
@@ -91,7 +92,7 @@ const ContainedCardDetailsForm: React.SFC<IContainedCardDetailsForm> = ({
       setIsLoading(false);
 
       // Google analytics
-      if (typeof window !== 'undefined') {
+      if (isWindowAvailable && !isDev) {
         (window as any).ga(
           'send',
           'event',

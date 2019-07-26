@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import Accordion from 'components/Accordion';
 import { QuestionAnswer } from 'components/Accordion';
+import { isDev, isWindowAvailable } from '../../utils';
 
 interface Props {
   questionsAnswers: QuestionAnswer[];
@@ -11,8 +12,10 @@ const ContainedAccordion: React.SFC<Props> = props => {
   const [activeItemsIds, setActiveItemsIds] = useState<string[]>([]);
 
   const handleToggleItemId = (id: QuestionAnswer['id']) => {
+    console.log('isDev', isDev);
+
     // Google analytics
-    if (typeof window !== 'undefined' && id) {
+    if (isWindowAvailable && !isDev && id) {
       (window as any).ga(
         'send',
         'event',
