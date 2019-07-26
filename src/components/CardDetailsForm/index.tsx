@@ -2,7 +2,7 @@ import React from 'react';
 import { CardElement } from 'react-stripe-elements';
 
 import * as Style from './style';
-import IllustrationSecure from './illustration-secure.png';
+import IllustrationSecure from './illustration-secure.svg';
 import { SubmitButton } from 'components/Form';
 
 export interface Props {
@@ -38,7 +38,7 @@ const CardDetailsForm: React.SFC<Props> = ({
       {error && <Style.Error>{error}</Style.Error>}
     </Style.Form>
 
-    <Style.Illustration src={IllustrationSecure} />
+    <Style.Illustration as={IllustrationSecure} />
   </>
 );
 
