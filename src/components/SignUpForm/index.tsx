@@ -8,9 +8,10 @@ import { isWindowAvailable, isDev } from '../../utils';
 
 export interface Props {
   onSubmit: () => void;
+  email: string;
 }
 
-const SignUpForm: React.SFC<Props> = ({ onSubmit }) => {
+const SignUpForm: React.SFC<Props> = ({ onSubmit, email }) => {
   const containerRef = useRef(null);
 
   const handleSubmit = () => {
@@ -21,8 +22,8 @@ const SignUpForm: React.SFC<Props> = ({ onSubmit }) => {
         'send',
         'event',
         'CardDetailsForm',
-        'SignUpForm',
-        'completed'
+        'SignUpFormCompleted',
+        email
       );
     }
 
@@ -32,9 +33,13 @@ const SignUpForm: React.SFC<Props> = ({ onSubmit }) => {
   useEffect(() => {
     // Initialise Typeform
     // TODO: Add email of customer to keep track of the progress
-    TypeformEmbed.makeWidget(containerRef.current, config.typeform.url, {
-      handleSubmit,
-    });
+    TypeformEmbed.makeWidget(
+      containerRef.current,
+      `${config.typeform.url}?email=${email}`,
+      {
+        onSubmit: handleSubmit,
+      }
+    );
   }, []);
 
   return <Style.Container ref={containerRef} />;

@@ -44,7 +44,7 @@ const SignUp: React.SFC<Props> = ({
 
         {step === 0 && (
           <Style.Wrapper>
-            <SignUpForm onSubmit={handleSetStep(1)} />
+            <SignUpForm onSubmit={handleSetStep(1)} email={email} />
           </Style.Wrapper>
         )}
 
