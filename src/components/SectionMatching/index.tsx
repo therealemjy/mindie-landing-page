@@ -2,7 +2,6 @@ import React from 'react';
 
 import * as Style from './style';
 import { Section } from 'components/Grid';
-import P from 'components/P';
 
 import IllustrationPsyChoices from './psy-choices.svg';
 
