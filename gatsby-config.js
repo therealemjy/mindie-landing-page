@@ -27,6 +27,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-hotjar`,
+      options: {
+        id: 1418923,
+        sv: 6,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-crisp-chat',
       options: {
         websiteId: 'eeef61de-83b4-4b66-a17e-27cc1ba0bcb9',
