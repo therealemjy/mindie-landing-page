@@ -32,7 +32,7 @@ const CardDetailsForm: React.SFC<Props> = ({
       </Style.CardElementContainer>
 
       <SubmitButton type="submit" isLoading={isLoading}>
-        Valider et continuer
+        Enregistrer ma carte
       </SubmitButton>
 
       {error && <Style.Error>{error}</Style.Error>}

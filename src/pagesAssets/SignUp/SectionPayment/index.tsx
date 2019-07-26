@@ -19,17 +19,19 @@ const SectionPayment: React.SFC<Props> = ({ apiKey, onSubmit, email }) => (
     </Style.Price>
 
     <Style.List>
-      <ListItem>Matching avec un psychologue adapté à vous</ListItem>
-      <ListItem>Support personnalisé d'un psychologue qualifié</ListItem>
-      <ListItem>Écrivez dès que vous en ressentez le besoin</ListItem>
+      <ListItem>
+        Matching avec un psychologue qualifié et adapté à vous
+      </ListItem>
+      <ListItem>Pas de sessions fixes, écrivez lorsque vous le voulez</ListItem>
       <ListItem>Communications confidentielles et encryptées</ListItem>
-      <ListItem>Aucun besoin de se déplacer</ListItem>
       <ListItem>Aucun jugement ou stigmat</ListItem>
     </Style.List>
 
     <Style.BillingDetails>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor
-      sit amet, consectetur adipiscing elit.
+      Votre souscription ne démarrera que lorsque vous commencerez à parler avec
+      votre psychologue ; aucun montant ne vous sera débité avant cela. Vous
+      pouvez de plus annuler votre souscription à n'importe quel moment, sans
+      frais.
     </Style.BillingDetails>
 
     <StripeProvider apiKey={apiKey}>
