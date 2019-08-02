@@ -65,9 +65,6 @@ const questionsAnswers = [
         problèmes tels qu'ils leur surviennent, sans avoir à attendre d'avoir un
         rendez-vous et de se souvenir des problèmatiques dont ils voulaient
         discuter.
-        <br />
-        <br />
-        (trouver articles)
       </>
     ),
   },
