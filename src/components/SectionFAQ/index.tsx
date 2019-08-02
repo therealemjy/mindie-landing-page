@@ -83,7 +83,8 @@ const questionsAnswers = [
         quatre semaines ; soit une réduction totale de 56€ ! La personne
         parrainée bénéficiera par ailleurs de la même réduction que vous.
         <br />
-        Pour en savoir plus sur le parrainage, envoyez-nous un email à{' '}
+        Pour parrainer quelqu'un ou pour en savoir plus sur le parrainage,
+        envoyez-nous un email à{' '}
         <a href="mailto:bonjour@mindie.app">bonjour@mindie.app</a>.
       </>
     ),
