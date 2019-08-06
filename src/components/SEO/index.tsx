@@ -3,6 +3,7 @@ import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import favicon from './favicon.ico';
+import socialImage from './social.png';
 
 interface Meta {
   name: string;
@@ -58,6 +59,10 @@ const SEO: React.SFC<Props> = ({
           content: title,
         },
         {
+          name: `og:image`,
+          content: `${socialImage}`,
+        },
+        {
           property: `og:description`,
           content: metaDescription,
         },
@@ -76,6 +81,10 @@ const SEO: React.SFC<Props> = ({
         {
           name: `twitter:title`,
           content: title,
+        },
+        {
+          name: `twitter:image`,
+          content: `${socialImage}`,
         },
         {
           name: `twitter:description`,
