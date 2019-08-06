@@ -12,8 +12,6 @@ const ContainedAccordion: React.SFC<Props> = props => {
   const [activeItemsIds, setActiveItemsIds] = useState<string[]>([]);
 
   const handleToggleItemId = (id: QuestionAnswer['id']) => {
-    console.log('isDev', isDev);
-
     // Google analytics
     if (isWindowAvailable && !isDev && id) {
       (window as any).ga(
