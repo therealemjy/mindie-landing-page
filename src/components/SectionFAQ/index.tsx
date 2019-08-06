@@ -48,7 +48,7 @@ const questionsAnswers = [
         investis dans la mission qui est la nôtre.
         <br />
         <br />
-        Vous aurez accès à toutes ses informations concernant votre psychologue
+        Vous aurez accès à toutes les informations concernant votre psychologue
         à n'importe quel moment durant vos échanges.
       </>
     ),
@@ -62,7 +62,7 @@ const questionsAnswers = [
         psychothérapie en ligne est très efficace. L'utilisation de messages
         écrits pour échanger avec son psychologue est un moyen pour les
         utilisateurs de Mindie de s'ouvrir facilement et de parler de leurs
-        problèmes tels qu'ils leur surviennent, sans avoir à attendre d'avoir un
+        problèmes tels qu'ils leur viennent, sans avoir à attendre d'avoir un
         rendez-vous et de se souvenir des problèmatiques dont ils voulaient
         discuter.
       </>
