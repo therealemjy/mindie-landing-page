@@ -1,7 +1,7 @@
 import React from 'react';
+import { navigate } from 'gatsby';
 
 import * as Style from 'pagesAssets/SignUp/style';
-import SectionSuccess from 'pagesAssets/SignUp/SectionSuccess';
 import withSteps from 'hocs/withSteps';
 import withEmailRedirect from 'hocs/withEmailRedirect';
 import SEO from 'components/SEO';
@@ -30,13 +30,12 @@ const SignUp: React.SFC<Props> = ({ step, setStep, email }) => {
 
         <Topbar />
 
-        {step === 0 && (
-          <Style.Wrapper>
-            <SignUpForm onSubmit={handleSetStep(1)} email={email} />
-          </Style.Wrapper>
-        )}
-
-        {step === 1 && <SectionSuccess />}
+        <Style.Wrapper>
+          <SignUpForm
+            onSubmit={() => navigate('/success?type=postSignUp')}
+            email={email}
+          />
+        </Style.Wrapper>
       </Content>
 
       <Footer noSignUpForm noWarning />

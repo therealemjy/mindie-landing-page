@@ -1,5 +1,6 @@
 import React from 'react';
 import ScriptLoader from 'react-script-loader-hoc';
+import { navigate } from 'gatsby';
 
 import SectionPayment from 'pagesAssets/SignUp/SectionPayment';
 import config from 'config';
@@ -39,7 +40,7 @@ const SignUp: React.SFC<Props> = ({
 
         <SectionPayment
           apiKey={config.stripe.publicKey}
-          onSubmit={() => console.log('Payment success 💦')}
+          onSubmit={() => navigate('/success?type=postPayment')}
           email={email}
           pId={pId}
         />
