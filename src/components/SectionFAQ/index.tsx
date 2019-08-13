@@ -15,10 +15,10 @@ const questionsAnswers = [
         psychologie accessible et abordable.
         <br />
         <br />
-        Mindie permet de communiquer avec un psychologue certifié par messages
-        écrits ou audios et de faire ainsi part de ses problèmes de tous les
-        jours, afin d'obtenir en retour un avis objectif et sans jugement et de
-        trouver à terme des solutions durables.
+        Mindie permet de communiquer avec un psychologue certifié qui vous
+        connaît, par messages écrits ou audios et de faire ainsi part de ses
+        problèmes de tous les jours, afin d'obtenir en retour un avis objectif
+        et sans jugement et de trouver à terme des solutions durables.
         <br />
         <br />
         Nous n'essayons pas de remplacer la thérapie classique en cabinet.
@@ -32,6 +32,37 @@ const questionsAnswers = [
   },
   {
     id: 'question-2',
+    question: `Comment ça marche et combien cela coûte-t-il ?`,
+    answer: (
+      <>
+        Après avoir choisi un psychologue qui vous correspond parmi ceux qui
+        auront indiqué pouvoir vous aider, un premier échange de 30 minutes sera
+        organisé avec le praticien dans le but d’apprendre à vous connaître et
+        de définir vos objectifs. Cette échange coûte 35€ et ne vous engage à
+        rien.
+        <br />
+        <br />
+        À la suite de cet échange, vous pourrez choisir de commencer votre
+        accompagnement avec ce psychologue, ou d'organiser un échange avec un
+        autre praticien. Le prix de l'abonnement est de 49€ par semaine et vous
+        permet d'envoyer des messages à votre psychologue dès que vous le
+        souhaitez. Celui-ci vous répondra régulièrement et vous aidera à vous
+        libérer de vos problèmes. Il vous est possible d'annuler votre
+        abonnement, sans frais, à n'importe quel moment et sans justification.
+        <br />
+        <br />
+        De plus, vous pouvez parrainer n'importe quelle personne de votre
+        entourage et bénéficier d'une réduction de 14€ par semaine pendant
+        quatre semaines ; soit une réduction totale de 56€ ! La personne
+        parrainée bénéficiera par ailleurs de la même réduction que vous.
+        <br />
+        Pour parrainer quelqu'un ou pour en savoir plus sur Mindie, envoyez-nous
+        un email à <a href="mailto:bonjour@mindie.app">bonjour@mindie.app</a>.
+      </>
+    ),
+  },
+  {
+    id: 'question-3',
     question: `Les psychologues de Mindie sont-ils qualifiés ?`,
     answer: (
       <>
@@ -54,7 +85,7 @@ const questionsAnswers = [
     ),
   },
   {
-    id: 'question-3',
+    id: 'question-4',
     question: `Est-ce réellement efficace ?`,
     answer: (
       <>
@@ -65,27 +96,6 @@ const questionsAnswers = [
         problèmes tels qu'ils leur viennent, sans avoir à attendre d'avoir un
         rendez-vous et de se souvenir des problèmatiques dont ils voulaient
         discuter.
-      </>
-    ),
-  },
-  {
-    id: 'question-4',
-    question: `Combien cela coûte-t-il ?`,
-    answer: (
-      <>
-        Le prix de l'abonnement est de 49€ par semaine. Vous n'avez aucun
-        contrat à signer et il vous est possible d'annuler votre abonnement,
-        sans frais, à n'importe quel moment.
-        <br />
-        <br />
-        De plus, vous pouvez parrainer n'importe quelle personne de votre
-        entourage et bénéficier d'une réduction de 14€ par semaine pendant
-        quatre semaines ; soit une réduction totale de 56€ ! La personne
-        parrainée bénéficiera par ailleurs de la même réduction que vous.
-        <br />
-        Pour parrainer quelqu'un ou pour en savoir plus sur le parrainage,
-        envoyez-nous un email à{' '}
-        <a href="mailto:bonjour@mindie.app">bonjour@mindie.app</a>.
       </>
     ),
   },
