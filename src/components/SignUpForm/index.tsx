@@ -21,7 +21,7 @@ const SignUpForm: React.SFC<Props> = ({ onSubmit, email }) => {
       (window as any).ga(
         'send',
         'event',
-        'CardDetailsForm',
+        'SignUpForm',
         'SignUpFormCompleted',
         email
       );

@@ -1,24 +1,31 @@
 import React from 'react';
+import ScriptLoader from 'react-script-loader-hoc';
 
-import * as Style from 'pagesAssets/SignUp/style';
-import SectionSuccess from 'pagesAssets/SignUp/SectionSuccess';
+import SectionPayment from 'pagesAssets/SignUp/SectionPayment';
+import config from 'config';
 import withSteps from 'hocs/withSteps';
 import withEmailRedirect from 'hocs/withEmailRedirect';
 import SEO from 'components/SEO';
 import Topbar from 'components/Topbar';
 import Footer from 'components/Footer';
-import SignUpForm from 'components/SignUpForm';
 import { Page, Content } from 'components/Grid';
 import { compose } from 'utils';
+import withPIdRedirect from 'hocs/withPIdRedirect';
 
 export interface Props {
-  step: number;
+  scriptsLoadedSuccessfully: boolean;
   email: string;
-  setStep: (step: number) => void;
+  pId: string;
 }
 
-const SignUp: React.SFC<Props> = ({ step, setStep, email }) => {
-  const handleSetStep = (step: number) => () => setStep(step);
+const SignUp: React.SFC<Props> = ({
+  email,
+  pId,
+  scriptsLoadedSuccessfully,
+}) => {
+  if (!scriptsLoadedSuccessfully) {
+    return <>Chargement...</>;
+  }
 
   return (
     <Page>
@@ -30,13 +37,12 @@ const SignUp: React.SFC<Props> = ({ step, setStep, email }) => {
 
         <Topbar />
 
-        {step === 0 && (
-          <Style.Wrapper>
-            <SignUpForm onSubmit={handleSetStep(1)} email={email} />
-          </Style.Wrapper>
-        )}
-
-        {step === 1 && <SectionSuccess />}
+        <SectionPayment
+          apiKey={config.stripe.publicKey}
+          onSubmit={() => console.log('Payment success 💦')}
+          email={email}
+          pId={pId}
+        />
       </Content>
 
       <Footer noSignUpForm noWarning />
@@ -45,6 +51,8 @@ const SignUp: React.SFC<Props> = ({ step, setStep, email }) => {
 };
 
 export default compose(
+  withPIdRedirect,
   withEmailRedirect,
-  withSteps
+  withSteps,
+  ScriptLoader('https://js.stripe.com/v3/')
 )(SignUp);

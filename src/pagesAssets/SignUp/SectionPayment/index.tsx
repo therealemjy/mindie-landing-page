@@ -10,6 +10,7 @@ export interface Props {
   apiKey: string;
   onSubmit: () => void;
   email: string;
+  pId: string;
 }
 
 const SectionPayment: React.SFC<Props> = ({ apiKey, onSubmit, email }) => (
