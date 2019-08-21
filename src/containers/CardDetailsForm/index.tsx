@@ -79,11 +79,12 @@ const ContainedCardDetailsForm: React.SFC<IContainedCardDetailsForm> = ({
     try {
       await Axios({
         method: 'post',
-        url: config.api.createCustomerUrl,
+        url: 'http://localhost:5000/mindie/us-central1/payInitialSession',
         data: {
           email,
           paymentMethodId: setupIntent.payment_method,
           tokenId: token.id,
+          connectedAccountId: 'acct_1ExwUiBIJSPhWOSc',
         },
       });
     } catch (error) {
