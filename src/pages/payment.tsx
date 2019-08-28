@@ -4,7 +4,6 @@ import { navigate } from 'gatsby';
 
 import SectionPayment from 'pagesAssets/SignUp/SectionPayment';
 import config from 'config';
-import withSteps from 'hocs/withSteps';
 import withEmailRedirect from 'hocs/withEmailRedirect';
 import SEO from 'components/SEO';
 import Topbar from 'components/Topbar';
@@ -24,6 +23,8 @@ const SignUp: React.SFC<Props> = ({
   pId,
   scriptsLoadedSuccessfully,
 }) => {
+  const handleSubmit = () => navigate('/success?type=postPayment');
+
   if (!scriptsLoadedSuccessfully) {
     return <>Chargement...</>;
   }
@@ -40,7 +41,7 @@ const SignUp: React.SFC<Props> = ({
 
         <SectionPayment
           apiKey={config.stripe.publicKey}
-          onSubmit={() => navigate('/success?type=postPayment')}
+          onSubmit={handleSubmit}
           email={email}
           pId={pId}
         />
@@ -54,6 +55,5 @@ const SignUp: React.SFC<Props> = ({
 export default compose(
   withPIdRedirect,
   withEmailRedirect,
-  withSteps,
   ScriptLoader('https://js.stripe.com/v3/')
 )(SignUp);

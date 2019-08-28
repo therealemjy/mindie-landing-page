@@ -2,24 +2,18 @@ import React from 'react';
 import { navigate } from 'gatsby';
 
 import * as Style from 'pagesAssets/SignUp/style';
-import withSteps from 'hocs/withSteps';
 import withEmailRedirect from 'hocs/withEmailRedirect';
 import SEO from 'components/SEO';
 import Topbar from 'components/Topbar';
 import Footer from 'components/Footer';
 import SignUpForm from 'components/SignUpForm';
 import { Page, Content } from 'components/Grid';
-import { compose } from 'utils';
 
 export interface Props {
-  step: number;
   email: string;
-  setStep: (step: number) => void;
 }
 
-const SignUp: React.SFC<Props> = ({ step, setStep, email }) => {
-  const handleSetStep = (step: number) => () => setStep(step);
-
+const SignUp: React.SFC<Props> = ({ email }) => {
   return (
     <Page>
       <Content>
@@ -43,7 +37,4 @@ const SignUp: React.SFC<Props> = ({ step, setStep, email }) => {
   );
 };
 
-export default compose(
-  withEmailRedirect,
-  withSteps
-)(SignUp);
+export default withEmailRedirect(SignUp);
