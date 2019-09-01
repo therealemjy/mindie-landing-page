@@ -1,25 +1,19 @@
 import React from 'react';
+import { navigate } from 'gatsby';
 
 import * as Style from 'pagesAssets/SignUp/style';
-import SectionSuccess from 'pagesAssets/SignUp/SectionSuccess';
-import withSteps from 'hocs/withSteps';
 import withEmailRedirect from 'hocs/withEmailRedirect';
 import SEO from 'components/SEO';
 import Topbar from 'components/Topbar';
 import Footer from 'components/Footer';
 import SignUpForm from 'components/SignUpForm';
 import { Page, Content } from 'components/Grid';
-import { compose } from 'utils';
 
 export interface Props {
-  step: number;
   email: string;
-  setStep: (step: number) => void;
 }
 
-const SignUp: React.SFC<Props> = ({ step, setStep, email }) => {
-  const handleSetStep = (step: number) => () => setStep(step);
-
+const SignUp: React.SFC<Props> = ({ email }) => {
   return (
     <Page>
       <Content>
@@ -30,13 +24,12 @@ const SignUp: React.SFC<Props> = ({ step, setStep, email }) => {
 
         <Topbar />
 
-        {step === 0 && (
-          <Style.Wrapper>
-            <SignUpForm onSubmit={handleSetStep(1)} email={email} />
-          </Style.Wrapper>
-        )}
-
-        {step === 1 && <SectionSuccess />}
+        <Style.Wrapper>
+          <SignUpForm
+            onSubmit={() => navigate('/success?type=postSignUp')}
+            email={email}
+          />
+        </Style.Wrapper>
       </Content>
 
       <Footer noSignUpForm noWarning />
@@ -44,7 +37,4 @@ const SignUp: React.SFC<Props> = ({ step, setStep, email }) => {
   );
 };
 
-export default compose(
-  withEmailRedirect,
-  withSteps
-)(SignUp);
+export default withEmailRedirect(SignUp);

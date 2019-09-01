@@ -4,20 +4,26 @@
 
 ## 🚀 Set up
 
-1. **Switch to the correct Node.js version**
+### 1. **Switch to the correct Node.js version**
 
-   ```sh
-   nvm install
-   ```
+```sh
+nvm install
+```
 
-2. **Install peer dependencies**
+### 2. **Install peer dependencies**
 
-   ```sh
-   yarn install
-   ```
+```sh
+yarn install
+```
 
-3. **Start developing**
+### 3. **Install Firebase CLI globally**
 
-   ```sh
-   yarn start
-   ```
+```sh
+yarn global add firebase
+```
+
+### 4. **Start developing**
+
+```sh
+yarn start
+```
