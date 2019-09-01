@@ -44,20 +44,15 @@ const questionsAnswers = [
         <br />
         À la suite de cet échange, vous pourrez choisir de commencer votre
         accompagnement avec ce psychologue, ou d'organiser un échange avec un
-        autre praticien. Le prix de l'abonnement est de 49€ par semaine et vous
-        permet d'envoyer des messages à votre psychologue dès que vous le
-        souhaitez. Celui-ci vous répondra régulièrement et vous aidera à vous
-        libérer de vos problèmes. Il vous est possible d'annuler votre
+        autre praticien. Le prix de l'abonnement est de 79€ par mois et vous
+        permet d'envoyer des messages à votre psychologue lorsque vous le
+        souhaitez. Celui-ci vous répondra deux fois par semaine et vous aidera à
+        vous libérer de vos problèmes. Il vous est possible d'annuler votre
         abonnement, sans frais, à n'importe quel moment et sans justification.
         <br />
         <br />
-        De plus, vous pouvez parrainer n'importe quelle personne de votre
-        entourage et bénéficier d'une réduction de 14€ par semaine pendant
-        quatre semaines ; soit une réduction totale de 56€ ! La personne
-        parrainée bénéficiera par ailleurs de la même réduction que vous.
-        <br />
-        Pour parrainer quelqu'un ou pour en savoir plus sur Mindie, envoyez-nous
-        un email à <a href="mailto:bonjour@mindie.app">bonjour@mindie.app</a>.
+        Pour en savoir plus sur Mindie, envoyez-nous un email à
+        <a href="mailto:bonjour@mindie.app">bonjour@mindie.app</a>.
       </>
     ),
   },
