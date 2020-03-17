@@ -36,15 +36,15 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-crisp-chat',
       options: {
-        websiteId: 'eeef61de-83b4-4b66-a17e-27cc1ba0bcb9',
+        websiteId: 'xxxxx-xxxxxx-xxxxxxx-xxxxxxx',
       },
     },
     {
       resolve: `gatsby-plugin-s3`,
       options: {
-        bucketName: 'mindie.app',
+        bucketName: 'BUCKET_NAME',
         protocol: 'https',
-        hostname: 'www.mindie.app',
+        hostname: 'HOSTNAME',
       },
     },
   ],
